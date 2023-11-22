@@ -63,6 +63,7 @@ public class CounterSaleManagerTest extends TestDriverActions {
         counter.clickOnaddParts();
         counter.addCorePart();
         counter.addQtyAndExpand();
+      // TESTING
 
     }
 
