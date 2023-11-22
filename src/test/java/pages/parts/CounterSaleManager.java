@@ -15,7 +15,7 @@ import java.util.List;
 
 public class CounterSaleManager extends TestDriverActions {
 
-
+    //Hello
     @FindBy(xpath = "//a[text()='Parts']")
     WebElement label_parts;
 
