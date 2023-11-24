@@ -5,8 +5,6 @@ import actions.LoginActions;
 import actions.WaitActions;
 import constants.SheetConstants;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.log4j.Logger;
-import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,30 +14,27 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.LoginPage;
-import pages.administration.CustomerPage;
-import pages.administration.VendorsPage;
-import pages.cGVUnitFunctionality.UnitHistoryPage;
+import pages.administration.CreateCustomerPage;
+import pages.administration.CreateVendorPage;
 import pages.estimating.ApproveanEstimateDMSPage;
-import pages.estimating.PerformTheWorkOnAnEstimatePage;
+import pages.estimating.PerformTheWorkOnAnEstimateTech;
 import pages.fleet.CreateRedTagDMS;
 import pages.fleet.CreateUnitPage;
 import pages.fleet.SetUpWorkRequired;
 
 
-import pages.nonrepair.ApproveNonRepairBill;
 import pages.parts.*;
 //import pages.pmWorkFlow.WorkOrderWorkflowPage;
-import pages.pmWorkFlow.PmWorkOrderWorkFlowPage;
+import pages.pmWorkFlow.cGVTechPerformPM;
 import pages.service.*;
 
 import pages.techRo.*;
-import pages.serviceBoard.EstimateSubmit;
-import pages.tech.WoLabor;
-import pages.tech.WoParts;
+import pages.serviceBoard.SubmitAnEstimate_ServiceManagerPage;
+import pages.tech.EC_Tech_WoLabor;
+import pages.tech.EC_Tech_WoParts;
 
 
 import utils.TestListener;
-import utils.timeUtil;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -50,7 +45,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-import org.apache.log4j.xml.DOMConfigurator;
 
 public class TestDriverActions {
 
@@ -58,40 +52,40 @@ public class TestDriverActions {
     public LoginPage loginPage;
     public CreateUnitPage createUnitPage;
     public CreateRoPage createRoPage;
-    public VendorsPage vendorsPage;
-    public CustomerPage customerPage;
-    public CounterSaleManager counter;
+    public CreateVendorPage vendorsPage;
+    public CreateCustomerPage customerPage;
+    public CounterSalePage counter;
     public ReceiveParts receivePage;
-    public PartsRelatedItem relatedItem;
-    public EstimateSubmit submit ;
-    public OrderParts order;
+    public CreatePart relatedItem;
+    public SubmitAnEstimate_ServiceManagerPage submit ;
+    public SpotOrderParts order;
     public SetUpWorkRequired setUp;
-    public UpdatePoNumber update;
-    public UnitFunctionality unit;
-    public JournalizeParts journalize;
-    public WoLabor labor;
-    public WoParts part;
-    public AddRemoveLabour addRemove;
-    public ServiceManagerLabor servicelabor;
-    public NonRepairBills nonrepairbills;
-    public WoCompliance wocompliance;
+    public ECServiceManager_ChangeCustomerPOafterInvoicing update;
+    public InquireFXG_UnitHistory unit;
+    public JournalizePartsInvoice journalize;
+    public EC_Tech_WoLabor labor;
+    public EC_Tech_WoParts part;
+    public ECServiceManager_AddRemoveLabor addRemove;
+    public EC_ServiceManager_WoLabor servicelabor;
+    public CreateNonRepairBill_ServiceManager nonrepairbills;
+    public cGVTech_WoCompliance wocompliance;
 
-    public CompleteRoPage completeropage;
-    public CompleteRoPartsPage completeRoPartsPage;
-    public ApproveNonRepairBill approveNonRepairBill ;
+    public ECService_Manager_Invoice completeropage;
+    public ECServiceManager_PartsRelatedTasks completeRoPartsPage;
+    public pages.nonrepair.ApproveNonRepairBill_DMS approveNonRepairBill ;
 
     public CreateRedTagDMS redtag;
-    public JournalizePage journalizepage ;
+    public ECServiceManager_Journalize journalizepage ;
 
-    public UnitHistoryPage unithistorypage;
+    public pages.cGVUnitFunctionality.InquireFXG_UnitHistory unithistorypage;
 
     public ApproveanEstimateDMSPage approveanestimatedmspage;
 
-    public PmWorkOrderWorkFlowPage pmworkorderworkflowpage;
+    public cGVTechPerformPM pmworkorderworkflowpage;
 
-    public PerformTheWorkOnAnEstimatePage performtheworkonanestimatepage;
+    public PerformTheWorkOnAnEstimateTech performtheworkonanestimatepage;
 
-    public Spotorderparts spotorderparts;
+    public Spotorderparts_KonaEU spotorderparts;
 
     public ReceivePart_konaEU receivepart;
     public JournalizePartsInvoice_konaEU journalizepartinvoice;
@@ -254,7 +248,7 @@ public class TestDriverActions {
             options.setExperimentalOption("prefs", chromePrefs);
             WebDriverManager.chromedriver().setup();
             options.addArguments("--start-maximized");
-            options.addArguments("--headless=new");
+  //          options.addArguments("--headless=new");
             options.addArguments("--window-size=1366,768");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-popup-blocking");
@@ -291,33 +285,33 @@ public class TestDriverActions {
         loginPage = PageFactory.initElements(driver, LoginPage.class);
         createRoPage = PageFactory.initElements(driver, CreateRoPage.class);
         createUnitPage = PageFactory.initElements(driver, CreateUnitPage.class);
-        vendorsPage = PageFactory.initElements(driver, VendorsPage.class);
-        customerPage = PageFactory.initElements(driver, CustomerPage.class);
-        counter = PageFactory.initElements(driver, CounterSaleManager.class);
+        vendorsPage = PageFactory.initElements(driver, CreateVendorPage.class);
+        customerPage = PageFactory.initElements(driver, CreateCustomerPage.class);
+        counter = PageFactory.initElements(driver, CounterSalePage.class);
         receivePage = PageFactory.initElements(driver,ReceiveParts.class);
-        relatedItem = PageFactory.initElements(driver,PartsRelatedItem.class);
-        submit = PageFactory.initElements(driver,EstimateSubmit.class);
-        order = PageFactory.initElements(driver,OrderParts.class);
+        relatedItem = PageFactory.initElements(driver, CreatePart.class);
+        submit = PageFactory.initElements(driver, SubmitAnEstimate_ServiceManagerPage.class);
+        order = PageFactory.initElements(driver, SpotOrderParts.class);
         setUp = PageFactory.initElements(driver,SetUpWorkRequired.class);
-        update = PageFactory.initElements(driver,UpdatePoNumber.class);
-        unit = PageFactory.initElements(driver,UnitFunctionality.class);
-        journalize = PageFactory.initElements(driver,JournalizeParts.class);
-        labor = PageFactory.initElements(driver,WoLabor.class);
-        part = PageFactory.initElements(driver,WoParts.class);
-        addRemove = PageFactory.initElements(driver,AddRemoveLabour.class);
-        servicelabor = PageFactory.initElements(driver,ServiceManagerLabor.class);
-        nonrepairbills = PageFactory.initElements(driver, NonRepairBills.class);
-        wocompliance = PageFactory.initElements(driver, WoCompliance.class);
-        completeropage = PageFactory.initElements(driver, CompleteRoPage.class);
-        completeRoPartsPage = PageFactory.initElements(driver, CompleteRoPartsPage.class);
-        approveNonRepairBill = PageFactory.initElements(driver, ApproveNonRepairBill.class);
-        journalizepage = PageFactory.initElements(driver, JournalizePage.class);
+        update = PageFactory.initElements(driver, ECServiceManager_ChangeCustomerPOafterInvoicing.class);
+        unit = PageFactory.initElements(driver, InquireFXG_UnitHistory.class);
+        journalize = PageFactory.initElements(driver, JournalizePartsInvoice.class);
+        labor = PageFactory.initElements(driver, EC_Tech_WoLabor.class);
+        part = PageFactory.initElements(driver, EC_Tech_WoParts.class);
+        addRemove = PageFactory.initElements(driver, ECServiceManager_AddRemoveLabor.class);
+        servicelabor = PageFactory.initElements(driver, EC_ServiceManager_WoLabor.class);
+        nonrepairbills = PageFactory.initElements(driver, CreateNonRepairBill_ServiceManager.class);
+        wocompliance = PageFactory.initElements(driver, cGVTech_WoCompliance.class);
+        completeropage = PageFactory.initElements(driver, ECService_Manager_Invoice.class);
+        completeRoPartsPage = PageFactory.initElements(driver, ECServiceManager_PartsRelatedTasks.class);
+        approveNonRepairBill = PageFactory.initElements(driver, pages.nonrepair.ApproveNonRepairBill_DMS.class);
+        journalizepage = PageFactory.initElements(driver, ECServiceManager_Journalize.class);
         redtag = PageFactory.initElements(driver,CreateRedTagDMS.class);
-        unithistorypage = PageFactory.initElements(driver,UnitHistoryPage.class);
+        unithistorypage = PageFactory.initElements(driver, pages.cGVUnitFunctionality.InquireFXG_UnitHistory.class);
         approveanestimatedmspage = PageFactory.initElements(driver, ApproveanEstimateDMSPage.class);
-        pmworkorderworkflowpage = PageFactory.initElements(driver,PmWorkOrderWorkFlowPage.class);
-        performtheworkonanestimatepage = PageFactory.initElements(driver,PerformTheWorkOnAnEstimatePage.class);
-        spotorderparts = PageFactory.initElements(driver, Spotorderparts.class);
+        pmworkorderworkflowpage = PageFactory.initElements(driver, cGVTechPerformPM.class);
+        performtheworkonanestimatepage = PageFactory.initElements(driver, PerformTheWorkOnAnEstimateTech.class);
+        spotorderparts = PageFactory.initElements(driver, Spotorderparts_KonaEU.class);
         journalizepartinvoice = PageFactory.initElements(driver, JournalizePartsInvoice_konaEU.class);
         receivepart = PageFactory.initElements(driver, ReceivePart_konaEU.class);
 
