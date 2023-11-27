@@ -1,4 +1,4 @@
-package tests.approveanestimatedms;
+package tests.estimating;
 
 import tests.TestDriverActions;
 

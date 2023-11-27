@@ -391,7 +391,7 @@ public class EC_Tech_WoLabor extends TestDriverActions {
     @FindBy(xpath ="//a[text()='Accessories Group']")
     public List<WebElement> accessories1accessories_All ;
 
-    @FindBy(xpath = "(//a[text()='Accessories Group'])[1]")
+    @FindBy(xpath = "//a[contains(@id,'clPopupWoact')]/following::span[text()='Accessories Group']")
     WebElement accessories1;
 
     @FindBy(xpath = "//a[contains(@id,'ciDWoAct1')]")

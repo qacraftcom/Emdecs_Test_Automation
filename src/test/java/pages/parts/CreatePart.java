@@ -345,6 +345,7 @@ public class CreatePart extends TestDriverActions {
 
          WaitActions.getWaits().loadingWait(loder);
 
+         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_inventoryLine);
         Assert.assertTrue(label_inventoryLine.isDisplayed());
         Assert.assertTrue(dropdwn_inventoryLine.isDisplayed());
         Assert.assertTrue(label_inventoryClass.isDisplayed());

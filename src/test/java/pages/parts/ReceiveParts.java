@@ -30,7 +30,7 @@ public class ReceiveParts extends TestDriverActions {
     @FindBy(xpath = "//label[text()='From Date:']/following::a[2]/span")
     WebElement btn_refresh;
 
-    @FindBy(xpath = "//span[text()='Total Amount']/following::tr[7]/td[1]/span/a/span")
+    @FindBy(xpath = "//span[text()='Total Amount']/following::tr[4]/td[1]/span/a/span")
     WebElement PONumber;
 
     @FindBy(xpath = "//span[text()='Extended Cost']/following::span[2]")
@@ -508,7 +508,7 @@ public class ReceiveParts extends TestDriverActions {
 
 //        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_invoiceNumber);
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_invoiceNumber);
-        String invoiceNum = String.valueOf(WebElementActions.getActions().randomNumber(1000,10000000));
+        String invoiceNum = String.valueOf(WebElementActions.getActions().randomNumber(10,1000));
         WebElementActions.getActions().inputText(txt_invoiceNumber,invoiceNum);
 
 //        WaitActions.getWaits().waitForElementTobeClickable(btn_receiveParts2);
