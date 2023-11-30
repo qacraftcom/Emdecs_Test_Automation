@@ -105,7 +105,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "//span[text()='Bin Number']")
     WebElement label_BinNumber;
 
-    @FindBy(xpath = "//label[text()='Part #:']/following::span[4]")
+    @FindBy(xpath = "//span[text()='Issue Part']")
     WebElement btn_IssuePart;
 
     @FindBy(xpath = "//span[text()='Total Charge']/following::td[3]")
@@ -126,7 +126,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "(//span[text()='Cancel'])[2]")
     WebElement btn_cancle;
 
-    @FindBy(xpath = "//label[text()='Part #:']/following::span[6]")
+    @FindBy(xpath = "//span[text()='Core Return']")
     WebElement btn_coreReturn;
 
     @FindBy(xpath = "//span[text()='Non-Catalog Part']")
@@ -161,7 +161,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "//label[text()='Unit Cost:']/following::input[1]")
     WebElement txtfield_UnitCost;
 
-   @FindBy(xpath = "(//span[text()='Cancel'])[2]")
+   @FindBy(xpath = "//div[contains(@id,'cbCancel')]")
     WebElement cancle;
 
     @FindBy(xpath = "(//span[text()='Issue Part'])[2]")
@@ -279,7 +279,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "//span[text()='Pause']")
     WebElement pause;
 
-    @FindBy(xpath = "//div[contains(@id,'ctbUnd')]")
+    @FindBy(xpath = "//span[text()='Moises Olivas']/following::a[2]/span")
     WebElement pause_unpause;
 
 
@@ -307,7 +307,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "//div[contains(@id,'rSPS:3:r6:7:s1:ctbClose')]")
     WebElement cancle_btn;
 
-    @FindBy(xpath = "(//span[text()='Select'])[2]")
+    @FindBy(xpath = "//div[contains(@id,'cbSelectCus')]/a/span")
     WebElement select_button;
 
 //new added element
@@ -318,7 +318,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "(//span[text()='OK'])[2]")
     WebElement OK_btn;
 
-    @FindBy(xpath = "(//a[text()='Accessories Group'])[1]")
+    @FindBy(xpath = "//a[contains(@id,'clPopupWoact')]")
     WebElement VMRSName_Accessories;
 
     @FindBy(xpath="//a[contains(@id,'clPopupWoact')]")
@@ -327,7 +327,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
 //    @FindBy(xpath = "//a[text()='Aerodynamic Devices']")   //(//a[text()='Aerodynamic Devices'])[1]
 //    List<WebElement> FirstWorkRequired;
 
-    @FindBy(xpath = "(//a[text()='Aerodynamic Devices'])[1]")
+    @FindBy(xpath = "//a[contains(@id,'clPopupWoact')]")
     WebElement FirstWorkRequired_AeroDynamic;
 
     @FindBy(xpath = "//label[text()='Cause/Reason:']/following::a[1]")
@@ -569,6 +569,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
     public void clickOnIssuePart() throws InterruptedException {
 // WaitActions.getWaits().waitForElementTobeClickable(btn_IssuePart);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_IssuePart);
+//        Thread.sleep(2000);
         WebElementActions.getActions().clickElement(btn_IssuePart);
 
         WaitActions.getWaits().loadingWait(loder);
@@ -880,6 +881,17 @@ public class EC_Tech_WoParts extends TestDriverActions {
                 break;
             }
         }
+
+ /*       for(int i=0;i<VMRSName.size();i++)
+        {
+            if(VMRSName.contains("Accessories Group"))
+            {
+                WebElementActions.getActions().moveOnTargetElement(VMRSName.get(i));
+
+                WebElementActions.getActions().clickElement(VMRSName.get(i));
+                break;
+            }
+        } */
 /* WebElementActions.getActions().moveOnTargetElement(firstrow_cell);
 
 // WaitActions.getWaits().WaitUntilWebElementIsVisible(VMRSName_Img);
