@@ -95,7 +95,8 @@ public class SubmitAnEstimate_ServiceManagerTest extends TestDriverActions {
     @Test(priority = 6, description="T_007 Click on accessories group and add non-Catalog part",enabled = true)
     @Description("Test Description : Click on accessories group and add non-Catalog part")
     public void add_noncatalog_part_number() throws InterruptedException {
-
+         submit.clickOnSelectedReason();
+        submit.clickOnSelectButtonAccident();
         submit.clickOnAddParts();
         submit.clickOnAccessoriesGrpIMG();
         submit.clickOnNonCatalogPart();

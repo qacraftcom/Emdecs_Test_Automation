@@ -93,7 +93,7 @@ public class WaitActions extends TestDriverActions {
      * @return
      */
     public boolean waitForElementTobeClickable(WebElement element) {
-        new WebDriverWait(driver, Duration.ofSeconds(40))  //20
+        new WebDriverWait(driver, Duration.ofSeconds(20))  //20
                 .until(ExpectedConditions.elementToBeClickable(element));
         System.out.println("WebElement is clickable using locator: " + "<" + element.toString() + ">");
         return false;
@@ -188,10 +188,10 @@ public class WaitActions extends TestDriverActions {
      */
     public static void waitForElementToBeRefreshedAndClickable(WebElement element) throws InterruptedException {
         try {
-            Thread.sleep(3000);
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+            Thread.sleep(4000);
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));  //120
             wait.until(ExpectedConditions.refreshed(ExpectedConditions.elementToBeClickable(element)));
-            Thread.sleep(3000);
+            Thread.sleep(4000);
         }
         catch(Throwable e)
         {
@@ -207,10 +207,10 @@ public class WaitActions extends TestDriverActions {
 
     public static void waitForElementToBeRefreshedAndIsVisible(WebElement element) throws InterruptedException {
         try {
-            Thread.sleep(3000);
+            Thread.sleep(4000);
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
             wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(element)));
-            Thread.sleep(3000);
+            Thread.sleep(4000);
         }
         catch(Throwable e)
         {

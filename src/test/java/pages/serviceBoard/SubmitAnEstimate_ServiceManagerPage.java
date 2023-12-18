@@ -17,7 +17,7 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
     @FindBy(xpath = "(//a[text()='Service Board'])[1]")
     WebElement btn_serviceBoard;
 
-    @FindBy(xpath = "(//span[text()='Estimate'])[2]")
+    @FindBy(xpath = "//div[contains(@id,'ctbNewEstimate')]")
     WebElement btn_estimate;
 
     @FindBy(xpath = "//span[text()='Yes']")
@@ -318,7 +318,7 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
     @FindBy(xpath = "(//label[text()='Part #:']/following::input)[1]")
     WebElement txt_parts_AirdiscBrakes;
 
-    @FindBy(xpath = "//ul[@class='AFAutoSuggestItemsContainer']//li")
+    @FindBy(xpath = "//li[contains(@class,'AFAutoSuggestItem')]")
     WebElement autoList;
 
     @FindBy(xpath = "(//tboli)[1]dy/tr/td/ul/")
@@ -426,6 +426,7 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
         ReusableActions.getActions().clickParentMenu("Service");
         ReusableActions.getActions().clickChildMenu("Service Board");
 
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
@@ -447,7 +448,7 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
      * move to left side horizontally
      */
       public void moveRightToLeft() throws InterruptedException {
-          Thread.sleep(2000);
+          Thread.sleep(6000);
           WebElementActions.getActions().moveOnTargetElement(btn_estimate);
           Thread.sleep(3000);
           WebElementActions.getActions().moveOnTargetElement(ele_Location);
@@ -458,6 +459,7 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
      * click on estimate link
      */
       public void clickOnEstimateLink() throws InterruptedException {
+          Thread.sleep(2000);
           WebElementActions.getActions().moveOnTargetElement(btn_estimate);
           WebElementActions.getActions().clickElement(btn_estimate);
 
@@ -752,7 +754,7 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
      * click on  Accessories Group img (VMRS)
      */
       public void clickOnAccessoriesImgVMRS() throws InterruptedException {
-//          Thread.sleep(2000);
+          Thread.sleep(2000);
 //          WaitActions.getWaits().waitForElementTobeClickable(VMRS_accessoriesImg);
           WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(VMRS_accessoriesImg);
           WebElementActions.getActions().clickElement(VMRS_accessoriesImg);
@@ -894,17 +896,19 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
 //            Thread.sleep(10000);
 //            WaitActions.getWaits().waitForElementTobeClickable(txt_parts_AirdiscBrakes);
      //       txt_parts_AirdiscBrakes.sendKeys(prop.getProperty("partNumber"));
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_parts_AirdiscBrakes);
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_parts_AirdiscBrakes);
             WebElementActions.getActions().inputText(txt_parts_AirdiscBrakes,prop.getProperty("partNumber"));
   //          Thread.sleep(2000);
  //       WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(autoList);
             WebElementActions.getActions().clickElement(autoList);
             Thread.sleep(2000);
-            txt_parts_AirdiscBrakes.clear();
+ //           txt_parts_AirdiscBrakes.clear();
             Thread.sleep(5000);
 
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_parts_AirdiscBrakes);
             WebElementActions.getActions().inputText(txt_parts_AirdiscBrakes, prop.getProperty("partNumber"));
-            Thread.sleep(3000);
+            Thread.sleep(1000);
+             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(autoList);
             WebElementActions.getActions().clickElement(autoList);
 
             Thread.sleep(1000);
@@ -1082,6 +1086,7 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
          WebElementActions.getActions().clickElement(autoList);
          Thread.sleep(2000);
 
+         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(btn_coreReturn);
          Assert.assertTrue(btn_coreReturn.isDisplayed());
  //        WaitActions.getWaits().waitForElementTobeClickable(btn_coreReturn);
          WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_coreReturn);
