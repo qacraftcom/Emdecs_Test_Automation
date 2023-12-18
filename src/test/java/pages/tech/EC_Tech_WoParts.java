@@ -72,7 +72,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "//div[text()='No data to display']")
     WebElement label_NodataDisplay;
 
-    @FindBy(xpath = "//li[contains(@class,'AFAutoSuggestItem')]")
+    @FindBy(xpath = "//ul[@class='AFAutoSuggestItemsContainer']/li")
     WebElement number_15_762;
 
     @FindBy(xpath = "//label[text()='Warehouse:']")
@@ -108,7 +108,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "//span[text()='Issue Part']")
     WebElement btn_IssuePart;
 
-    @FindBy(xpath = "//div[contains(@id,'pgl7')]")
+    @FindBy(xpath = "//span[text()='Total Charge']/following::td[3]")
     WebElement label_partDescription1;
 
     @FindBy(xpath = "//span[text()='Total Charge']/following::span[6]")
@@ -167,7 +167,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "(//span[text()='Issue Part'])[2]")
     WebElement IssuePart;
 
-    @FindBy(xpath = "//a[contains(@id,'clPartsStockOnHand')]/span")
+    @FindBy(xpath = "//span[text()='Total Charge']/following::a[2]")
     WebElement ncpPartName;
 
     @FindBy(xpath = "//span[text()='Total Charge']/following::a[3]")
@@ -252,7 +252,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "//span[text()='Pause']")
     WebElement btn_pause;
 
-    @FindBy(xpath = "(//span[text()='Select'])")
+    @FindBy(xpath = "(//span[text()='Select'])[1]")
     WebElement btn_select;
 
     @FindBy(xpath = "(//span[text()='OK'])[1]")
@@ -287,7 +287,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
    WebElement select_btn_TechRO;
 
    @FindBy(xpath = "//span[text()='Clear Screen']")
-    List<WebElement> btn_clear;
+   WebElement btn_clear;
 
     @FindBy(xpath = "//h1[contains(text(),'Working...Please Wait')]")
     List<WebElement> loder;
@@ -342,7 +342,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "(//span[text()='Cancel'])[2]")
     WebElement cancleBtn ;
 
-    @FindBy(xpath = "//li[contains(@class,'AFAutoSuggestItem')]")
+    @FindBy(xpath = "//ul[@class='AFAutoSuggestItemsContainer']/li[1]")
     WebElement corePart;
 
     //(//span[text()='Select'])[1]
@@ -533,12 +533,10 @@ public class EC_Tech_WoParts extends TestDriverActions {
 // WaitActions.getWaits().waitForElementTobeClickable(txt_part);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_part);
         WebElementActions.getActions().inputText(txt_part,prop.getProperty("PartName"));
-        Thread.sleep(5000);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_part);
+        Thread.sleep(3000);
         WebElementActions.getActions().inputText(txt_part,prop.getProperty("PartName"));
-         Thread.sleep(2000);
+
 // WaitActions.getWaits().loadingWait(loder);
-     //   WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(number_15_762);
         WebElementActions.getActions().clickElement(number_15_762);
 
         WaitActions.getWaits().loadingWait(loder);
@@ -582,8 +580,8 @@ public class EC_Tech_WoParts extends TestDriverActions {
      */
     public void verifyPartAdded() throws InterruptedException {
 // WaitActions.getWaits().WaitUntilWebElementIsVisible(label_partDescription1);
-//        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_partDescription1);
-//        Assert.assertTrue(label_partDescription1.isDisplayed());
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_partDescription1);
+        Assert.assertTrue(label_partDescription1.isDisplayed());
 // WaitActions.getWaits().WaitUntilWebElementIsVisible(label_EA1);
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_EA1);
         Assert.assertTrue(label_EA1.isDisplayed());
@@ -632,21 +630,17 @@ public class EC_Tech_WoParts extends TestDriverActions {
     public void enterCorePart() throws InterruptedException {
 
 // WaitActions.getWaits().waitForElementTobeClickable(txt_part);
-        Thread.sleep(2000);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_part);
         WebElementActions.getActions().inputText(txt_part,prop.getProperty("CorePart"));
 
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         WebElementActions.getActions().clickElement(corePart);
         Thread.sleep(5000);
 
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_part);
         WebElementActions.getActions().inputText(txt_part,prop.getProperty("CorePart"));
         Thread.sleep(3000);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_part);
         WebElementActions.getActions().inputText(txt_part,prop.getProperty("CorePart"));
-        Thread.sleep(2000);
-//        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(corePart);
+        Thread.sleep(3000);
         WebElementActions.getActions().clickElement(corePart);
 
         WaitActions.getWaits().loadingWait(loder);
@@ -704,10 +698,10 @@ public class EC_Tech_WoParts extends TestDriverActions {
      * click on Core Return button
      */
     public void clickOnCoreReturn() throws InterruptedException {
-        Thread.sleep(2000);
+
 // WaitActions.getWaits().waitForElementTobeClickable(btn_coreReturn);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_coreReturn);
-
+        Thread.sleep(2000);
         WebElementActions.getActions().clickElement(btn_coreReturn);
 
         WaitActions.getWaits().loadingWait(loder);
@@ -1167,16 +1161,6 @@ WebElementActions.getActions().clickElement(hyperlink_AeroDynamicDevice); */
 
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
-          Thread.sleep(2000);
-        if(btn_clear.size() > 0)
-        {
-            Thread.sleep(2000);
-            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_clear.get(0));
-            WebElementActions.getActions().clickElement(btn_clear.get(0));
-
-            WaitActions.getWaits().loadingWait(loder);
-            TestListener.saveScreenshotPNG(driver);
-        }
     }
     /**
      * click on pause button
@@ -1197,8 +1181,8 @@ WebElementActions.getActions().clickElement(hyperlink_AeroDynamicDevice); */
 
 // WaitActions.getWaits().waitForElementTobeClickable(btn_clear);
         Thread.sleep(2000);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_clear.get(0));
-        WebElementActions.getActions().clickElement(btn_clear.get(0));
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_clear);
+        WebElementActions.getActions().clickElement(btn_clear);
 
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);

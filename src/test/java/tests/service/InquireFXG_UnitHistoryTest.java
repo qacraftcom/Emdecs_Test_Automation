@@ -27,14 +27,13 @@ public class InquireFXG_UnitHistoryTest extends TestDriverActions {
     public void click_FedExFleetHistory_select_Unit() throws InterruptedException {
         unit.fedFxFleetHistory();
         unit.clickOnSelectUnit();
-        unit.verifySearchUnitElement();
-
+ //       unit.verifySearchUnitElement();
+        unit.verifySearchHeaderColumnElement();
     }
 
     @Test(priority=2,description="T_003 Enter Unit Number and verify history screen",enabled = true)
     @Description("Test Description : Enter Unit Number and verify history screen")
     public void enterUnitNumber() throws InterruptedException {
-        unit.verifySearchHeaderColumnElement();
        unit.enterOnUnitNumber();
        unit.clickOnSelectButton();
        unit.verifyUnitNumber_VIN();

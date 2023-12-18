@@ -127,7 +127,7 @@ public class SetUpWorkRequired extends TestDriverActions {
     public void clickOnMoreWork() throws InterruptedException {
         //WaitActions.getWaits().waitForElementTobeClickable(btn_moreWork);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_moreWork);
-      Thread.sleep(5000);
+//      Thread.sleep(5000);
         WebElementActions.getActions().clickElement(btn_moreWork);
 
         WaitActions.getWaits().loadingWait(loder);

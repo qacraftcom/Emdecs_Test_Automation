@@ -32,8 +32,7 @@ public class ReceiveParts extends TestDriverActions {
 
     //@FindBy(xpath = "//span[text()='Total Amount']/following::tr[4]/td[1]/span/a/span")
     @FindBy(xpath = "//a[contains(@id,'cil4')]")
-//    List<WebElement> PONumber;
-    WebElement PONumber;
+    List<WebElement> PONumber;
 
 
     @FindBy(xpath = "//span[text()='Extended Cost']/following::span[2]")
@@ -170,8 +169,8 @@ public class ReceiveParts extends TestDriverActions {
 
     //@FindBy(xpath = "//span[text()='Link']")
     @FindBy(xpath = "//span[text()='Link']/ancestor::div[1]")
-//    List<WebElement> btn_link;
-    WebElement btn_link;
+    List<WebElement> btn_link;
+//    WebElement btn_link;
 
     @FindBy(xpath = "//span[text()='Yes']")
     WebElement btn_yes;
@@ -257,8 +256,7 @@ public class ReceiveParts extends TestDriverActions {
     @FindBy(xpath = "(//div[text()='Purchase Order']/following::span[text()='Cancel'])[4]")
     WebElement btn_cancle3;
 
- //   @FindBy(xpath = "//div[contains(@id,'cbtpoRec')]/a/span")
-    @FindBy(xpath = "//h1[text()='Order Summary']/following::span[2]")
+    @FindBy(xpath = "//h1[text()='Order Summary']/following::a[2]/span")
     WebElement btn_receivePO;
 
     @FindBy(xpath = "//span[text()='Change Preferred Vendor']/following::a[4]/span")
@@ -285,9 +283,6 @@ public class ReceiveParts extends TestDriverActions {
     @FindBy(xpath = "//span[text()='Create New Receiving']")
     WebElement createNewReceiving;
 
-    @FindBy(xpath = "//label[text()='Search:']")
-    WebElement label_search;
-
 
 
 
@@ -303,14 +298,14 @@ public class ReceiveParts extends TestDriverActions {
     public void enterDateClickrefresh() throws InterruptedException {
 
 //        WaitActions.getWaits().WaitUntilWebElementIsVisible(dropdown);
-/*        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(dropdown);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(dropdown);
         WebElementActions.getActions().elementSelectByVisibilityText(dropdown,prop.getProperty("warehouse"));
 
 //       WaitActions.getWaits().waitForElementTobeClickable(txt_adddate);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_adddate);
        txt_adddate.clear();
        Thread.sleep(1000);
-       txt_adddate.sendKeys(prop.getProperty("date"));  */
+       txt_adddate.sendKeys(prop.getProperty("date"));
 
 //       WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_refresh);
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(btn_refresh);
@@ -326,20 +321,19 @@ public class ReceiveParts extends TestDriverActions {
      */
     public void clickOnPONumber() throws InterruptedException {
 //        WaitActions.getWaits().waitForElementTobeClickable(PONumber);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(PONumber);
+ /*       WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(PONumber);
         WebElementActions.getActions().clickElement(PONumber);
-        WaitActions.getWaits().loadingWait(loder);
-        TestListener.saveScreenshotPNG(driver);
 
- /*       WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_search);
-        Assert.assertTrue(label_search.isDisplayed());
+        WaitActions.getWaits().loadingWait(loder);
+
+        TestListener.saveScreenshotPNG(driver);  */
+
+
+
 //        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(PONumber.get(0));
-        Thread.sleep(3000);
-        for (int i = 0; i < PONumber.size()-1; i++) {
-            System.out.println("Size of PoNumber :"+PONumber.size());
-            System.out.println(i);
-            Thread.sleep(2000);
- //           WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(PONumber.get(i));
+        for (int i = 0; i <= PONumber.size(); i++) {
+ //           WaitActions.getWaits().fluentWait(PONumber.get(i),60);
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(PONumber.get(i));
             WebElementActions.getActions().clickElement(PONumber.get(i));
  //           Thread.sleep(2000);
  //           WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_link.get(0));
@@ -347,17 +341,17 @@ public class ReceiveParts extends TestDriverActions {
  //           for (int j = 0; j < btn_link.size(); j++) {
                WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_parts);
      //           WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_link.get(i));
-            Thread.sleep(3000);
+            Thread.sleep(2000);
      //           System.out.println("Size of Link :"+btn_link.size());
-               if(btn_link.size() > 0) {
-                     Thread.sleep(2000);
-                   if (btn_link.get(0).getAttribute("class").contains("p_AFDisabled")) {
+               if(btn_link.size()>0) {
+
+                   if (btn_link.get(i).getAttribute("class").contains("p_AFDisabled")) {
                        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_cancle1);
                        WebElementActions.getActions().clickElement(btn_cancle1);
 
                    } else {
-                       WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_link.get(0));
-                       WebElementActions.getActions().clickElement(btn_link.get(0));
+                       WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_link.get(i));
+                       WebElementActions.getActions().clickElement(btn_link.get(i));
                        break;
                    }
                }
@@ -368,7 +362,7 @@ public class ReceiveParts extends TestDriverActions {
  //                   break;
             }
 
- //       }  */
+ //       }
 
         WaitActions.getWaits().loadingWait(loder);
 
@@ -378,7 +372,7 @@ public class ReceiveParts extends TestDriverActions {
     /**
      * verify all the element of Purchase order page
      */
-    public void displayAllLabels() throws InterruptedException {
+ /*   public void displayAllLabels() throws InterruptedException {
 //        WaitActions.getWaits().WaitUntilWebElementIsVisible(label_Link_Delink_Labor);
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_Link_Delink_Labor);
        Assert.assertTrue(label_Link_Delink_Labor.isDisplayed());
@@ -440,13 +434,13 @@ public class ReceiveParts extends TestDriverActions {
 
         TestListener.saveScreenshotPNG(driver);
 
-    }
+    }  */
 
     /**
      * click on link button
      *
      */
-    public void clickOnLinkButton() throws InterruptedException {
+ /*   public void clickOnLinkButton() throws InterruptedException {
 //        WaitActions.getWaits().waitForElementTobeClickable(btn_link);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_link);
         WebElementActions.getActions().clickElement(btn_link);
@@ -454,7 +448,7 @@ public class ReceiveParts extends TestDriverActions {
         WaitActions.getWaits().loadingWait(loder);
 
         TestListener.saveScreenshotPNG(driver);
-    }
+    }  */
 
     /**
      * verify element in Link part to RO Activity or counter sale Page
@@ -528,8 +522,8 @@ public class ReceiveParts extends TestDriverActions {
 //          WaitActions.getWaits().waitForElementTobeClickable(btn_canclePOScreen);
           WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_canclePOScreen);
           WebElementActions.getActions().clickElement(btn_canclePOScreen);
-              Thread.sleep(2000);
-//          WaitActions.getWaits().loadingWait(loder);
+
+          WaitActions.getWaits().loadingWait(loder);
       }
 
     /**
@@ -538,15 +532,12 @@ public class ReceiveParts extends TestDriverActions {
     public void clickOnReceivePO() throws InterruptedException {
  //       try
 //          WaitActions.getWaits().waitForElementTobeClickable(btn_receivePO);
-//        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(btn_receivePO);
-//        Assert.assertTrue(btn_receivePO.isDisplayed());
-            Thread.sleep(2000);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_receivePO);
-        WebElementActions.getActions().clickElement(btn_receivePO);
+          WebElementActions.getActions().clickElement(btn_receivePO);
 
 //          WaitActions.getWaits().waitForElementTobeClickable(createNewReceiving);
-//        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(createNewReceiving);
-//          WebElementActions.getActions().clickElement(createNewReceiving);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(createNewReceiving);
+          WebElementActions.getActions().clickElement(createNewReceiving);
 
           WaitActions.getWaits().loadingWait(loder);
       }

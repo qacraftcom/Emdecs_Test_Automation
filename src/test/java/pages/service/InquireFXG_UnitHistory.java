@@ -31,8 +31,8 @@ public class InquireFXG_UnitHistory extends TestDriverActions {
       @FindBy(xpath = "//label[text()='Unit Number:']")
       WebElement label_unitNumber;
 
-    @FindBy(xpath = "//a[text()='Select Unit']")
-    public  WebElement label_SelectUnit;
+      @FindBy(xpath = "//h1[text()='History Search']/following::a[1]")
+      WebElement hyperlink_selectUnit;
 
   //    @FindBy(xpath = "//div[contains(text(),'Search Unit')]")
       @FindBy(xpath = "//div[contains(@id,'rFXGH:0:pw4::_ttxt')]")
@@ -266,8 +266,9 @@ public class InquireFXG_UnitHistory extends TestDriverActions {
       @FindBy(xpath = "//input[@name='username']")
       public WebElement inputbox_Username;
 
-    @FindBy(xpath = "//h1[text()='Working...Please Wait']")
-    List<WebElement> loder;
+      @FindBy(xpath = "//h1[text()='Working...Please Wait']")
+      List<WebElement> loder;
+
 
 
       /**
@@ -299,11 +300,11 @@ public class InquireFXG_UnitHistory extends TestDriverActions {
             Assert.assertTrue(label_unitNumber.isDisplayed());
 
  //           WaitActions.getWaits().waitForElementTobeClickable(hyperlink_selectUnit);
-          WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_SelectUnit);
-          WebElementActions.getActions().clickElement(label_SelectUnit);
-             Thread.sleep(2000);
-          WaitActions.getWaits().loadingWait(loder);
-          TestListener.saveScreenshotPNG(driver);
+          WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(hyperlink_selectUnit);
+            WebElementActions.getActions().clickUsingJS(hyperlink_selectUnit);
+
+            WaitActions.getWaits().loadingWait(loder);
+            TestListener.saveScreenshotPNG(driver);
       }
       /**
        * verify Search Unit POP Up  elements
@@ -327,8 +328,8 @@ public class InquireFXG_UnitHistory extends TestDriverActions {
       /**
        * Verify Serach Header Column ELement
         */
-        public void verifySearchHeaderColumnElement() throws InterruptedException {
-            WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_owner);
+        public void verifySearchHeaderColumnElement()
+        {
             Assert.assertTrue(label_owner.isDisplayed());
             Assert.assertTrue(label_unitNumber1.isDisplayed());
             Assert.assertTrue(label_description.isDisplayed());
@@ -418,7 +419,7 @@ public class InquireFXG_UnitHistory extends TestDriverActions {
               Assert.assertTrue(Netbook_Date.isDisplayed());
               Assert.assertTrue(label_status.isDisplayed());
               Assert.assertTrue(status_txt.isDisplayed());
-//              Assert.assertTrue(btn_Red_Tag.isDisplayed());
+              Assert.assertTrue(btn_Red_Tag.isDisplayed());
               TestListener.saveScreenshotPNG(driver);
 
         }
