@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import tests.TestDriverActions;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -80,6 +81,18 @@ public class ReusableActions extends TestDriverActions {
 
         WaitActions.getWaits().WaitUntilWebElementIsVisible(inputbox_Username);
         Assert.assertTrue(inputbox_Username.isDisplayed());
+    }
+
+    public static void deleteDownloadedFile() throws InterruptedException {
+        int i;
+        File dir = new File(System.getProperty("user.dir")+"\\downloadFiles");
+        File[] dirContents = dir.listFiles();
+        if (dirContents.length>0) {
+            for (i = 0; i < dirContents.length; i++) {
+                System.out.println("File name"+ dirContents[i].getName());
+                dirContents[i].delete();
+            }
+        }
     }
 
 }
