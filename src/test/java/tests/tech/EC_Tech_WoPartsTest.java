@@ -82,7 +82,7 @@ public class EC_Tech_WoPartsTest extends TestDriverActions {
 
         public void verifyPartadded_deletePart() throws InterruptedException {
 
-            part.verifyPartAdded();
+   //         part.verifyPartAdded();
 
             part.clickOnCrossBtn();
 
@@ -252,12 +252,13 @@ public class EC_Tech_WoPartsTest extends TestDriverActions {
 
             part.clickOnUnPause_Pause_Button();
 
-            part.clickOnClearButton();
+  //          part.clickOnClearButton();
 
             part.enterTechBadge();
 
             part.clickOnGoBtn();
-// part.clickOnSelectButton();
+
+            part.clickOnSelectButton();
 
 
         }

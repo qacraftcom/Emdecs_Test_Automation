@@ -25,14 +25,14 @@ public class ReceivePartsTest extends TestDriverActions {
     @Description("Test Description : Click on PO number and Verify page")
      public void clickOn_PoNumber_Verify_Page() throws InterruptedException {
         receivePage.clickOnPONumber();
- //       receivePage.displayAllLabels();
+        receivePage.displayAllLabels();
 
     }
 
     @Test(priority=2, description="Test003: click on link button and verify the elements",enabled = true)
     @Description("Test Description : Click on link button and verify the elements")
     public void clickOn_link_button() throws InterruptedException {
- //       receivePage.clickOnLinkButton();
+        receivePage.clickOnLinkButton();
         receivePage.repairOrderActivityTable();
         receivePage.openCounterSaleButton() ;
         receivePage.openCounterSaleTable();
@@ -46,6 +46,7 @@ public class ReceivePartsTest extends TestDriverActions {
     public void clickOn_ReceivePo_Send_Invoice_Number() throws InterruptedException {
         receivePage.clickOnReceivePO();
         receivePage.clickOnReceiveParts();
+ //       receivePage.clickOnReceivePO();
         receivePage.clickOnSignOut();
     }
 }

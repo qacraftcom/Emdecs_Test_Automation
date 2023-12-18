@@ -13,7 +13,7 @@ public class ApproveNonRepairBill_DMSTest extends TestDriverActions {
     @Test(priority=0, description = "Login the Page and go to Approval Screen",enabled = true)
     @Description("Test Description - Login the Page and go to Approval Screen")
     public void gotoApprovals() throws FileNotFoundException, InterruptedException {
-        driver.get(prop.getProperty("URL"));
+        driver.get(prop.getProperty("url"));
        loginPage.loginWithValidCredentials(prop.getProperty("fedex_one_username"),prop.getProperty("fedex_one_password"));
        approveNonRepairBill.gotoApprovalScreen();
     }
