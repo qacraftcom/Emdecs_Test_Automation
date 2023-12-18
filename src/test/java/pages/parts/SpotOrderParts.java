@@ -682,14 +682,12 @@ public class SpotOrderParts extends TestDriverActions {
      */
     public void clickOnCrossIcon() throws InterruptedException {
  //       Thread.sleep(3000);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(value_3_Quantity);
         Assert.assertTrue(value_3_Quantity.isDisplayed());
 
  //       WaitActions.getWaits().waitForElementTobeClickable(cross_icon);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(cross_icon);
         WebElementActions.getActions().clickElement(cross_icon);
 
-        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(orderTotal);
         Assert.assertTrue(orderTotal.isDisplayed());
 
         TestListener.saveScreenshotPNG(driver);

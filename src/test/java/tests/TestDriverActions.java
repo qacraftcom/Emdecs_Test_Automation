@@ -23,7 +23,6 @@ import pages.fleet.CreateUnitPage;
 import pages.fleet.SetUpWorkRequired;
 
 
-import pages.nonRepair.ReportsPage;
 import pages.parts.*;
 //import pages.pmWorkFlow.WorkOrderWorkflowPage;
 import pages.pmWorkFlow.cGVTechPerformPM;
@@ -90,8 +89,6 @@ public class TestDriverActions {
 
     public ReceivePart_konaEU receivepart;
     public JournalizePartsInvoice_konaEU journalizepartinvoice;
-
-    public ReportsPage reportsPage;
     LoginActions loginActions;
 
 
@@ -123,80 +120,80 @@ public class TestDriverActions {
             filePath = System.getProperty("user.dir") + "/src/test/java/utils/countersale.properties";
         }
         else if(this.getClass().getCanonicalName().contains("CreateCustomerTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/createcustomer.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/customer.properties";
         }
         else if(this.getClass().getCanonicalName().contains("CreateVendorTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/createvendor.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/vendors.properties";
         }
         else if(this.getClass().getCanonicalName().contains("ReceivePartsTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/receiveparts.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/receive.properties";
         }
         else if(this.getClass().getCanonicalName().contains("CreatePartTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/createpart.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/partrelated.properties";
         }
         else if(this.getClass().getCanonicalName().contains("CreateRoTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/createro.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/config.properties";
         }
         else if(this.getClass().getCanonicalName().contains("SubmitAnEstimate_ServiceManagerTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/estimateansubmit_servicemanager.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/estimatesubmit.properties";
         }
         else if(this.getClass().getCanonicalName().contains("SpotOrderPartsTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/spotorderparts.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/orderparts.properties";
         }
         else if(this.getClass().getCanonicalName().contains("SetUpWorkRequiredTest")) {
             filePath = System.getProperty("user.dir") + "/src/test/java/utils/setupworkrequired.properties";
         }
         else if(this.getClass().getCanonicalName().contains("ECServiceManager_ChangeCustomerPOafterInvoicingTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/changecustomer_poafter_invoice.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/updatepo.properties";
         }
         else if(this.getClass().getCanonicalName().contains("InquireFXG_UnitHistoryTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/inquirefxg_unithistory.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/unitfunctionality.properties";
         }
         else if(this.getClass().getCanonicalName().contains("JournalizePartsInvoiceTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/journalizepartsinvoice.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/journalizeparts.properties";
         }
         else if(this.getClass().getCanonicalName().contains("EC_Tech_WoLaborTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/ectech_wolabor.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/labor.properties";
         }
         else if(this.getClass().getCanonicalName().contains("EC_Tech_WoPartsTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/ectech_woparts.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/woparts.properties";
         }
         else if(this.getClass().getCanonicalName().contains("ECServiceManager_AddRemoveLaborTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/ec_servicemanager_addremovelabor.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/addremove.properties";
         }
         else if(this.getClass().getCanonicalName().contains("EC_ServiceManager_WoLaborTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/ec_servicemanager_wolabor.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/servicelabor.properties";
         }
         else if(this.getClass().getCanonicalName().contains("CreateNonRepairBill_ServiceManagerTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/createnonrepairbill_servicemanager.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/NonRepairBills.properties";
         }
         else if(this.getClass().getCanonicalName().contains("ECService_Manager_InvoiceTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/ecservicemanager_invoice.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/completero.properties";
         }
         else if(this.getClass().getCanonicalName().contains("ECServiceManager_PartsRelatedTasksTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/ecservicemanager_partsrelatedtask.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/completeroparts.properties";
         }
         else if(this.getClass().getCanonicalName().contains("ApproveNonRepairBillTest")) {
             filePath = System.getProperty("user.dir") + "/src/test/java/utils/approvenonrepair.properties";
         }
 
         else if(this.getClass().getCanonicalName().contains("cGVTech_WoComplianceTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/cgvtech_wocompliance.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/wocompliance.properties";
         }
         else if(this.getClass().getCanonicalName().contains("ECServiceManager_JournalizeTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/ecservicemanager_journalize.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/journalize.properties";
         }
         else if(this.getClass().getCanonicalName().contains("CreateRedTagDMSTest")) {
             filePath = System.getProperty("user.dir") + "/src/test/java/utils/redtag.properties";
         }
         else if(this.getClass().getCanonicalName().contains("InquireFXG_UnitHistoryTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/inquirefxg_unithistory.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/unithistory.properties";
         }
         else if(this.getClass().getCanonicalName().contains("ApproveNonRepairBill_DMSTest")) {
             filePath = System.getProperty("user.dir") + "/src/test/java/utils/approveanestimatedms.properties";
         }
         else if(this.getClass().getCanonicalName().contains("cGVTechPerformPMTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/cgvtech_performpm.properties";
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/pmworkorderworkflow.properties";
         }
         else if(this.getClass().getCanonicalName().contains("PerformTheWorkOnAnEstimateTechTest")) {
             filePath = System.getProperty("user.dir") + "/src/test/java/utils/performtheworkonanestimate.properties";
@@ -209,9 +206,6 @@ public class TestDriverActions {
         }
         else if(this.getClass().getCanonicalName().contains("ReceivePart_konaEUTest")) {
             filePath = System.getProperty("user.dir") + "/src/test/java/utils/receviepartkonaeu.properties";
-        }
-        else if(this.getClass().getCanonicalName().contains("ReportsTest")) {
-            filePath = System.getProperty("user.dir") + "/src/test/java/utils/reports.properties";
         }
 
         try {
@@ -248,7 +242,7 @@ public class TestDriverActions {
 
         if (browserName.equalsIgnoreCase(browserName)) {
 
-    /*        HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+            HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--remote-allow-origins=*");
             options.setExperimentalOption("prefs", chromePrefs);
@@ -270,36 +264,7 @@ public class TestDriverActions {
             options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
             driver = new ChromeDriver(options);
             //  driver.manage().window().setSize(new Dimension(1920, 1080));
-            driver.manage().window().maximize();  */
-
-            WebDriverManager.chromedriver().setup();
-            ChromeOptions options = new ChromeOptions();
-            HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
-            chromePrefs.put("plugins.plugins_disabled", new String[] { "Chrome PDF Viewer" });
-            chromePrefs.put("plugins.always_open_pdf_externally", true);
-            chromePrefs.put("download.prompt_for_download", false);
-            chromePrefs.put("download.default_directory", System.getProperty("user.dir")+"\\downloadFiles");
-            options.addArguments("--remote-allow-origins=*");
-            options.addArguments("--start-maximized");
-//options.addArguments("--headless=new");
-            options.addArguments("--window-size=1366,768");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-popup-blocking");
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--disable-gpu");
-            options.addArguments("--dns-prefetch-disable");
-            options.addArguments("--always-authorize-plugins");
-            options.addArguments("enable-automation");
-            options.addArguments("--disable-browser-side-navigation");
-            options.addArguments("--ignore-certificate-errors");
-            options.addArguments("--disable-extensions");
-            options.addArguments("--allow-running-insecure-content");
-            options.setExperimentalOption("prefs", chromePrefs);
-            options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-            driver = new ChromeDriver(options);
-            //  driver.manage().window().setSize(new Dimension(1920, 1080));
             driver.manage().window().maximize();
-
 
 
         } else if (browserName.equalsIgnoreCase("Firefox")) {
@@ -349,7 +314,7 @@ public class TestDriverActions {
         spotorderparts = PageFactory.initElements(driver, Spotorderparts_KonaEU.class);
         journalizepartinvoice = PageFactory.initElements(driver, JournalizePartsInvoice_konaEU.class);
         receivepart = PageFactory.initElements(driver, ReceivePart_konaEU.class);
-        reportsPage = PageFactory.initElements(driver,ReportsPage.class);
+
 
 
 
@@ -358,7 +323,7 @@ public class TestDriverActions {
         property();
 
         configProp  = new Properties();
-        FileInputStream fip = new FileInputStream(System.getProperty("user.dir") + "/src/test/java/utils/createro.properties");
+        FileInputStream fip = new FileInputStream(System.getProperty("user.dir") + "/src/test/java/utils/config.properties");
         try {
             configProp.load(fip);
         } catch (IOException e) {
@@ -534,9 +499,6 @@ public class TestDriverActions {
         else if (getClass().getCanonicalName().contains("ReceivePart_konaEUTest")) {
             folderPath = System.getProperty("user.dir") + "/allure-results/Reports/ReceivePart_konaEUTestReports/" + "__" + currentDateTime;
         }
-        else if (getClass().getCanonicalName().contains("ReportsTest")) {
-            folderPath = System.getProperty("user.dir") + "/allure-results/Reports/ReportsTestReports/" + "__" + currentDateTime;
-        }
 
 
 
@@ -662,9 +624,6 @@ public class TestDriverActions {
             }
             else if (getClass().getCanonicalName().contains("ReceivePart_konaEUTest")) {
                 cmd = allurePathWin + " generate " + " " + System.getProperty("user.dir") + "\\allure-results -o" + " " + System.getProperty("user.dir") + "\\allure-results\\Reports\\ReceivePart_konaEUTestReports\\" + theDir.getName();
-            }
-            else if (getClass().getCanonicalName().contains("ReportsTest")) {
-                cmd = allurePathWin + " generate " + " " + System.getProperty("user.dir") + "\\allure-results -o" + " " + System.getProperty("user.dir") + "\\allure-results\\Reports\\ReportsTestReports\\" + theDir.getName();
             }
 
 

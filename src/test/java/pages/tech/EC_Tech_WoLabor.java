@@ -18,7 +18,7 @@ public class EC_Tech_WoLabor extends TestDriverActions {
     @FindBy(xpath = "//span[text()='Go']")
     WebElement btn_Go;
 
-    @FindBy(xpath = "//span[contains(text(),'More Units')]")
+    @FindBy(xpath = "//span[text()='More Units']")
     WebElement tab_moreUnits;
 
     @FindBy(xpath = "//span[text()='Moises Olivas']")
@@ -33,8 +33,8 @@ public class EC_Tech_WoLabor extends TestDriverActions {
     @FindBy(xpath = "//span[text()='Lunch / Break']")
     WebElement btn_Lunch;
 
-    @FindBy(xpath = "//span[contains(text(),'Assigned Work')]")
-    List<WebElement> btn_assignedWork;
+    @FindBy(xpath = "//div[contains(@id,'ctbAssignedWork')]")
+    WebElement btn_assignedWork;
 
     @FindBy(xpath = "//span[text()='Service Board']")
     WebElement btn_serviceBoard;
@@ -315,7 +315,7 @@ public class EC_Tech_WoLabor extends TestDriverActions {
     @FindBy(xpath = "(//a[text()='VMRS'])[1]")
     WebElement btn_LabourDetails_VMRS ;
 
-    @FindBy(xpath = "//a[contains(@id,'citWRD1')]")
+    @FindBy(xpath = "//h1[text()='Work Required']/following::a[8]/img")
     WebElement img_workRequired_AeroDynamic;
 
  //   @FindBy(xpath = "//h1[text()='Labour - ASAP SHOP']/following::img[7]")
@@ -391,9 +391,8 @@ public class EC_Tech_WoLabor extends TestDriverActions {
     @FindBy(xpath ="//a[text()='Accessories Group']")
     public List<WebElement> accessories1accessories_All ;
 
-    //@FindBy(xpath = "//a[contains(@id,'clPopupWoact')]/following::span[text()='Accessories Group']")
-    @FindBy(xpath = "//a[contains(@id,'clPopupWoact')]")
-    List<WebElement> accessories1;
+    @FindBy(xpath = "//a[contains(@id,'clPopupWoact')]/following::span[text()='Accessories Group']")
+    WebElement accessories1;
 
     @FindBy(xpath = "//a[contains(@id,'ciDWoAct1')]")
     List<WebElement> crossIcon_All;
@@ -404,8 +403,6 @@ public class EC_Tech_WoLabor extends TestDriverActions {
 // WaitActions.getWaits().waitForElementTobeClickable(txt_scanEmployeeBadge);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_scanEmployeeBadge);
         WebElementActions.getActions().inputText(txt_scanEmployeeBadge,prop.getProperty("TechBadge"));
-
-        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
     /**
@@ -424,8 +421,8 @@ public class EC_Tech_WoLabor extends TestDriverActions {
      */
     public void clickOnAssignedWork() throws InterruptedException {
 // WaitActions.getWaits().waitForElementTobeClickable(btn_assignedWork);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_assignedWork.get(0));
-        WebElementActions.getActions().clickElement(btn_assignedWork.get(0));
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_assignedWork);
+        WebElementActions.getActions().clickElement(btn_assignedWork);
 
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
@@ -434,24 +431,25 @@ public class EC_Tech_WoLabor extends TestDriverActions {
      * click on MoreUnit tab
      */
     public void clickOnMoreUnit() throws InterruptedException {
-
-        Thread.sleep(6000);
-        if (btn_assignedWork.size() > 0) {
-            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_assignedWork.get(0));
-            WebElementActions.getActions().clickElement(btn_assignedWork.get(0));
+ //          Thread.sleep(2000);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(btn_assignedWork);
+        if(btn_assignedWork.isDisplayed())
+        {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_assignedWork);
+     //       Thread.sleep(4000);
+            WebElementActions.getActions().clickUsingJS(btn_assignedWork);
 
             WaitActions.getWaits().loadingWait(loder);
-            TestListener.saveScreenshotPNG(driver);
         }
-             Thread.sleep(8000);
-            // WaitActions.getWaits().waitForElementTobeClickable(tab_moreUnits);
+
+// WaitActions.getWaits().waitForElementTobeClickable(tab_moreUnits);
             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(tab_moreUnits);
+            Thread.sleep(4000);
             WebElementActions.getActions().clickElement(tab_moreUnits);
 
             WaitActions.getWaits().loadingWait(loder);
 
-            TestListener.saveScreenshotPNG(driver);
-
+        TestListener.saveScreenshotPNG(driver);
     }
     /**
      * Verify element present in header
@@ -605,7 +603,7 @@ public class EC_Tech_WoLabor extends TestDriverActions {
     public void clickOnLabourTab() throws InterruptedException {
 // WaitActions.getWaits().waitForElementTobeClickable(btn_labor);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_labor);
- //       Thread.sleep(5000);
+        Thread.sleep(5000);
         WebElementActions.getActions().clickElement(btn_labor);
 
         WaitActions.getWaits().loadingWait(loder);
@@ -997,7 +995,6 @@ TestListener.saveScreenshotPNG(driver);
      */
     public void clickOnCancleButton() throws InterruptedException {
 // WaitActions.getWaits().waitForElementTobeClickable(but_cancle);
-        Thread.sleep(2000);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(but_cancle);
         Thread.sleep(8000);
         WebElementActions.getActions().clickElement(but_cancle);
@@ -1092,8 +1089,8 @@ TestListener.saveScreenshotPNG(driver);
         Thread.sleep(10000);
 
         WebElementActions.getActions().moveOnTargetElement(crossIcon_All.get(0));
-        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(accessories1.get(0));
-        String assessories = accessories1.get(0).getAttribute("title");
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(accessories1);
+        String assessories = accessories1.getAttribute("title");
 
            Thread.sleep(3000);
 
@@ -1135,9 +1132,8 @@ WebElementActions.getActions().clickUsingJS(btn_YesdeletelabourParts.get(0));
 
         Thread.sleep(3000);
 // WaitActions.getWaits().WaitUntilWebElementIsVisible(label_DeleteAero);
- //       WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_DeleteAero);
- //       Assert.assertTrue(label_DeleteAero.isDisplayed());
-        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_description_MoveTech);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_DeleteAero);
+        Assert.assertTrue(label_DeleteAero.isDisplayed());
         Assert.assertTrue(label_description_MoveTech.isDisplayed());
 // WaitActions.getWaits().WaitUntilWebElementIsVisible(label_description1);
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_description1);

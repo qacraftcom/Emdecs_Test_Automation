@@ -362,7 +362,7 @@ public class EC_ServiceManager_WoLabor extends TestDriverActions {
     @FindBy(xpath = "(//span[text()='Select'])[1]")
     WebElement btn_select;
 
-    @FindBy(xpath = "//a[contains(@id,'cl12')]/span")
+    @FindBy(xpath = "//a[text()='Update Rates']")
     WebElement label_UpdateRates;
 
     @FindBy(xpath = "//label[text()='RO Account Group:']/following::label[1]")
@@ -405,7 +405,7 @@ public class EC_ServiceManager_WoLabor extends TestDriverActions {
     @FindBy(xpath = "//label[text()='USD']")
     WebElement label_USD;
 
-    @FindBy(xpath = "//a[contains(@id,'clVROPL')]/span")
+    @FindBy(xpath = "//a[text()='View Profit and Loss']")
     WebElement viewProfitLoss;
 
     @FindBy(xpath = "(//a[text()='Purchasing']/preceding::a[1])[1]")
@@ -1414,9 +1414,8 @@ public class EC_ServiceManager_WoLabor extends TestDriverActions {
      * click on Number
      */
     public void clickOnNumber() throws InterruptedException {
-       Thread.sleep(3000);
-//       WaitActions.getWaits().scrollElementTillView(number_2row); moveOnTargetElement
-        WebElementActions.getActions().moveOnTargetElement(number_2row);
+       Thread.sleep(2000);
+       WaitActions.getWaits().scrollElementTillView(number_2row);
 
 //       WaitActions.getWaits().waitForElementTobeClickable(number_2row);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(number_2row);

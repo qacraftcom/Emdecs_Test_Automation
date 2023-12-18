@@ -2,7 +2,6 @@ package actions;
 
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.*;
-import tests.TestDriverActions;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -13,7 +12,7 @@ import java.util.Calendar;
 import java.util.Iterator;
 import java.util.Properties;
 
-public class DataActions extends TestDriverActions {
+public class DataActions {
 
     public static Properties prop;
     public FileInputStream fis = null;
@@ -40,7 +39,7 @@ public class DataActions extends TestDriverActions {
  /*   public DataActions() {
         try {
             prop = new Properties();
-            FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\java\\config\\createro.properties");
+            FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\java\\config\\config.properties");
             prop.load(ip);
         } catch (
                 FileNotFoundException e) {
