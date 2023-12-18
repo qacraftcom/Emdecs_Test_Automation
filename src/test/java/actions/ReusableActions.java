@@ -1,3 +1,4 @@
+
 package actions;
 
 import org.openqa.selenium.By;
@@ -83,16 +84,18 @@ public class ReusableActions extends TestDriverActions {
         Assert.assertTrue(inputbox_Username.isDisplayed());
     }
 
-    public static void deleteDownloadedFile() throws InterruptedException {
+
+    public static void deleteDownloadedFile () throws InterruptedException {
         int i;
-        File dir = new File(System.getProperty("user.dir")+"\\downloadFiles");
+        File dir = new File(System.getProperty("user.dir") + "\\downloadFiles");
         File[] dirContents = dir.listFiles();
-        if (dirContents.length>0) {
+        if (dirContents.length > 0) {
             for (i = 0; i < dirContents.length; i++) {
-                System.out.println("File name"+ dirContents[i].getName());
+                System.out.println("File name" + dirContents[i].getName());
                 dirContents[i].delete();
             }
         }
     }
 
 }
+
