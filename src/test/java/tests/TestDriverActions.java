@@ -23,7 +23,7 @@ import pages.fleet.CreateUnitPage;
 import pages.fleet.SetUpWorkRequired;
 
 
-import pages.nonRepair.ReportsPage;
+import pages.ReportsPage;
 import pages.parts.*;
 //import pages.pmWorkFlow.WorkOrderWorkflowPage;
 import pages.pmWorkFlow.cGVTechPerformPM;

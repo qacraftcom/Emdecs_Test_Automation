@@ -118,7 +118,7 @@ public class ReportsPage extends TestDriverActions {
     /**
      * Click On Reports Categories
      */
-    String reportName = "Employees";
+    String reportName = "Inventory";
     String allReports = String.format("//span[contains(text(),'%s')]", reportName);
 
     public void clickOnReportsCategories() throws InterruptedException {
@@ -132,7 +132,7 @@ public class ReportsPage extends TestDriverActions {
     /**
      * Click On Available Reports
      */
-    String availReportName = "Employee Hours Profit / Loss";
+    String availReportName = "Contract Price List";
     String allAvailReports = String.format("//span[starts-with(text(),'%s')]", availReportName);
 
     public void clickOnAvailableReports() throws InterruptedException {

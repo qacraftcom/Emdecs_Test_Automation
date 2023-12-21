@@ -3,7 +3,7 @@ package tests;
 
 
 import org.testng.annotations.Test;
-import pages.nonRepair.ReportsPage;
+import pages.ReportsPage;
 import tests.TestDriverActions;
 
 import java.io.FileNotFoundException;
