@@ -1,8 +1,9 @@
-package tests.reportsCategories;
+package tests;
 
 
-import pages.reportsCategories.ReportsPage;
+
 import org.testng.annotations.Test;
+import pages.nonRepair.ReportsPage;
 import tests.TestDriverActions;
 
 import java.io.FileNotFoundException;
@@ -29,6 +30,7 @@ public class ReportsTest extends TestDriverActions {
         String dateToEnter = ReportsPage.subtractMonthsFromCurrentDate(2);
         reportsPage.enterDateInTextBox(dateToEnter);
         reportsPage.readPDF();
+//       reportsPage.readExcel();
     }
 
 }

@@ -1,10 +1,15 @@
-package pages.reportsCategories;
+package pages;
 
 import actions.ReusableActions;
 import actions.WaitActions;
 import actions.WebElementActions;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.joda.time.DateTime;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -75,11 +80,26 @@ public class ReportsPage extends TestDriverActions {
     @FindBy(xpath = "(//label[contains(text(),'Report Specification:')])[1]//following::select[1]")
     List <WebElement> reportSpecification;
 
-    @FindBy(xpath = "//label[contains(text(),'Warehouse:')]//following::select[1]")
+    @FindBy(xpath = "//tr[contains(@id,'socWar')]/td[2]/child::select ")
     List <WebElement> warehouse;
 
     @FindBy(xpath = "//span[contains(text(),'Warehouse Receiving')]")
     WebElement ScrollUpTo;
+
+     @FindBy(xpath ="//select[contains(@name,'socCus')]")
+    List<WebElement> unitOwner;
+
+    @FindBy(xpath = "//div[@class='toast-item-text']")
+    List<WebElement> queue;
+
+    @FindBy(xpath = "(//a[text()='Report History'])[1]")
+    WebElement reportHistory_btn;
+
+    @FindBy(xpath = "//span[contains(text(),'Refresh')]")
+    WebElement refresh_btn;
+
+    @FindBy(xpath = "//a[contains(@id,'gl1')]")
+    List<WebElement> view;
 
     /**
      * Click On Reports
@@ -95,7 +115,7 @@ public class ReportsPage extends TestDriverActions {
     /**
      * Click On Reports Categories
      */
-    String reportName = "Financial";
+    String reportName = "Counter Sale";
     String allReports = String.format("//span[contains(text(),'%s')]", reportName);
 
     public void clickOnReportsCategories() throws InterruptedException {
@@ -109,7 +129,7 @@ public class ReportsPage extends TestDriverActions {
     /**
      * Click On Available Reports
      */
-    String availReportName = "Balance Sheet";
+    String availReportName = "Print Counter Sale Invoices";
     String allAvailReports = String.format("//span[contains(text(),'%s')]", availReportName);
 
     public void clickOnAvailableReports() throws InterruptedException {
@@ -201,21 +221,28 @@ public class ReportsPage extends TestDriverActions {
     public void enterDateInTextBox(String dateToEnter) throws InterruptedException {
         Thread.sleep(10000);
 
-        if (dateTextBox.size()>=1) {
-            dateTextBox.get(0).clear();
-            dateTextBox.get(0).sendKeys(dateToEnter);
-            dateTextBox.get(0).sendKeys(Keys.TAB);
-
+        if (dateTextBox.size() >= 1) {
+            WebElement disableDate = dateTextBox.get(0);
+            if (disableDate.isEnabled()) {
+                dateTextBox.get(0).clear();
+                dateTextBox.get(0).sendKeys(dateToEnter);
+                dateTextBox.get(0).sendKeys(Keys.TAB);
+            }
             TestListener.saveScreenshotPNG(driver);
-            if (emp.size() > 0){
-                this.employee();
-                TestListener.saveScreenshotPNG(driver);
-            } else if (toDate.size()>=1) {
+            WebElement toDateTextBox = toDate.get(0);
+            if (toDateTextBox.isEnabled()) {
                 toDate.get(0).clear();
                 toDate.get(0).sendKeys(currentDate());
-                if(warehouse.size() >=1) {
-                    this.wareHouse();
-                }
+                TestListener.saveScreenshotPNG(driver);
+            }
+            if (warehouse.size() >= 1) {
+                this.wareHouse();
+                TestListener.saveScreenshotPNG(driver);
+            } else if (emp.size() >= 1) {
+                this.employee();
+                TestListener.saveScreenshotPNG(driver);
+            } else if (reading_Type.size() >= 1 && uom.size() >= 1) {
+                this.readingType();
                 TestListener.saveScreenshotPNG(driver);
             }
 
@@ -251,11 +278,36 @@ public class ReportsPage extends TestDriverActions {
             TestListener.saveScreenshotPNG(driver);
         }
         else
+        ReusableActions.deleteDownloadedFile();
         Thread.sleep(5000);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_RunReport);
         WebElementActions.getActions().clickElement(btn_RunReport);
 
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
+
+         int count = 0;
+        while(count<20)
+        {
+ //           System.out.println("Size of queue is :"+queue.size());
+            Thread.sleep(1000);
+            count++;
+            if(queue.size()>0) {
+
+                WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(reportHistory_btn);
+                WebElementActions.getActions().clickElement(reportHistory_btn);
+     //           Thread.sleep(2000);
+                WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(refresh_btn);
+                WebElementActions.getActions().clickUsingJS(refresh_btn);
+                  Thread.sleep(8000);
+        //        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(view.get(0));
+                WebElementActions.getActions().clickElement(view.get(0));
+
+                TestListener.saveScreenshotPNG(driver);
+
+                break;
+            }
+        }
 
     }
 
@@ -277,6 +329,34 @@ public class ReportsPage extends TestDriverActions {
         ReusableActions.deleteDownloadedFile();
 
         TestListener.saveScreenshotPNG(driver);
+    }
+
+     public void readExcel() throws InterruptedException, IOException {
+
+        Thread.sleep(10000);
+        File dir = new File(System.getProperty("user.dir")+"\\downloadFiles");
+        File[] dirContents= dir.listFiles();
+        String fileName= dirContents[0].getName();
+        String url= System.getProperty("user.dir")+"\\downloadFiles\\" + fileName;
+        File file = new File(url);
+        FileInputStream fis = new FileInputStream(file);
+        Workbook workbook= new HSSFWorkbook(fis);
+        Sheet sheet= workbook.getSheetAt(0);
+        //Iterate through rows and columns to read data
+        for(Row row:sheet)
+        {
+            for(Cell cell: row)
+            {
+                System.out.print(cell.toString()+"\t");
+            }
+            System.out.println();  //move to next row
+        }
+        fis.close();
+        Thread.sleep(10000);
+        ReusableActions.deleteDownloadedFile();
+
+        TestListener.saveScreenshotPNG(driver);
+
     }
 
 }
