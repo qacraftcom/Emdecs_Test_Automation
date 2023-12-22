@@ -1,0 +1,44 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "Login the page and go to Reports page",
+    "uid" : "1e3b7d04b9ca4a2f",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1703245162074,
+      "stop" : 1703245221150,
+      "duration" : 59076
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Click on Reports Categories and Available Reports",
+    "uid" : "ed9f07e69f512a5e",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1703245222123,
+      "stop" : 1703245248663,
+      "duration" : 26540
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Enter Date for Generate Reports",
+    "uid" : "39aa7f7787030d3",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1703245249121,
+      "stop" : 1703245348687,
+      "duration" : 99566
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  } ]
+}

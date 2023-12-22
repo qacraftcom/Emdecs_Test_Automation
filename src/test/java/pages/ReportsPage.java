@@ -71,7 +71,7 @@ public class ReportsPage extends TestDriverActions {
     @FindBy(xpath = "//label[contains(text(),'UOM:')]//following::select[1]")
     List<WebElement> uom;
 
-    @FindBy(xpath = "//select[contains(@id,'soc1::content')]")
+    @FindBy(xpath = "//label[contains(text(),'Employee:')]/parent::td/following-sibling::td/select")
     List<WebElement> emp;
 
     @FindBy(xpath = "//label[contains(text(),'Report Type:')]//following::select[1]")
@@ -118,7 +118,7 @@ public class ReportsPage extends TestDriverActions {
     /**
      * Click On Reports Categories
      */
-    String reportName = "Inventory";
+    String reportName = "Employees";
     String allReports = String.format("//span[contains(text(),'%s')]", reportName);
 
     public void clickOnReportsCategories() throws InterruptedException {
@@ -132,7 +132,7 @@ public class ReportsPage extends TestDriverActions {
     /**
      * Click On Available Reports
      */
-    String availReportName = "Contract Price List";
+    String availReportName = "Employee Time Sheet Export";
     String allAvailReports = String.format("//span[starts-with(text(),'%s')]", availReportName);
 
     public void clickOnAvailableReports() throws InterruptedException {
@@ -187,16 +187,32 @@ public class ReportsPage extends TestDriverActions {
 
     }
     public void readingType() throws InterruptedException {
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(reading_Type.get(0));
-        WebElementActions.getActions().elementSelectByVisibilityText(reading_Type.get(0), "FUEL");
+        if(reading_Type.get(0).getText().contains("FUEL")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(reading_Type.get(0));
+            WebElementActions.getActions().elementSelectByVisibilityText(reading_Type.get(0), "FUEL");
+        }
+        else if (reading_Type.get(0).getText().contains("COOLNESS temp")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(reading_Type.get(0));
+            WebElementActions.getActions().elementSelectByVisibilityText(reading_Type.get(0), "COOLNESS temp");
+        }
+        else{
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(reading_Type.get(0));
+            WebElementActions.getActions().elementSelectByVisibilityText(reading_Type.get(0), "All");
+        }
 
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(uom.get(0));
         WebElementActions.getActions().elementSelectByVisibilityText(uom.get(0), "GA");
     }
 
     public void employee() throws InterruptedException {
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(emp.get(0));
-        WebElementActions.getActions().elementSelectByVisibilityText(emp.get(0), "Adica Test Tech 1 (ADICA1)");
+        if(emp.get(0).getText().contains("Adica Test Tech 1 (ADICA1)")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(emp.get(0));
+            WebElementActions.getActions().elementSelectByVisibilityText(emp.get(0), "Adica Test Tech 1 (ADICA1)");
+        }
+        else {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(emp.get(0));
+            WebElementActions.getActions().elementSelectByVisibilityText(emp.get(0), "All");
+        }
     }
     public void reportType() throws InterruptedException {
         Thread.sleep(3000);
@@ -298,11 +314,11 @@ public class ReportsPage extends TestDriverActions {
 
                 WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(reportHistory_btn);
                 WebElementActions.getActions().clickElement(reportHistory_btn);
-     //           Thread.sleep(2000);
+                Thread.sleep(2000);
                 WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(refresh_btn);
                 WebElementActions.getActions().clickUsingJS(refresh_btn);
-                  Thread.sleep(8000);
-        //        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(view.get(0));
+                  Thread.sleep(10000);
+         //       WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(view.get(0));
                 WebElementActions.getActions().clickElement(view.get(0));
 
                 TestListener.saveScreenshotPNG(driver);
@@ -319,19 +335,46 @@ public class ReportsPage extends TestDriverActions {
         File[] dirContents = dir.listFiles();
         String fileName = dirContents[0].getName();
         String url = System.getProperty("user.dir") + "\\downloadFiles\\" + fileName;
-        File file = new File(url);
-        FileInputStream fis = new FileInputStream(file);
-        PDDocument document = null;
-        document = PDDocument.load(fis);
-        PDFTextStripper pdfStripper = new PDFTextStripper();
-        String pdfFullText = pdfStripper.getText(document);
-        System.out.println(pdfFullText);
-        fis.close();
-        Thread.sleep(5000);
+        if(url.contains(".pdf")) {
+            File file = new File(url);
+            FileInputStream fis = new FileInputStream(file);
+            PDDocument document = null;
+            document = PDDocument.load(fis);
+            PDFTextStripper pdfStripper = new PDFTextStripper();
+            String pdfFullText = pdfStripper.getText(document);
+            System.out.println(pdfFullText);
+            fis.close();
+        }
+        else {
+            File file = new File(url);
+            FileInputStream fis = new FileInputStream(file);
+            Workbook workbook= new HSSFWorkbook(fis);
+            Sheet sheet= workbook.getSheetAt(0);
+            //Iterate through rows and columns to read data
+            for(Row row:sheet)
+            {
+                for(Cell cell: row)
+                {
+                    System.out.print(cell.toString()+"\t");
+                }
+                System.out.println();  //move to next row
+            }
+            fis.close();
+        }
+        Thread.sleep(10000);
         ReusableActions.deleteDownloadedFile();
 
         TestListener.saveScreenshotPNG(driver);
     }
+
+
+
+
+
+
+
+
+
 
      public void readExcel() throws InterruptedException, IOException {
 

@@ -1,0 +1,56 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Default Suite",
+    "children" : [ {
+      "name" : "Emdecs_Test_Automation",
+      "children" : [ {
+        "name" : "tests.ReportsTest",
+        "children" : [ {
+          "name" : "Login the page and go to Reports page",
+          "uid" : "1e3b7d04b9ca4a2f",
+          "parentUid" : "ab861a2ab3e8c640b80219d4c417ba49",
+          "status" : "passed",
+          "time" : {
+            "start" : 1703245162074,
+            "stop" : 1703245221150,
+            "duration" : 59076
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "Click on Reports Categories and Available Reports",
+          "uid" : "ed9f07e69f512a5e",
+          "parentUid" : "ab861a2ab3e8c640b80219d4c417ba49",
+          "status" : "passed",
+          "time" : {
+            "start" : 1703245222123,
+            "stop" : 1703245248663,
+            "duration" : 26540
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "Enter Date for Generate Reports",
+          "uid" : "39aa7f7787030d3",
+          "parentUid" : "ab861a2ab3e8c640b80219d4c417ba49",
+          "status" : "passed",
+          "time" : {
+            "start" : 1703245249121,
+            "stop" : 1703245348687,
+            "duration" : 99566
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "ab861a2ab3e8c640b80219d4c417ba49"
+      } ],
+      "uid" : "08b98c4da19495aebcd64cc16a06eafd"
+    } ],
+    "uid" : "8399274b4bb69ec8699907dd6ef7de4e"
+  } ]
+}

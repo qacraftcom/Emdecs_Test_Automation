@@ -1,0 +1,31 @@
+[ {
+  "uid" : "39aa7f7787030d3",
+  "name" : "Enter Date for Generate Reports",
+  "time" : {
+    "start" : 1703245249121,
+    "stop" : 1703245348687,
+    "duration" : 99566
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ed9f07e69f512a5e",
+  "name" : "Click on Reports Categories and Available Reports",
+  "time" : {
+    "start" : 1703245222123,
+    "stop" : 1703245248663,
+    "duration" : 26540
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1e3b7d04b9ca4a2f",
+  "name" : "Login the page and go to Reports page",
+  "time" : {
+    "start" : 1703245162074,
+    "stop" : 1703245221150,
+    "duration" : 59076
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

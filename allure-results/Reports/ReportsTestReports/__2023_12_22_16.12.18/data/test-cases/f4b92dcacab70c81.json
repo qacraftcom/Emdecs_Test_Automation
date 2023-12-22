@@ -1,0 +1,134 @@
+{
+  "uid" : "f4b92dcacab70c81",
+  "name" : "Enter Date for Generate Reports",
+  "fullName" : "tests.ReportsTest.Test_003_subtractMonthsFromCurrentDate",
+  "historyId" : "520bc38f0c2d12f117c3c1aeca4e92d7",
+  "time" : {
+    "start" : 1703241630206,
+    "stop" : 1703241738312,
+    "duration" : 108106
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "initialization",
+    "time" : {
+      "start" : 1703241445901,
+      "stop" : 1703241492731,
+      "duration" : 46830
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "91333df16af7568c",
+      "name" : "Page Screenshot",
+      "source" : "91333df16af7568c.png",
+      "type" : "image/png",
+      "size" : 130014
+    }, {
+      "uid" : "592f8ffb1edb35ba",
+      "name" : "Page Screenshot",
+      "source" : "592f8ffb1edb35ba.png",
+      "type" : "image/png",
+      "size" : 137544
+    }, {
+      "uid" : "b75879477040e5db",
+      "name" : "Page Screenshot",
+      "source" : "b75879477040e5db.png",
+      "type" : "image/png",
+      "size" : 131362
+    }, {
+      "uid" : "8bb0c826421c589b",
+      "name" : "Page Screenshot",
+      "source" : "8bb0c826421c589b.png",
+      "type" : "image/png",
+      "size" : 131384
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "afterMethodTakeScreenShot",
+    "time" : {
+      "start" : 1703241738316,
+      "stop" : 1703241738790,
+      "duration" : 474
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "a6b6e2005780a7fc",
+      "name" : "Page Screenshot",
+      "source" : "a6b6e2005780a7fc.png",
+      "type" : "image/png",
+      "size" : 131384
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests.ReportsTest"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.ReportsTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "Test_003_subtractMonthsFromCurrentDate"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Default Suite"
+  }, {
+    "name" : "suite",
+    "value" : "Emdecs_Test_Automation"
+  }, {
+    "name" : "subSuite",
+    "value" : "tests.ReportsTest"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-J406M0D"
+  }, {
+    "name" : "thread",
+    "value" : "2148@DESKTOP-J406M0D.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f4b92dcacab70c81.json",
+  "parameterValues" : [ ]
+}
