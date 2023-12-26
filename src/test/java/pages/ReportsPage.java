@@ -16,14 +16,17 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 
+import org.testng.Assert;
 import tests.TestDriverActions;
 import utils.TestListener;
 
 import java.io.*;
 
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.*;
 import java.util.List;
 
@@ -101,8 +104,8 @@ public class ReportsPage extends TestDriverActions {
     @FindBy(xpath = "//span[contains(text(),'Refresh')]")
     WebElement refresh_btn;
 
-    @FindBy(xpath = "//a[contains(@id,'gl1')]")
-    List<WebElement> view;
+    @FindBy(xpath = "(//a[contains(text(),'View')])[4]")
+    WebElement view;
 
     /**
      * Click On Reports
@@ -118,7 +121,7 @@ public class ReportsPage extends TestDriverActions {
     /**
      * Click On Reports Categories
      */
-    String reportName = "Employees";
+    String reportName = "Inventory";
     String allReports = String.format("//span[contains(text(),'%s')]", reportName);
 
     public void clickOnReportsCategories() throws InterruptedException {
@@ -132,7 +135,7 @@ public class ReportsPage extends TestDriverActions {
     /**
      * Click On Available Reports
      */
-    String availReportName = "Employee Time Sheet Export";
+    String availReportName = "Purchase Price Comparison";
     String allAvailReports = String.format("//span[starts-with(text(),'%s')]", availReportName);
 
     public void clickOnAvailableReports() throws InterruptedException {
@@ -314,12 +317,45 @@ public class ReportsPage extends TestDriverActions {
 
                 WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(reportHistory_btn);
                 WebElementActions.getActions().clickElement(reportHistory_btn);
-                Thread.sleep(2000);
-                WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(refresh_btn);
-                WebElementActions.getActions().clickUsingJS(refresh_btn);
-                  Thread.sleep(10000);
-         //       WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(view.get(0));
-                WebElementActions.getActions().clickElement(view.get(0));
+
+                for(int i=0;i<10;i++)
+                {
+     //               System.out.println("Iteration :"+i);
+
+                    try {
+                        // Use FluentWait to define custom conditions and polling intervals
+                        new FluentWait<>(driver)
+                                .withTimeout(Duration.ofSeconds(120))
+                                .pollingEvery(Duration.ofSeconds(30))
+                                .ignoring(Exception.class)
+                                .until(drv -> refresh_btn.isEnabled());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    if (refresh_btn.isEnabled()) {
+             //           System.out.println("Button is ENABLED in iteration " + i);
+                        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(refresh_btn);
+                        WebElementActions.getActions().clickElement(refresh_btn);
+            /*           Thread.sleep(2000);
+                        if(view.isEnabled())
+                        {
+                            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(view);
+                            WebElementActions.getActions().clickElement(view);
+
+                            TestListener.saveScreenshotPNG(driver);
+
+                            break;
+
+                        }  */
+
+                    } else {
+                        System.out.println("Button is DISABLED in iteration " + i);
+                    }
+                    }
+
+                WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(view);
+                WebElementActions.getActions().clickElement(view);
 
                 TestListener.saveScreenshotPNG(driver);
 
@@ -348,7 +384,7 @@ public class ReportsPage extends TestDriverActions {
         else {
             File file = new File(url);
             FileInputStream fis = new FileInputStream(file);
-            Workbook workbook= new HSSFWorkbook(fis);
+            HSSFWorkbook workbook= new HSSFWorkbook(fis);
             Sheet sheet= workbook.getSheetAt(0);
             //Iterate through rows and columns to read data
             for(Row row:sheet)
@@ -369,14 +405,7 @@ public class ReportsPage extends TestDriverActions {
 
 
 
-
-
-
-
-
-
-
-     public void readExcel() throws InterruptedException, IOException {
+    public void readExcel() throws InterruptedException, IOException {
 
         Thread.sleep(10000);
         File dir = new File(System.getProperty("user.dir")+"\\downloadFiles");
@@ -403,6 +432,8 @@ public class ReportsPage extends TestDriverActions {
         TestListener.saveScreenshotPNG(driver);
 
     }
+
+
 
 }
 
