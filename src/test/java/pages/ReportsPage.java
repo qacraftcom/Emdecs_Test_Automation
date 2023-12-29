@@ -44,8 +44,10 @@ public class ReportsPage extends TestDriverActions {
     @FindBy(xpath = "//label[contains(text(),'From Date:')]//following::input[1]")
     public static List<WebElement> dateTextBox;
 
-    @FindBy(xpath = "//label[contains(text(),'To Date:')]//following::input[1]")
+   @FindBy(xpath = "//label[contains(text(),'To Date:')]//following::input[1]")
     public static List<WebElement> toDate;
+    @FindBy(xpath = "//label[@class='af_inputDate_label-text']")
+    public static List<WebElement> asOfDate;
 
     @FindBy(xpath = "//span[contains(text(),'Run Report')]")
     WebElement btn_RunReport;
@@ -121,7 +123,7 @@ public class ReportsPage extends TestDriverActions {
     /**
      * Click On Reports Categories
      */
-    String reportName = "Inventory";
+    String reportName = "BO Management";
     String allReports = String.format("//span[contains(text(),'%s')]", reportName);
 
     public void clickOnReportsCategories() throws InterruptedException {
@@ -135,7 +137,7 @@ public class ReportsPage extends TestDriverActions {
     /**
      * Click On Available Reports
      */
-    String availReportName = "Purchase Price Comparison";
+    String availReportName = "Corpro License Summary Export";
     String allAvailReports = String.format("//span[starts-with(text(),'%s')]", availReportName);
 
     public void clickOnAvailableReports() throws InterruptedException {
@@ -245,7 +247,7 @@ public class ReportsPage extends TestDriverActions {
 
         if (dateTextBox.size() >= 1 || toDate.size() >= 1) {
             WebElement fromDate = dateTextBox.get(0);
-            if(fromDate.isEnabled()) {
+            if (fromDate.isEnabled()) {
                 dateTextBox.get(0).clear();
                 dateTextBox.get(0).sendKeys(dateToEnter);
                 dateTextBox.get(0).sendKeys(Keys.TAB);
@@ -256,21 +258,38 @@ public class ReportsPage extends TestDriverActions {
                 toDate.get(0).sendKeys(currentDate());
                 TestListener.saveScreenshotPNG(driver);
             }
-            Thread.sleep(2000);
-            if (warehouse.size() >= 1) {
-                this.wareHouse();
-                TestListener.saveScreenshotPNG(driver);
-            } else if (emp.size() >= 1) {
-                this.employee();
-                TestListener.saveScreenshotPNG(driver);
-            } else if (reading_Type.size() >= 1 && uom.size() >= 1) {
-                this.readingType();
-                TestListener.saveScreenshotPNG(driver);
+            else {
+                WebElement asOfDateTextBox = asOfDate.get(0);
+                if (asOfDateTextBox.isEnabled()) {
+                    asOfDate.get(0).clear();
+                    asOfDate.get(0).sendKeys(currentDate());
+                    TestListener.saveScreenshotPNG(driver);
+                }
             }
+                Thread.sleep(2000);
+                if (warehouse.size() >= 1) {
+                    this.wareHouse();
+                    TestListener.saveScreenshotPNG(driver);
+                } else if (emp.size() >= 1) {
+                    this.employee();
+                    TestListener.saveScreenshotPNG(driver);
+                } else if (reading_Type.size() >= 1 && uom.size() >= 1) {
+                    this.readingType();
+                    TestListener.saveScreenshotPNG(driver);
+                }
 
-        } else if (reportType.size() >= 1 && reportSpecification.size() >= 1) {
-            this.reportType();
-            if (year.size() > 0 && accounting_Period.size() > 0) {
+            } else if (reportType.size() >= 1 && reportSpecification.size() >= 1) {
+                this.reportType();
+                if (year.size() > 0 && accounting_Period.size() > 0) {
+                    Thread.sleep(5000);
+                    Select yearDropdown = new Select(year.get(0));
+                    yearDropdown.selectByVisibleText("2021");
+                    Thread.sleep(5000);
+                    Select priodeDropdown = new Select(accounting_Period.get(0));
+                    priodeDropdown.selectByVisibleText("2");
+                    Thread.sleep(2000);
+                }
+            } else if (year.size() > 0 && accounting_Period.size() > 0) {
                 Thread.sleep(5000);
                 Select yearDropdown = new Select(year.get(0));
                 yearDropdown.selectByVisibleText("2021");
@@ -278,65 +297,53 @@ public class ReportsPage extends TestDriverActions {
                 Select priodeDropdown = new Select(accounting_Period.get(0));
                 priodeDropdown.selectByVisibleText("2");
                 Thread.sleep(2000);
-            }
-        } else if (year.size() > 0 && accounting_Period.size() > 0) {
+                TestListener.saveScreenshotPNG(driver);
+            } else if (credit_Limit.size() >= 1) {
+                this.creditLimit();
+                TestListener.saveScreenshotPNG(driver);
+            } else if (reading_Type.size() >= 1 && uom.size() >= 1) {
+                this.readingType();
+                TestListener.saveScreenshotPNG(driver);
+            } else if (warehouse.size() >= 1) {
+                this.wareHouse();
+                TestListener.saveScreenshotPNG(driver);
+            } else
+                ReusableActions.deleteDownloadedFile();
             Thread.sleep(5000);
-            Select yearDropdown = new Select(year.get(0));
-            yearDropdown.selectByVisibleText("2021");
-            Thread.sleep(5000);
-            Select priodeDropdown = new Select(accounting_Period.get(0));
-            priodeDropdown.selectByVisibleText("2");
-            Thread.sleep(2000);
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_RunReport);
+            WebElementActions.getActions().clickElement(btn_RunReport);
+
+            WaitActions.getWaits().loadingWait(loder);
             TestListener.saveScreenshotPNG(driver);
-        } else if (credit_Limit.size() >= 1) {
-            this.creditLimit();
-            TestListener.saveScreenshotPNG(driver);
-        } else if (reading_Type.size() >= 1 && uom.size() >= 1) {
-            this.readingType();
-            TestListener.saveScreenshotPNG(driver);
-        } else if (warehouse.size() >= 1) {
-            this.wareHouse();
-            TestListener.saveScreenshotPNG(driver);
-        }
-        else
-        ReusableActions.deleteDownloadedFile();
-        Thread.sleep(5000);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_RunReport);
-        WebElementActions.getActions().clickElement(btn_RunReport);
 
-        WaitActions.getWaits().loadingWait(loder);
-        TestListener.saveScreenshotPNG(driver);
+            int count = 0;
+            while (count < 20) {
+                //           System.out.println("Size of queue is :"+queue.size());
+                Thread.sleep(1000);
+                count++;
+                if (queue.size() > 0) {
 
-         int count = 0;
-        while(count<20)
-        {
- //           System.out.println("Size of queue is :"+queue.size());
-            Thread.sleep(1000);
-            count++;
-            if(queue.size()>0) {
+                    WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(reportHistory_btn);
+                    WebElementActions.getActions().clickElement(reportHistory_btn);
 
-                WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(reportHistory_btn);
-                WebElementActions.getActions().clickElement(reportHistory_btn);
+                    for (int i = 0; i < 10; i++) {
+                        //               System.out.println("Iteration :"+i);
 
-                for(int i=0;i<10;i++)
-                {
-     //               System.out.println("Iteration :"+i);
+                        try {
+                            // Use FluentWait to define custom conditions and polling intervals
+                            new FluentWait<>(driver)
+                                    .withTimeout(Duration.ofSeconds(120))
+                                    .pollingEvery(Duration.ofSeconds(30))
+                                    .ignoring(Exception.class)
+                                    .until(drv -> refresh_btn.isEnabled());
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
-                    try {
-                        // Use FluentWait to define custom conditions and polling intervals
-                        new FluentWait<>(driver)
-                                .withTimeout(Duration.ofSeconds(120))
-                                .pollingEvery(Duration.ofSeconds(30))
-                                .ignoring(Exception.class)
-                                .until(drv -> refresh_btn.isEnabled());
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-
-                    if (refresh_btn.isEnabled()) {
-             //           System.out.println("Button is ENABLED in iteration " + i);
-                        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(refresh_btn);
-                        WebElementActions.getActions().clickElement(refresh_btn);
+                        if (refresh_btn.isEnabled()) {
+                            //           System.out.println("Button is ENABLED in iteration " + i);
+                            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(refresh_btn);
+                            WebElementActions.getActions().clickElement(refresh_btn);
             /*           Thread.sleep(2000);
                         if(view.isEnabled())
                         {
@@ -349,21 +356,22 @@ public class ReportsPage extends TestDriverActions {
 
                         }  */
 
-                    } else {
-                        System.out.println("Button is DISABLED in iteration " + i);
+                        } else {
+                            System.out.println("Button is DISABLED in iteration " + i);
+                        }
                     }
-                    }
 
-                WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(view);
-                WebElementActions.getActions().clickElement(view);
+                    WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(view);
+                    WebElementActions.getActions().clickElement(view);
 
-                TestListener.saveScreenshotPNG(driver);
+                    TestListener.saveScreenshotPNG(driver);
 
-                break;
+                    break;
+                }
             }
-        }
 
-    }
+        }
+ //   }
 
     public void readPDF() throws IOException, InterruptedException {
         Thread.sleep(10000);

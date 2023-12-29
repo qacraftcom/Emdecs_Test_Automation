@@ -20,7 +20,7 @@ public class CreateCustomerTest extends TestDriverActions {
     public void Test_001_gotoCustomerScreen() throws FileNotFoundException, InterruptedException {
  //       driver.get(prop.getProperty("KONA_EU"));
  //          driver.get(SheetConstants.KONA_EU);
-        loginPage.loginWithValidCredentials(prop.getProperty("service_one_username"), prop.getProperty("service_one_password") );
+ //       loginPage.loginWithValidCredentials(prop.getProperty("service_one_username"), prop.getProperty("service_one_password") );
      //   loginPage.loginWithValidCredentials(CredentialsAction, prop.getProperty("password_manager_one") );
         customerPage.gotoCustomerScreen();
         customerPage.clickOnAddCustomer();

@@ -1,4 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Fri Dec 22 17:10:49 IST 2023","Fri Dec 22 17:12:28 IST 2023","99566","Default Suite","Emdecs_Test_Automation","tests.ReportsTest","tests.ReportsTest","Test_003_subtractMonthsFromCurrentDate","Enter Date for Generate Reports",""
-"passed","Fri Dec 22 17:10:22 IST 2023","Fri Dec 22 17:10:48 IST 2023","26540","Default Suite","Emdecs_Test_Automation","tests.ReportsTest","tests.ReportsTest","Test_002_clickOnReports","Click on Reports Categories and Available Reports",""
-"passed","Fri Dec 22 17:09:22 IST 2023","Fri Dec 22 17:10:21 IST 2023","59076","Default Suite","Emdecs_Test_Automation","tests.ReportsTest","tests.ReportsTest","Test_001_gotoReportScreen","Login the page and go to Reports page",""
