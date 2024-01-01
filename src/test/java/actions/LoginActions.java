@@ -1,16 +1,20 @@
 package actions;
 
 import constants.SheetConstants;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import tests.TestDriverActions;
 
+import java.awt.*;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URI;
+import java.util.Properties;
 
 public class LoginActions extends TestDriverActions {
-
-    public LoginActions() throws FileNotFoundException {
-        super();
-    }
+    public static String environmentName = System.getProperty("env", "QA");
 
     public String getAppUrl() throws IOException {
 
@@ -34,10 +38,19 @@ public class LoginActions extends TestDriverActions {
         }*/
 
         return appUrl;
-
-
     }
+   /** new metnod Akash*/
+    public String getAppUrl1(String className) throws IOException {     //Method to get Url from commomd line
+        String appUrl = null;
+        String configFileName = System.getProperty("user.dir")+"/src/test/java/utils"+"/"+className.toLowerCase()+"/"+className.toLowerCase()+"%s.properties";
+         configFileName= String.format(configFileName,LoginActions.environmentName);
+           System.out.println(" configFileName :: " + configFileName);
+           appProp = new Properties();
+        appProp.load(new FileInputStream(new File(configFileName)));
+        appUrl=appProp.getProperty("url");
 
+        return  appUrl;
+    }
     public String[] getUserCredentials() throws IOException {
 
         String userRole = System.getProperty("role");
@@ -45,7 +58,6 @@ public class LoginActions extends TestDriverActions {
 
         credentials[0] = DataActions.getReuseActions().getCellData(SheetConstants.loginSheetPath, SheetConstants.sheetNameForCredentials, SheetConstants.columnForTestEmail, SheetConstants.role_manager_credentials_rowNumber);
         credentials[1] = DataActions.getReuseActions().getCellData(SheetConstants.loginSheetPath, SheetConstants.sheetNameForCredentials, SheetConstants.columnForTestPassword, SheetConstants.role_manager_credentials_rowNumber);
-
 
 /*
         if (System.getProperty("env").equalsIgnoreCase("TEST") && userRole.equalsIgnoreCase("ADMIN")) {
@@ -67,5 +79,5 @@ public class LoginActions extends TestDriverActions {
 
     }
 
-}
+    }
 
