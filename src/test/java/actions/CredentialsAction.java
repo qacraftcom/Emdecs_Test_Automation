@@ -37,7 +37,24 @@ public class CredentialsAction extends TestDriverActions {
                 }
         }
 
+        environmentName = "kona_na";
+        switch(Websites){
+            case "KonaNA":
+                switch(environmentName){
+                    case "manager":
+                        email = prop.getProperty("username_NA_manager_one");
+                        password = prop.getProperty("passward_NA_manager_one ");
+                        break;
+                    case "service" :
+                        email = prop.getProperty("username_NA_service_one");
+                        password = prop.getProperty("passward_NA_service_one");
+                        break;
 
+                    case "tech" :
+                        email = prop.getProperty("username_NA_tech_one");
+                        password = prop.getProperty("passward_NA_tech_one");
+                }
+        }
         environmentName = "kona_ec";
         switch(Websites){
             case "KonaEC":

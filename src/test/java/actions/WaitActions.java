@@ -1,4 +1,3 @@
-
 package actions;
 
 import org.openqa.selenium.By;
@@ -235,5 +234,4 @@ public class WaitActions extends TestDriverActions {
 
 
 }
-
 
