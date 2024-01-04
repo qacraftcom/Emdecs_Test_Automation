@@ -1,0 +1,48 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "tests.ReportsTest",
+    "children" : [ {
+      "name" : "Test_001_gotoReportScreen",
+      "uid" : "bc2293ce69b1ccc8",
+      "parentUid" : "882a46b520f93e9bc634fea7e6bf48c7",
+      "status" : "passed",
+      "time" : {
+        "start" : 1704377335279,
+        "stop" : 1704377377927,
+        "duration" : 42648
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Test_002_clickOnReports",
+      "uid" : "5070d863c686fc2a",
+      "parentUid" : "882a46b520f93e9bc634fea7e6bf48c7",
+      "status" : "passed",
+      "time" : {
+        "start" : 1704377378468,
+        "stop" : 1704377423332,
+        "duration" : 44864
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Test_003_subtractMonthsFromCurrentDate",
+      "uid" : "a9507a0ea92cd2e8",
+      "parentUid" : "882a46b520f93e9bc634fea7e6bf48c7",
+      "status" : "broken",
+      "time" : {
+        "start" : 1704377423531,
+        "stop" : 1704377433576,
+        "duration" : 10045
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "tests.ReportsTest"
+  } ]
+}
