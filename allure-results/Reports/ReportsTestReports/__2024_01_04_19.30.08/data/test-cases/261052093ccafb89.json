@@ -1,0 +1,104 @@
+{
+  "uid" : "261052093ccafb89",
+  "name" : "Login the page and go to Reports page",
+  "fullName" : "tests.ReportsTest.Test_001_gotoReportScreen",
+  "historyId" : "148264459aa12b48f8b6e8ed19961b2c",
+  "time" : {
+    "start" : 1704376264443,
+    "stop" : 1704376306376,
+    "duration" : 41933
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "f21fcb7d8f2af300",
+      "name" : "Page Screenshot",
+      "source" : "f21fcb7d8f2af300.png",
+      "type" : "image/png",
+      "size" : 49600
+    }, {
+      "uid" : "56cccdcffa229adc",
+      "name" : "Page Screenshot",
+      "source" : "56cccdcffa229adc.png",
+      "type" : "image/png",
+      "size" : 145739
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 2
+  },
+  "afterStages" : [ {
+    "name" : "afterMethodTakeScreenShot",
+    "time" : {
+      "start" : 1704376306607,
+      "stop" : 1704376306812,
+      "duration" : 205
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "f41775d614d41343",
+      "name" : "Page Screenshot",
+      "source" : "f41775d614d41343.png",
+      "type" : "image/png",
+      "size" : 151345
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 1
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests.ReportsTest"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.ReportsTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "Test_001_gotoReportScreen"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Default Suite"
+  }, {
+    "name" : "suite",
+    "value" : "Emdecs_Test_Automation"
+  }, {
+    "name" : "subSuite",
+    "value" : "tests.ReportsTest"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-RH29BD1"
+  }, {
+    "name" : "thread",
+    "value" : "19480@DESKTOP-RH29BD1.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "261052093ccafb89.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,99 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-RH29BD1",
+    "children" : [ {
+      "name" : "15424@DESKTOP-RH29BD1.main(1)",
+      "children" : [ {
+        "name" : "Login the page and go to Reports page",
+        "uid" : "69d2ea4615e211f8",
+        "parentUid" : "91f9b7d3059a36a0f1ad3739e999effa",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704376414267,
+          "stop" : 1704376454198,
+          "duration" : 39931
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "91f9b7d3059a36a0f1ad3739e999effa"
+    }, {
+      "name" : "19480@DESKTOP-RH29BD1.main(1)",
+      "children" : [ {
+        "name" : "Login the page and go to Reports page",
+        "uid" : "261052093ccafb89",
+        "parentUid" : "3480da7d8d8f2366ec57f48ab61c3278",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704376264443,
+          "stop" : 1704376306376,
+          "duration" : 41933
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Click on Reports Categories and Available Reports",
+        "uid" : "890296a7e5ee008",
+        "parentUid" : "3480da7d8d8f2366ec57f48ab61c3278",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704376306845,
+          "stop" : 1704376351704,
+          "duration" : 44859
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "3480da7d8d8f2366ec57f48ab61c3278"
+    }, {
+      "name" : "14112@DESKTOP-RH29BD1.main(1)",
+      "children" : [ {
+        "name" : "Login the page and go to Reports page",
+        "uid" : "c6ae176d7fa196aa",
+        "parentUid" : "b69b255284225fef5a65e803e93a6a8e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704376713254,
+          "stop" : 1704376752784,
+          "duration" : 39530
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Enter Date for Generate Reports",
+        "uid" : "7540269521755e7a",
+        "parentUid" : "b69b255284225fef5a65e803e93a6a8e",
+        "status" : "broken",
+        "time" : {
+          "start" : 1704376798377,
+          "stop" : 1704376808453,
+          "duration" : 10076
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Click on Reports Categories and Available Reports",
+        "uid" : "8c173eed5ac68c4d",
+        "parentUid" : "b69b255284225fef5a65e803e93a6a8e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704376753295,
+          "stop" : 1704376798192,
+          "duration" : 44897
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "b69b255284225fef5a65e803e93a6a8e"
+    } ],
+    "uid" : "b1441ad176736c5515e66c68c9827861"
+  } ]
+}

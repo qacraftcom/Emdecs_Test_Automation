@@ -41,13 +41,13 @@ public class ReportsPage extends TestDriverActions {
     @FindBy(xpath = "(//a[text()='Reports'])[2]")
     WebElement btn_Reports;
 
-    @FindBy(xpath = "//label[contains(text(),'From Date:')]//following::input[1]")
+    @FindBy(xpath = "(//input[contains(@placeholder,'dd/mm/yyyy')])[1]")
     public static List<WebElement> dateTextBox;
 
-   @FindBy(xpath = "//label[contains(text(),'To Date:')]//following::input[1]")
+    @FindBy(xpath = "(//input[contains(@placeholder,'dd/mm/yyyy')])[2]")
     public static List<WebElement> toDate;
-    @FindBy(xpath = "//label[@class='af_inputDate_label-text']")
-    public static List<WebElement> asOfDate;
+    @FindBy(xpath = "(//label[contains(text(),'As of Date')])[1]")
+    WebElement asOfDate;
 
     @FindBy(xpath = "//span[contains(text(),'Run Report')]")
     WebElement btn_RunReport;
@@ -94,8 +94,8 @@ public class ReportsPage extends TestDriverActions {
     @FindBy(xpath = "//span[contains(text(),'Warehouse Receiving')]")
     WebElement ScrollUpTo;
 
-    @FindBy(xpath ="//select[contains(@name,'socCus')]")
-    List<WebElement> unitOwner;
+    @FindBy(xpath = "//label[contains(text(),'Unit Owner')]//following::select")
+    List<WebElement> unit_Owner;
 
     @FindBy(xpath = "//div[@class='toast-item-text']")
     List<WebElement> queue;
@@ -109,9 +109,13 @@ public class ReportsPage extends TestDriverActions {
     @FindBy(xpath = "(//a[contains(text(),'View')])[4]")
     WebElement view;
 
+    @FindBy(xpath = "//label[contains(text(),'To Period:')]//following::select[1]")
+    List<WebElement> to_Year;
+
     /**
      * Click On Reports
      */
+
     public void clickOnReports() throws InterruptedException {
         Thread.sleep(20000);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_Reports);
@@ -123,7 +127,8 @@ public class ReportsPage extends TestDriverActions {
     /**
      * Click On Reports Categories
      */
-    String reportName = "BO Management";
+
+    String reportName = "AP";
     String allReports = String.format("//span[contains(text(),'%s')]", reportName);
 
     public void clickOnReportsCategories() throws InterruptedException {
@@ -137,7 +142,8 @@ public class ReportsPage extends TestDriverActions {
     /**
      * Click On Available Reports
      */
-    String availReportName = "Corpro License Summary Export";
+
+    String availReportName = "Equipment Purchase Register";
     String allAvailReports = String.format("//span[starts-with(text(),'%s')]", availReportName);
 
     public void clickOnAvailableReports() throws InterruptedException {
@@ -173,6 +179,7 @@ public class ReportsPage extends TestDriverActions {
             return dateFormat.format(resultDate);
         }
     }
+
     public String currentDate() {
         Calendar calendar = Calendar.getInstance();
         Date resultDate = calendar.getTime();
@@ -185,22 +192,22 @@ public class ReportsPage extends TestDriverActions {
             return dateFormat.format(resultDate);
         }
     }
+
     public void creditLimit() throws InterruptedException {
 
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(credit_Limit.get(0));
         WebElementActions.getActions().inputText(credit_Limit.get(0), "10");
 
     }
+
     public void readingType() throws InterruptedException {
-        if(reading_Type.get(0).getText().contains("FUEL")) {
+        if (reading_Type.get(0).getText().contains("FUEL")) {
             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(reading_Type.get(0));
             WebElementActions.getActions().elementSelectByVisibilityText(reading_Type.get(0), "FUEL");
-        }
-        else if (reading_Type.get(0).getText().contains("COOLNESS temp")) {
+        } else if (reading_Type.get(0).getText().contains("COOLNESS temp")) {
             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(reading_Type.get(0));
             WebElementActions.getActions().elementSelectByVisibilityText(reading_Type.get(0), "COOLNESS temp");
-        }
-        else{
+        } else {
             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(reading_Type.get(0));
             WebElementActions.getActions().elementSelectByVisibilityText(reading_Type.get(0), "All");
         }
@@ -210,15 +217,15 @@ public class ReportsPage extends TestDriverActions {
     }
 
     public void employee() throws InterruptedException {
-        if(emp.get(0).getText().contains("Adica Test Tech 1 (ADICA1)")) {
+        if (emp.get(0).getText().contains("Adica Test Tech 1 (ADICA1)")) {
             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(emp.get(0));
             WebElementActions.getActions().elementSelectByVisibilityText(emp.get(0), "Adica Test Tech 1 (ADICA1)");
-        }
-        else {
+        } else {
             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(emp.get(0));
             WebElementActions.getActions().elementSelectByVisibilityText(emp.get(0), "All");
         }
     }
+
     public void reportType() throws InterruptedException {
         Thread.sleep(3000);
 //        Select report = new Select((WebElement) reading_Type);
@@ -237,9 +244,21 @@ public class ReportsPage extends TestDriverActions {
             WebElementActions.getActions().elementSelectByVisibilityText(reportSpecification.get(0), "Income Statement Report");
         }
     }
+
+    public void toYear() throws InterruptedException {
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(to_Year.get(0));
+        WebElementActions.getActions().elementSelectByVisibilityText(to_Year.get(0), "3");
+    }
+
     public void wareHouse() throws InterruptedException {
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(warehouse.get(0));
         WebElementActions.getActions().elementSelectByVisibilityText(warehouse.get(0), "11329 WAREHO Warehouse for #11329");
+    }
+
+    public void unitOwner() throws InterruptedException {
+        Thread.sleep(3000);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(unit_Owner.get(0));
+        WebElementActions.getActions().elementSelectByVisibilityText(unit_Owner.get(0), "0304 - 0304");
     }
 
     public void enterDateInTextBox(String dateToEnter) throws InterruptedException {
@@ -252,44 +271,36 @@ public class ReportsPage extends TestDriverActions {
                 dateTextBox.get(0).sendKeys(dateToEnter);
                 dateTextBox.get(0).sendKeys(Keys.TAB);
             }
-            WebElement toDateTextBox = toDate.get(0);
-            if (toDateTextBox.isEnabled()) {
-                toDate.get(0).clear();
-                toDate.get(0).sendKeys(currentDate());
+            if (toDate.size() >= 1) {
+                WebElement toDateTextBox = toDate.get(0);
+                if (toDateTextBox.isDisplayed() && toDateTextBox.isEnabled()) {
+                    toDate.get(0).clear();
+                    toDate.get(0).sendKeys(currentDate());
+                    TestListener.saveScreenshotPNG(driver);
+                } else {
+                    if (reportName.contains("BO Management") && availReportName.contains("Corpro License Summary Export")) {
+                        asOfDate.isDisplayed();
+                        TestListener.saveScreenshotPNG(driver);
+                    }
+                }
+            }
+            Thread.sleep(2000);
+            if (warehouse.size() >= 1) {
+                this.wareHouse();
+                TestListener.saveScreenshotPNG(driver);
+            } else if (emp.size() >= 1) {
+                this.employee();
+                TestListener.saveScreenshotPNG(driver);
+            } else if (reading_Type.size() >= 1 && uom.size() >= 1) {
+                this.readingType();
+                TestListener.saveScreenshotPNG(driver);
+            } else if (unit_Owner.size() >= 1) {
+                this.unitOwner();
                 TestListener.saveScreenshotPNG(driver);
             }
-            else {
-                WebElement asOfDateTextBox = asOfDate.get(0);
-                if (asOfDateTextBox.isEnabled()) {
-                    asOfDate.get(0).clear();
-                    asOfDate.get(0).sendKeys(currentDate());
-                    TestListener.saveScreenshotPNG(driver);
-                }
-            }
-                Thread.sleep(2000);
-                if (warehouse.size() >= 1) {
-                    this.wareHouse();
-                    TestListener.saveScreenshotPNG(driver);
-                } else if (emp.size() >= 1) {
-                    this.employee();
-                    TestListener.saveScreenshotPNG(driver);
-                } else if (reading_Type.size() >= 1 && uom.size() >= 1) {
-                    this.readingType();
-                    TestListener.saveScreenshotPNG(driver);
-                }
-
-            } else if (reportType.size() >= 1 && reportSpecification.size() >= 1) {
-                this.reportType();
-                if (year.size() > 0 && accounting_Period.size() > 0) {
-                    Thread.sleep(5000);
-                    Select yearDropdown = new Select(year.get(0));
-                    yearDropdown.selectByVisibleText("2021");
-                    Thread.sleep(5000);
-                    Select priodeDropdown = new Select(accounting_Period.get(0));
-                    priodeDropdown.selectByVisibleText("2");
-                    Thread.sleep(2000);
-                }
-            } else if (year.size() > 0 && accounting_Period.size() > 0) {
+        } else if (reportType.size() >= 1 && reportSpecification.size() >= 1) {
+            this.reportType();
+            if (year.size() > 0 && accounting_Period.size() > 0) {
                 Thread.sleep(5000);
                 Select yearDropdown = new Select(year.get(0));
                 yearDropdown.selectByVisibleText("2021");
@@ -297,18 +308,30 @@ public class ReportsPage extends TestDriverActions {
                 Select priodeDropdown = new Select(accounting_Period.get(0));
                 priodeDropdown.selectByVisibleText("2");
                 Thread.sleep(2000);
-                TestListener.saveScreenshotPNG(driver);
-            } else if (credit_Limit.size() >= 1) {
-                this.creditLimit();
-                TestListener.saveScreenshotPNG(driver);
-            } else if (reading_Type.size() >= 1 && uom.size() >= 1) {
-                this.readingType();
-                TestListener.saveScreenshotPNG(driver);
-            } else if (warehouse.size() >= 1) {
-                this.wareHouse();
-                TestListener.saveScreenshotPNG(driver);
-            } else
-                ReusableActions.deleteDownloadedFile();
+            }
+        } else if (year.size() > 0 && accounting_Period.size() > 0) {
+            Thread.sleep(5000);
+            Select yearDropdown = new Select(year.get(0));
+            yearDropdown.selectByVisibleText("2021");
+            Thread.sleep(5000);
+            Select priodeDropdown = new Select(accounting_Period.get(0));
+            priodeDropdown.selectByVisibleText("2");
+            Thread.sleep(2000);
+            TestListener.saveScreenshotPNG(driver);
+        } else if (to_Year.size() >= 1) {
+            this.toYear();
+            TestListener.saveScreenshotPNG(driver);
+        } else if (credit_Limit.size() >= 1) {
+            this.creditLimit();
+            TestListener.saveScreenshotPNG(driver);
+        } else if (reading_Type.size() >= 1 && uom.size() >= 1) {
+            this.readingType();
+            TestListener.saveScreenshotPNG(driver);
+        } else if (warehouse.size() >= 1) {
+            this.wareHouse();
+            TestListener.saveScreenshotPNG(driver);
+        } else
+            ReusableActions.deleteDownloadedFile();
             Thread.sleep(5000);
             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_RunReport);
             WebElementActions.getActions().clickElement(btn_RunReport);
@@ -316,34 +339,34 @@ public class ReportsPage extends TestDriverActions {
             WaitActions.getWaits().loadingWait(loder);
             TestListener.saveScreenshotPNG(driver);
 
-            int count = 0;
-            while (count < 20) {
-                //           System.out.println("Size of queue is :"+queue.size());
-                Thread.sleep(1000);
-                count++;
-                if (queue.size() > 0) {
+        int count = 0;
+        while (count < 20) {
+            //           System.out.println("Size of queue is :"+queue.size());
+            Thread.sleep(1000);
+            count++;
+            if (queue.size() > 0) {
 
-                    WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(reportHistory_btn);
-                    WebElementActions.getActions().clickElement(reportHistory_btn);
+                WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(reportHistory_btn);
+                WebElementActions.getActions().clickElement(reportHistory_btn);
 
-                    for (int i = 0; i < 10; i++) {
-                        //               System.out.println("Iteration :"+i);
+                for (int i = 0; i < 10; i++) {
+                    //               System.out.println("Iteration :"+i);
 
-                        try {
-                            // Use FluentWait to define custom conditions and polling intervals
-                            new FluentWait<>(driver)
-                                    .withTimeout(Duration.ofSeconds(120))
-                                    .pollingEvery(Duration.ofSeconds(30))
-                                    .ignoring(Exception.class)
-                                    .until(drv -> refresh_btn.isEnabled());
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
+                    try {
+                        // Use FluentWait to define custom conditions and polling intervals
+                        new FluentWait<>(driver)
+                                .withTimeout(Duration.ofSeconds(120))
+                                .pollingEvery(Duration.ofSeconds(30))
+                                .ignoring(Exception.class)
+                                .until(drv -> refresh_btn.isEnabled());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
 
-                        if (refresh_btn.isEnabled()) {
-                            //           System.out.println("Button is ENABLED in iteration " + i);
-                            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(refresh_btn);
-                            WebElementActions.getActions().clickElement(refresh_btn);
+                    if (refresh_btn.isEnabled()) {
+                        //           System.out.println("Button is ENABLED in iteration " + i);
+                        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(refresh_btn);
+                        WebElementActions.getActions().clickElement(refresh_btn);
             /*           Thread.sleep(2000);
                         if(view.isEnabled())
                         {
@@ -356,22 +379,22 @@ public class ReportsPage extends TestDriverActions {
 
                         }  */
 
-                        } else {
-                            System.out.println("Button is DISABLED in iteration " + i);
-                        }
+                    } else {
+                        System.out.println("Button is DISABLED in iteration " + i);
                     }
-
-                    WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(view);
-                    WebElementActions.getActions().clickElement(view);
-
-                    TestListener.saveScreenshotPNG(driver);
-
-                    break;
                 }
-            }
 
+                WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(view);
+                WebElementActions.getActions().clickElement(view);
+
+                TestListener.saveScreenshotPNG(driver);
+
+                break;
+            }
         }
- //   }
+
+    }
+    //   }
 
     public void readPDF() throws IOException, InterruptedException {
         Thread.sleep(10000);
@@ -379,7 +402,7 @@ public class ReportsPage extends TestDriverActions {
         File[] dirContents = dir.listFiles();
         String fileName = dirContents[0].getName();
         String url = System.getProperty("user.dir") + "\\downloadFiles\\" + fileName;
-        if(url.contains(".pdf")) {
+        if (url.contains(".pdf")) {
             File file = new File(url);
             FileInputStream fis = new FileInputStream(file);
             PDDocument document = null;
@@ -388,18 +411,15 @@ public class ReportsPage extends TestDriverActions {
             String pdfFullText = pdfStripper.getText(document);
             System.out.println(pdfFullText);
             fis.close();
-        }
-        else {
+        } else {
             File file = new File(url);
             FileInputStream fis = new FileInputStream(file);
-            HSSFWorkbook workbook= new HSSFWorkbook(fis);
-            Sheet sheet= workbook.getSheetAt(0);
+            HSSFWorkbook workbook = new HSSFWorkbook(fis);
+            Sheet sheet = workbook.getSheetAt(0);
             //Iterate through rows and columns to read data
-            for(Row row:sheet)
-            {
-                for(Cell cell: row)
-                {
-                    System.out.print(cell.toString()+"\t");
+            for (Row row : sheet) {
+                for (Cell cell : row) {
+                    System.out.print(cell.toString() + "\t");
                 }
                 System.out.println();  //move to next row
             }
@@ -412,24 +432,21 @@ public class ReportsPage extends TestDriverActions {
     }
 
 
-
     public void readExcel() throws InterruptedException, IOException {
 
         Thread.sleep(10000);
-        File dir = new File(System.getProperty("user.dir")+"\\downloadFiles");
-        File[] dirContents= dir.listFiles();
-        String fileName= dirContents[0].getName();
-        String url= System.getProperty("user.dir")+"\\downloadFiles\\" + fileName;
+        File dir = new File(System.getProperty("user.dir") + "\\downloadFiles");
+        File[] dirContents = dir.listFiles();
+        String fileName = dirContents[0].getName();
+        String url = System.getProperty("user.dir") + "\\downloadFiles\\" + fileName;
         File file = new File(url);
         FileInputStream fis = new FileInputStream(file);
-        Workbook workbook= new HSSFWorkbook(fis);
-        Sheet sheet= workbook.getSheetAt(0);
+        Workbook workbook = new HSSFWorkbook(fis);
+        Sheet sheet = workbook.getSheetAt(0);
         //Iterate through rows and columns to read data
-        for(Row row:sheet)
-        {
-            for(Cell cell: row)
-            {
-                System.out.print(cell.toString()+"\t");
+        for (Row row : sheet) {
+            for (Cell cell : row) {
+                System.out.print(cell.toString() + "\t");
             }
             System.out.println();  //move to next row
         }
@@ -440,7 +457,6 @@ public class ReportsPage extends TestDriverActions {
         TestListener.saveScreenshotPNG(driver);
 
     }
-
 
 
 }

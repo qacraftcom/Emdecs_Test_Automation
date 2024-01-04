@@ -1,0 +1,122 @@
+{
+  "uid" : "bc2293ce69b1ccc8",
+  "name" : "Login the page and go to Reports page",
+  "fullName" : "tests.ReportsTest.Test_001_gotoReportScreen",
+  "historyId" : "148264459aa12b48f8b6e8ed19961b2c",
+  "time" : {
+    "start" : 1704377335279,
+    "stop" : 1704377377927,
+    "duration" : 42648
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "initialization",
+    "time" : {
+      "start" : 1704377314152,
+      "stop" : 1704377335211,
+      "duration" : 21059
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "cf1af0808eb9bb27",
+      "name" : "Page Screenshot",
+      "source" : "cf1af0808eb9bb27.png",
+      "type" : "image/png",
+      "size" : 49665
+    }, {
+      "uid" : "ea5af54351c3ab80",
+      "name" : "Page Screenshot",
+      "source" : "ea5af54351c3ab80.png",
+      "type" : "image/png",
+      "size" : 174997
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 2
+  },
+  "afterStages" : [ {
+    "name" : "afterMethodTakeScreenShot",
+    "time" : {
+      "start" : 1704377378185,
+      "stop" : 1704377378433,
+      "duration" : 248
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "1e5a54ed383479a1",
+      "name" : "Page Screenshot",
+      "source" : "1e5a54ed383479a1.png",
+      "type" : "image/png",
+      "size" : 174972
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 1
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests.ReportsTest"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.ReportsTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "Test_001_gotoReportScreen"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Default Suite"
+  }, {
+    "name" : "suite",
+    "value" : "Emdecs_Test_Automation"
+  }, {
+    "name" : "subSuite",
+    "value" : "tests.ReportsTest"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-RH29BD1"
+  }, {
+    "name" : "thread",
+    "value" : "16008@DESKTOP-RH29BD1.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "bc2293ce69b1ccc8.json",
+  "parameterValues" : [ ]
+}

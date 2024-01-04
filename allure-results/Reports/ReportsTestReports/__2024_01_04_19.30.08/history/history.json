@@ -1,0 +1,60 @@
+{
+  "20a491ce0d90355038d40f65d19f708e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8c173eed5ac68c4d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1704376753295,
+        "stop" : 1704376798192,
+        "duration" : 44897
+      }
+    } ]
+  },
+  "520bc38f0c2d12f117c3c1aeca4e92d7" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7540269521755e7a",
+      "status" : "broken",
+      "statusDetails" : "java.lang.NullPointerException",
+      "time" : {
+        "start" : 1704376798377,
+        "stop" : 1704376808453,
+        "duration" : 10076
+      }
+    } ]
+  },
+  "148264459aa12b48f8b6e8ed19961b2c" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c6ae176d7fa196aa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1704376713254,
+        "stop" : 1704376752784,
+        "duration" : 39530
+      }
+    } ]
+  }
+}
