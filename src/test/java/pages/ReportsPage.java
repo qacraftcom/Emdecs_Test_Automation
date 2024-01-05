@@ -94,7 +94,7 @@ public class ReportsPage extends TestDriverActions {
     @FindBy(xpath = "//span[contains(text(),'Warehouse Receiving')]")
     WebElement ScrollUpTo;
 
-    @FindBy(xpath = "//label[contains(text(),'Unit Owner')]//following::select")
+    @FindBy(xpath = "//label[contains(text(),'Unit Owner')]//following::select[1]")
     List<WebElement> unit_Owner;
 
     @FindBy(xpath = "//div[@class='toast-item-text']")
@@ -128,7 +128,7 @@ public class ReportsPage extends TestDriverActions {
      * Click On Reports Categories
      */
 
-    String reportName = "AP";
+    String reportName = "Vendor Management";
     String allReports = String.format("//span[contains(text(),'%s')]", reportName);
 
     public void clickOnReportsCategories() throws InterruptedException {
@@ -143,7 +143,7 @@ public class ReportsPage extends TestDriverActions {
      * Click On Available Reports
      */
 
-    String availReportName = "Equipment Purchase Register";
+    String availReportName = "Vendor Performance For Parts Ordering";
     String allAvailReports = String.format("//span[starts-with(text(),'%s')]", availReportName);
 
     public void clickOnAvailableReports() throws InterruptedException {
@@ -256,9 +256,17 @@ public class ReportsPage extends TestDriverActions {
     }
 
     public void unitOwner() throws InterruptedException {
-        Thread.sleep(3000);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(unit_Owner.get(0));
-        WebElementActions.getActions().elementSelectByVisibilityText(unit_Owner.get(0), "0304 - 0304");
+        if(unit_Owner.get(0).getText().contains("0304 - 0304")) {
+            Thread.sleep(3000);
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(unit_Owner.get(0));
+            WebElementActions.getActions().elementSelectByVisibilityText(unit_Owner.get(0), "0304 - 0304");
+        }
+        else {
+            Thread.sleep(3000);
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(unit_Owner.get(0));
+            WebElementActions.getActions().elementSelectByVisibilityText(unit_Owner.get(0), "All");
+        }
+
     }
 
     public void enterDateInTextBox(String dateToEnter) throws InterruptedException {
@@ -349,7 +357,7 @@ public class ReportsPage extends TestDriverActions {
                 WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(reportHistory_btn);
                 WebElementActions.getActions().clickElement(reportHistory_btn);
 
-                for (int i = 0; i < 10; i++) {
+                for (int i = 0; i < 13; i++) {
                     //               System.out.println("Iteration :"+i);
 
                     try {
