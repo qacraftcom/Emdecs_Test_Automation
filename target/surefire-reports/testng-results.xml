@@ -2,151 +2,151 @@
 <testng-results total="9" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-09T08:37:20Z" name="Surefire suite" finished-at="2024-01-09T08:56:57Z" duration-ms="1177602">
+  <suite started-at="2024-01-09T12:40:13Z" name="Surefire suite" finished-at="2024-01-09T12:59:25Z" duration-ms="1152033">
     <groups>
     </groups>
-    <test started-at="2024-01-09T08:37:20Z" name="Surefire test" finished-at="2024-01-09T08:56:57Z" duration-ms="1177602">
+    <test started-at="2024-01-09T12:40:13Z" name="Surefire test" finished-at="2024-01-09T12:59:25Z" duration-ms="1152033">
       <class name="tests.parts.Spotorderparts">
-        <test-method is-config="true" signature="initialization()[pri:0, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:07:20Z" name="initialization" finished-at="2024-01-09T14:07:39Z" duration-ms="18774" status="PASS">
+        <test-method is-config="true" signature="initialization()[pri:0, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:10:13Z" name="initialization" finished-at="2024-01-09T18:10:32Z" duration-ms="19291" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialization -->
-        <test-method signature="Test_001_gotoOrderPartsScreen()[pri:0, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:07:39Z" name="Test_001_gotoOrderPartsScreen" description="Test_001 Login to the page and go to Order Part screen " finished-at="2024-01-09T14:08:15Z" duration-ms="36532" status="PASS">
+        <test-method signature="Test_001_gotoOrderPartsScreen()[pri:0, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:10:32Z" name="Test_001_gotoOrderPartsScreen" description="Test_001 Login to the page and go to Order Part screen " finished-at="2024-01-09T18:10:59Z" duration-ms="26657" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_001_gotoOrderPartsScreen -->
-        <test-method is-config="true" signature="afterMethodTakeScreenShot(org.testng.ITestResult)[pri:0, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:08:15Z" name="afterMethodTakeScreenShot" finished-at="2024-01-09T14:08:15Z" duration-ms="66" status="PASS">
+        <test-method is-config="true" signature="afterMethodTakeScreenShot(org.testng.ITestResult)[pri:0, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:10:59Z" name="afterMethodTakeScreenShot" finished-at="2024-01-09T18:10:59Z" duration-ms="64" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Test_001_gotoOrderPartsScreen status=SUCCESS method=Spotorderparts.Test_001_gotoOrderPartsScreen()[pri:0, instance:tests.parts.Spotorderparts@55b8dbda] output={null}]]]>
+                <![CDATA[[TestResult name=Test_001_gotoOrderPartsScreen status=SUCCESS method=Spotorderparts.Test_001_gotoOrderPartsScreen()[pri:0, instance:tests.parts.Spotorderparts@3a022576] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethodTakeScreenShot -->
-        <test-method signature="Test_002_clickOnSpotOrder()[pri:1, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:08:15Z" name="Test_002_clickOnSpotOrder" description="Test_002 click On The Spot order Tab " finished-at="2024-01-09T14:09:37Z" duration-ms="82049" status="PASS">
+        <test-method signature="Test_002_clickOnSpotOrder()[pri:1, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:10:59Z" name="Test_002_clickOnSpotOrder" description="Test_002 click On The Spot order Tab " finished-at="2024-01-09T18:12:21Z" duration-ms="81957" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_002_clickOnSpotOrder -->
-        <test-method is-config="true" signature="afterMethodTakeScreenShot(org.testng.ITestResult)[pri:0, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:09:37Z" name="afterMethodTakeScreenShot" finished-at="2024-01-09T14:09:37Z" duration-ms="44" status="PASS">
+        <test-method is-config="true" signature="afterMethodTakeScreenShot(org.testng.ITestResult)[pri:0, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:12:21Z" name="afterMethodTakeScreenShot" finished-at="2024-01-09T18:12:21Z" duration-ms="64" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Test_002_clickOnSpotOrder status=SUCCESS method=Spotorderparts.Test_002_clickOnSpotOrder()[pri:1, instance:tests.parts.Spotorderparts@55b8dbda] output={null}]]]>
+                <![CDATA[[TestResult name=Test_002_clickOnSpotOrder status=SUCCESS method=Spotorderparts.Test_002_clickOnSpotOrder()[pri:1, instance:tests.parts.Spotorderparts@3a022576] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethodTakeScreenShot -->
-        <test-method signature="Test_003_inputPartialPartNumber()[pri:2, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:09:37Z" name="Test_003_inputPartialPartNumber" description="Test_003  input Partial Part Number " finished-at="2024-01-09T14:10:42Z" duration-ms="64864" status="PASS">
+        <test-method signature="Test_003_inputPartialPartNumber()[pri:2, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:12:21Z" name="Test_003_inputPartialPartNumber" description="Test_003  input Partial Part Number " finished-at="2024-01-09T18:13:26Z" duration-ms="64796" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_003_inputPartialPartNumber -->
-        <test-method is-config="true" signature="afterMethodTakeScreenShot(org.testng.ITestResult)[pri:0, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:10:42Z" name="afterMethodTakeScreenShot" finished-at="2024-01-09T14:10:42Z" duration-ms="77" status="PASS">
+        <test-method is-config="true" signature="afterMethodTakeScreenShot(org.testng.ITestResult)[pri:0, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:13:26Z" name="afterMethodTakeScreenShot" finished-at="2024-01-09T18:13:26Z" duration-ms="67" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Test_003_inputPartialPartNumber status=SUCCESS method=Spotorderparts.Test_003_inputPartialPartNumber()[pri:2, instance:tests.parts.Spotorderparts@55b8dbda] output={null}]]]>
+                <![CDATA[[TestResult name=Test_003_inputPartialPartNumber status=SUCCESS method=Spotorderparts.Test_003_inputPartialPartNumber()[pri:2, instance:tests.parts.Spotorderparts@3a022576] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethodTakeScreenShot -->
-        <test-method signature="Test_004_clickOnAddButton()[pri:3, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:10:42Z" name="Test_004_clickOnAddButton" description="Test_004 click On Add Button " finished-at="2024-01-09T14:11:56Z" duration-ms="73325" status="PASS">
+        <test-method signature="Test_004_clickOnAddButton()[pri:3, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:13:26Z" name="Test_004_clickOnAddButton" description="Test_004 click On Add Button " finished-at="2024-01-09T18:14:40Z" duration-ms="73788" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_004_clickOnAddButton -->
-        <test-method is-config="true" signature="afterMethodTakeScreenShot(org.testng.ITestResult)[pri:0, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:11:56Z" name="afterMethodTakeScreenShot" finished-at="2024-01-09T14:11:56Z" duration-ms="49" status="PASS">
+        <test-method is-config="true" signature="afterMethodTakeScreenShot(org.testng.ITestResult)[pri:0, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:14:40Z" name="afterMethodTakeScreenShot" finished-at="2024-01-09T18:14:40Z" duration-ms="49" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Test_004_clickOnAddButton status=SUCCESS method=Spotorderparts.Test_004_clickOnAddButton()[pri:3, instance:tests.parts.Spotorderparts@55b8dbda] output={null}]]]>
+                <![CDATA[[TestResult name=Test_004_clickOnAddButton status=SUCCESS method=Spotorderparts.Test_004_clickOnAddButton()[pri:3, instance:tests.parts.Spotorderparts@3a022576] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethodTakeScreenShot -->
-        <test-method signature="Test_005_verifySearchPartDescription()[pri:4, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:11:56Z" name="Test_005_verifySearchPartDescription" description="Test_005 verify Search Part Description " finished-at="2024-01-09T14:14:56Z" duration-ms="179971" status="PASS">
+        <test-method signature="Test_005_verifySearchPartDescription()[pri:4, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:14:40Z" name="Test_005_verifySearchPartDescription" description="Test_005 verify Search Part Description " finished-at="2024-01-09T18:17:31Z" duration-ms="171681" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_005_verifySearchPartDescription -->
-        <test-method is-config="true" signature="afterMethodTakeScreenShot(org.testng.ITestResult)[pri:0, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:14:56Z" name="afterMethodTakeScreenShot" finished-at="2024-01-09T14:14:56Z" duration-ms="52" status="PASS">
+        <test-method is-config="true" signature="afterMethodTakeScreenShot(org.testng.ITestResult)[pri:0, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:17:32Z" name="afterMethodTakeScreenShot" finished-at="2024-01-09T18:17:32Z" duration-ms="61" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Test_005_verifySearchPartDescription status=SUCCESS method=Spotorderparts.Test_005_verifySearchPartDescription()[pri:4, instance:tests.parts.Spotorderparts@55b8dbda] output={null}]]]>
+                <![CDATA[[TestResult name=Test_005_verifySearchPartDescription status=SUCCESS method=Spotorderparts.Test_005_verifySearchPartDescription()[pri:4, instance:tests.parts.Spotorderparts@3a022576] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethodTakeScreenShot -->
-        <test-method signature="Test_006_inputCoreParentPart()[pri:5, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:14:56Z" name="Test_006_inputCoreParentPart" description="Test_006 input Core Parent Part and sign out  " finished-at="2024-01-09T14:17:29Z" duration-ms="152835" status="PASS">
+        <test-method signature="Test_006_inputCoreParentPart()[pri:5, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:17:32Z" name="Test_006_inputCoreParentPart" description="Test_006 input Core Parent Part and sign out  " finished-at="2024-01-09T18:20:02Z" duration-ms="150335" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_006_inputCoreParentPart -->
-        <test-method is-config="true" signature="afterMethodTakeScreenShot(org.testng.ITestResult)[pri:0, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:17:29Z" name="afterMethodTakeScreenShot" finished-at="2024-01-09T14:17:29Z" duration-ms="83" status="PASS">
+        <test-method is-config="true" signature="afterMethodTakeScreenShot(org.testng.ITestResult)[pri:0, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:20:02Z" name="afterMethodTakeScreenShot" finished-at="2024-01-09T18:20:02Z" duration-ms="63" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Test_006_inputCoreParentPart status=SUCCESS method=Spotorderparts.Test_006_inputCoreParentPart()[pri:5, instance:tests.parts.Spotorderparts@55b8dbda] output={null}]]]>
+                <![CDATA[[TestResult name=Test_006_inputCoreParentPart status=SUCCESS method=Spotorderparts.Test_006_inputCoreParentPart()[pri:5, instance:tests.parts.Spotorderparts@3a022576] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethodTakeScreenShot -->
-        <test-method signature="Test_007_verifyPO()[pri:6, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:17:29Z" name="Test_007_verifyPO" description="Test_007 verify PO  " finished-at="2024-01-09T14:20:41Z" duration-ms="192442" status="PASS">
+        <test-method signature="Test_007_verifyPO()[pri:6, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:20:02Z" name="Test_007_verifyPO" description="Test_007 verify PO  " finished-at="2024-01-09T18:23:10Z" duration-ms="188022" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_007_verifyPO -->
-        <test-method is-config="true" signature="afterMethodTakeScreenShot(org.testng.ITestResult)[pri:0, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:20:41Z" name="afterMethodTakeScreenShot" finished-at="2024-01-09T14:20:41Z" duration-ms="95" status="PASS">
+        <test-method is-config="true" signature="afterMethodTakeScreenShot(org.testng.ITestResult)[pri:0, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:23:10Z" name="afterMethodTakeScreenShot" finished-at="2024-01-09T18:23:10Z" duration-ms="52" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Test_007_verifyPO status=SUCCESS method=Spotorderparts.Test_007_verifyPO()[pri:6, instance:tests.parts.Spotorderparts@55b8dbda] output={null}]]]>
+                <![CDATA[[TestResult name=Test_007_verifyPO status=SUCCESS method=Spotorderparts.Test_007_verifyPO()[pri:6, instance:tests.parts.Spotorderparts@3a022576] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethodTakeScreenShot -->
-        <test-method signature="Test_008_verifyRequiredPart()[pri:7, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:20:41Z" name="Test_008_verifyRequiredPart" description="Test_008 verify Required Part  " finished-at="2024-01-09T14:23:53Z" duration-ms="191557" status="PASS">
+        <test-method signature="Test_008_verifyRequiredPart()[pri:7, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:23:10Z" name="Test_008_verifyRequiredPart" description="Test_008 verify Required Part  " finished-at="2024-01-09T18:26:22Z" duration-ms="192219" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_008_verifyRequiredPart -->
-        <test-method is-config="true" signature="afterMethodTakeScreenShot(org.testng.ITestResult)[pri:0, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:23:53Z" name="afterMethodTakeScreenShot" finished-at="2024-01-09T14:23:53Z" duration-ms="84" status="PASS">
+        <test-method is-config="true" signature="afterMethodTakeScreenShot(org.testng.ITestResult)[pri:0, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:26:22Z" name="afterMethodTakeScreenShot" finished-at="2024-01-09T18:26:22Z" duration-ms="79" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Test_008_verifyRequiredPart status=SUCCESS method=Spotorderparts.Test_008_verifyRequiredPart()[pri:7, instance:tests.parts.Spotorderparts@55b8dbda] output={null}]]]>
+                <![CDATA[[TestResult name=Test_008_verifyRequiredPart status=SUCCESS method=Spotorderparts.Test_008_verifyRequiredPart()[pri:7, instance:tests.parts.Spotorderparts@3a022576] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethodTakeScreenShot -->
-        <test-method signature="Test_009_verifyWarehouseText()[pri:8, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:23:53Z" name="Test_009_verifyWarehouseText" description="Test_009 verify Warehouse Text " finished-at="2024-01-09T14:26:57Z" duration-ms="184544" status="PASS">
+        <test-method signature="Test_009_verifyWarehouseText()[pri:8, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:26:22Z" name="Test_009_verifyWarehouseText" description="Test_009 verify Warehouse Text " finished-at="2024-01-09T18:29:25Z" duration-ms="182618" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Test_009_verifyWarehouseText -->
-        <test-method is-config="true" signature="afterMethodTakeScreenShot(org.testng.ITestResult)[pri:0, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:26:57Z" name="afterMethodTakeScreenShot" finished-at="2024-01-09T14:26:57Z" duration-ms="56" status="PASS">
+        <test-method is-config="true" signature="afterMethodTakeScreenShot(org.testng.ITestResult)[pri:0, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:29:25Z" name="afterMethodTakeScreenShot" finished-at="2024-01-09T18:29:25Z" duration-ms="52" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Test_009_verifyWarehouseText status=SUCCESS method=Spotorderparts.Test_009_verifyWarehouseText()[pri:8, instance:tests.parts.Spotorderparts@55b8dbda] output={null}]]]>
+                <![CDATA[[TestResult name=Test_009_verifyWarehouseText status=SUCCESS method=Spotorderparts.Test_009_verifyWarehouseText()[pri:8, instance:tests.parts.Spotorderparts@3a022576] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethodTakeScreenShot -->
-        <test-method is-config="true" signature="generateAllure()[pri:0, instance:tests.parts.Spotorderparts@55b8dbda]" started-at="2024-01-09T14:26:57Z" name="generateAllure" finished-at="2024-01-09T14:27:07Z" duration-ms="10021" status="PASS">
+        <test-method is-config="true" signature="generateAllure()[pri:0, instance:tests.parts.Spotorderparts@3a022576]" started-at="2024-01-09T18:29:25Z" name="generateAllure" finished-at="2024-01-09T18:29:35Z" duration-ms="10054" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateAllure -->

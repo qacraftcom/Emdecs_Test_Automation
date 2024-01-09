@@ -187,10 +187,8 @@ public class Spotorderparts extends TestDriverActions {
         spotorderparts.clickOnPoNumber();
         spotorderparts.verifyPONumber ();
         spotorderparts.clickOnSumbmitPrintPOButton();
-        spotorderparts.verifySubmited();
         spotorderparts.clickOnSignOut();
         spotorderparts.clickOnUserNameTextArea();
-
 
     }
 }

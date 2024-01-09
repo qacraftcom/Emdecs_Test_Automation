@@ -1,0 +1,91 @@
+[ {
+  "uid" : "15dab15f320208bd",
+  "name" : "Test_007 verify PO  ",
+  "time" : {
+    "start" : 1704792715125,
+    "stop" : 1704792907499,
+    "duration" : 192374
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2c3569461442563",
+  "name" : "Test_009 verify Warehouse Text ",
+  "time" : {
+    "start" : 1704793099723,
+    "stop" : 1704793390141,
+    "duration" : 290418
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "c6e1f6177ff1a092",
+  "name" : "Test_008 verify Required Part  ",
+  "time" : {
+    "start" : 1704792907615,
+    "stop" : 1704793099656,
+    "duration" : 192041
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5a9b969e96ae2c2b",
+  "name" : "Test_005 verify Search Part Description ",
+  "time" : {
+    "start" : 1704792382698,
+    "stop" : 1704792562708,
+    "duration" : 180010
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "302e953c93396031",
+  "name" : "Test_002 click On The Spot order Tab ",
+  "time" : {
+    "start" : 1704792162348,
+    "stop" : 1704792244353,
+    "duration" : 82005
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7d6f1b4576b2176d",
+  "name" : "Test_003  input Partial Part Number ",
+  "time" : {
+    "start" : 1704792244440,
+    "stop" : 1704792309225,
+    "duration" : 64785
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "21b5c7d0ed567ef2",
+  "name" : "Test_006 input Core Parent Part and sign out  ",
+  "time" : {
+    "start" : 1704792562774,
+    "stop" : 1704792715034,
+    "duration" : 152260
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3a79abcb654a3f02",
+  "name" : "Test_001 Login to the page and go to Order Part screen ",
+  "time" : {
+    "start" : 1704792131787,
+    "stop" : 1704792162219,
+    "duration" : 30432
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e3ba1e0cca8cfad9",
+  "name" : "Test_004 click On Add Button ",
+  "time" : {
+    "start" : 1704792309316,
+    "stop" : 1704792382613,
+    "duration" : 73297
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

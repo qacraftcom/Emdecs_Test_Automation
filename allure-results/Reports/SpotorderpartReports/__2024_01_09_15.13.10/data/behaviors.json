@@ -1,0 +1,122 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "Test_001 Login to the page and go to Order Part screen ",
+    "uid" : "3a79abcb654a3f02",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1704792131787,
+      "stop" : 1704792162219,
+      "duration" : 30432
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Test_002 click On The Spot order Tab ",
+    "uid" : "302e953c93396031",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1704792162348,
+      "stop" : 1704792244353,
+      "duration" : 82005
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Test_003  input Partial Part Number ",
+    "uid" : "7d6f1b4576b2176d",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1704792244440,
+      "stop" : 1704792309225,
+      "duration" : 64785
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Test_004 click On Add Button ",
+    "uid" : "e3ba1e0cca8cfad9",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1704792309316,
+      "stop" : 1704792382613,
+      "duration" : 73297
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Test_005 verify Search Part Description ",
+    "uid" : "5a9b969e96ae2c2b",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1704792382698,
+      "stop" : 1704792562708,
+      "duration" : 180010
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Test_006 input Core Parent Part and sign out  ",
+    "uid" : "21b5c7d0ed567ef2",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1704792562774,
+      "stop" : 1704792715034,
+      "duration" : 152260
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Test_007 verify PO  ",
+    "uid" : "15dab15f320208bd",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1704792715125,
+      "stop" : 1704792907499,
+      "duration" : 192374
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Test_008 verify Required Part  ",
+    "uid" : "c6e1f6177ff1a092",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1704792907615,
+      "stop" : 1704793099656,
+      "duration" : 192041
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Test_009 verify Warehouse Text ",
+    "uid" : "2c3569461442563",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "failed",
+    "time" : {
+      "start" : 1704793099723,
+      "stop" : 1704793390141,
+      "duration" : 290418
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  } ]
+}

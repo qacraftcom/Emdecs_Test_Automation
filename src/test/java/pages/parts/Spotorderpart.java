@@ -489,8 +489,8 @@ public class Spotorderpart extends TestDriverActions {
      * goto order parts Screen
      */
     public void gotoOrderPartsScreen() throws FileNotFoundException, InterruptedException {
-        WaitActions.getWaits().loadingWait(loder);
-        Thread.sleep(3000);
+      //  WaitActions.getWaits().loadingWait(loder);
+      //  Thread.sleep(3000);
         ReusableActions.getActions().clickParentMenu("Parts");
         ReusableActions.getActions().clickChildMenu("Order Parts");
         TestListener.saveScreenshotPNG(driver);
@@ -538,6 +538,7 @@ public class Spotorderpart extends TestDriverActions {
      * verify Order Parts
      */
     public void verifyOrderPart() throws InterruptedException {
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(text_OrderPart);
         Assert.assertTrue(text_OrderPart.isDisplayed());
     }
@@ -564,6 +565,7 @@ public class Spotorderpart extends TestDriverActions {
      * verify TotalText
      */
     public void verifyTotalText() throws InterruptedException {
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_Total);
         Assert.assertTrue(label_Total.isDisplayed());
     }
@@ -572,6 +574,7 @@ public class Spotorderpart extends TestDriverActions {
      * verify Refresh Text
      */
     public void verifyRefreshText() throws InterruptedException {
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(btn_Refresh);
         Assert.assertTrue(btn_Refresh.isDisplayed());
     }
@@ -580,6 +583,7 @@ public class Spotorderpart extends TestDriverActions {
      * verify TextPart
      */
     public void verifyTextPart() throws InterruptedException {
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_Part);
         Assert.assertTrue(txt_Part.isDisplayed());
     }
@@ -588,6 +592,7 @@ public class Spotorderpart extends TestDriverActions {
      * verify Text
      */
     public void verifyTextUOM() throws InterruptedException {
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_UOM);
         Assert.assertTrue(txt_UOM.isDisplayed());
     }
@@ -623,17 +628,13 @@ public class Spotorderpart extends TestDriverActions {
      */
     public void inputPartialPartNumber() throws InterruptedException {
 
-        //   if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU") || LoginActions.environmentName.contains("EC") || LoginActions.environmentName.contains("NA")) {
-
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_SearchPartTextArea);
         WebElementActions.getActions().inputText(label_SearchPartTextArea, appProp.getProperty("PartialPartNumber"));
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
-
     }
 
-//}
 
     /**
      * verify Full Part Number
@@ -762,13 +763,10 @@ public class Spotorderpart extends TestDriverActions {
         WaitActions.getWaits().loadingWait(loder);
     }
 
-
-
     /**
      * input part Name Wrench Wheel brace
      */
     public void inputPartNameWrenchWheelbrace() throws InterruptedException {
-     //   if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU") || LoginActions.environmentName.contains("EC") || LoginActions.environmentName.contains("NA")) {
 
             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_SearchPartTextArea);
             WebElementActions.getActions().inputText(label_SearchPartTextArea, appProp.getProperty("SearchPartDescription"));
@@ -776,9 +774,7 @@ public class Spotorderpart extends TestDriverActions {
             WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_UsetheSearchboxabovetosearchforparts);
             Assert.assertTrue(label_UsetheSearchboxabovetosearchforparts.isDisplayed());
 
-
         }
-  //  }
 
     /**
      * Select PartDescription Dropdown
@@ -845,7 +841,6 @@ public class Spotorderpart extends TestDriverActions {
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_TotalOrder);
         Assert.assertTrue(label_TotalOrder.isDisplayed());
     }
-
     /**
      * verify Part price Two and Total Order
      */
@@ -874,8 +869,6 @@ public class Spotorderpart extends TestDriverActions {
      * Input Full Part Number
      */
     public void InputFullPartNumber() throws InterruptedException {
-     //   if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU") || LoginActions.environmentName.contains("EC") || LoginActions.environmentName.contains("NA")) {
-
             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_SearchPartTextArea);
             WebElementActions.getActions().inputText(label_SearchPartTextArea,appProp.getProperty("FullPartNumber"));
             WaitActions.getWaits().loadingWait(loder);
@@ -885,7 +878,6 @@ public class Spotorderpart extends TestDriverActions {
             TestListener.saveScreenshotPNG(driver);
 
         }
-  //  }
 
     /**
      * verify value
@@ -901,7 +893,6 @@ public class Spotorderpart extends TestDriverActions {
      * input Quantity value
      */
     public void inputQuantityValue() throws InterruptedException {
-      //  if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU") || LoginActions.environmentName.contains("EC") || LoginActions.environmentName.contains("NA")) {
 
             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_value);
             label_value.clear();
@@ -910,9 +901,7 @@ public class Spotorderpart extends TestDriverActions {
             Assert.assertTrue(label_value.isDisplayed());
             TestListener.saveScreenshotPNG(driver);
 
-
         }
-  // }
 
     /**
      * click on Increrement and verify value
@@ -948,7 +937,6 @@ public class Spotorderpart extends TestDriverActions {
 
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_Add);
         WebElementActions.getActions().clickElement(btn_Add);
-        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
 
@@ -961,8 +949,6 @@ public class Spotorderpart extends TestDriverActions {
 
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_value);
         Assert.assertTrue(label_value.isDisplayed());
-
-        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
@@ -976,7 +962,6 @@ public class Spotorderpart extends TestDriverActions {
 
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_StoreText);
         Assert.assertTrue(label_StoreText.isDisplayed());
-        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
@@ -991,7 +976,6 @@ public class Spotorderpart extends TestDriverActions {
 
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_PartQuantity);
         Assert.assertTrue(label_PartQuantity.isDisplayed());
-        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
@@ -1000,12 +984,10 @@ public class Spotorderpart extends TestDriverActions {
      * input core parent part
      */
     public void inputCoreParentPart() throws InterruptedException {
-      // if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU") || LoginActions.environmentName.contains("EC") || LoginActions.environmentName.contains("NA")) {
 
             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_SearchPartTextArea);
             WebElementActions.getActions().inputText(label_SearchPartTextArea, appProp.getProperty("CoreParentPart"));
             WaitActions.getWaits().loadingWait(loder);
-
 
             WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_CalculateOrderTotal);
             Assert.assertTrue(label_CalculateOrderTotal.isDisplayed());
@@ -1014,7 +996,7 @@ public class Spotorderpart extends TestDriverActions {
 
     }
 
-//}
+
     /**click On Add Button */
     public void verifyAddButton () throws InterruptedException {
 
@@ -1082,7 +1064,6 @@ public class Spotorderpart extends TestDriverActions {
 
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_PartVendorName);
         Assert.assertTrue(label_PartVendorName.isDisplayed());
-        WaitActions.getWaits().loadingWait(loder);
     }
     /**verify Order Total */
     public void verifyOrderTotal () throws InterruptedException {
@@ -1158,7 +1139,7 @@ public class Spotorderpart extends TestDriverActions {
 
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_PODatePresent);
         Assert.assertTrue(label_PODatePresent.isDisplayed());
-        WaitActions.getWaits().loadingWait(loder);
+
     }
     /**verify TransPortPriority and verify Transport PriorityTextArea*/
     public void verifyTransPOrtPriority () throws InterruptedException {
@@ -1221,7 +1202,6 @@ public class Spotorderpart extends TestDriverActions {
     public void verifyVoidDate () throws InterruptedException {
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_VoidedDate);
         Assert.assertTrue(label_VoidedDate.isDisplayed());
-        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
@@ -1510,15 +1490,12 @@ public class Spotorderpart extends TestDriverActions {
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(input_VendorValue);
         Assert.assertTrue(input_VendorValue.isDisplayed());
 
-        WaitActions.getWaits().loadingWait(loder);
     }
     /**verify Address*/
     public void verifyAddress () throws InterruptedException {
 
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_Address);
         Assert.assertTrue(label_Address.isDisplayed());
-
-        WaitActions.getWaits().loadingWait(loder);
 
     }
     /**verify Po date and PO Part Cost and Order Total */
@@ -1531,9 +1508,7 @@ public class Spotorderpart extends TestDriverActions {
         Assert.assertTrue(label_POPartCost.isDisplayed());
 
     //    WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(Text_OrderTotal);
-    //    Assert.assertTrue(Text_OrderTotal.isDisplayed());
-
-        WaitActions.getWaits().loadingWait(loder);
+    //    Assert.assertTrue(Text_OrderTotal.isDisplayed())
 
         TestListener.saveScreenshotPNG(driver);
 
@@ -1564,22 +1539,19 @@ public class Spotorderpart extends TestDriverActions {
     }
     /**click On Submit Print PO Button*/
     public void clickOnSumbmitPrintPOButton () throws InterruptedException {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_SubmitPrintPOButton);
+            Assert.assertTrue(label_SubmitPrintPOButton.isDisplayed());
 
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_SubmitPrintPOButton);
-        WebElementActions.getActions().clickElement(label_SubmitPrintPOButton);
-        Thread.sleep(3000);
-        WaitActions.getWaits().loadingWait(loder);
-        TestListener.saveScreenshotPNG(driver);
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_SubmitPrintPOButton);
+            WebElementActions.getActions().clickElement(label_SubmitPrintPOButton);
+
+            Thread.sleep(3000);
+
+            WaitActions.getWaits().loadingWait(loder);
+            TestListener.saveScreenshotPNG(driver);
+
 
     }
-    /**verify text Submitted*/
-       public void verifySubmited () throws InterruptedException {
-           if (LoginActions.environmentName.contains("EU")) {
-               WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_SubmitPrintPOButton);
-               Assert.assertTrue(label_SubmitPrintPOButton.isDisplayed());
-
-           }
-       }
 
 
     /**click On Sign Out */
@@ -1587,7 +1559,6 @@ public class Spotorderpart extends TestDriverActions {
 
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_Signout);
         WebElementActions.getActions().clickUsingJS(label_Signout);
-        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
     /**click On UserName TextArea*/

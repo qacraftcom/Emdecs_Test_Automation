@@ -1,0 +1,149 @@
+{
+  "uid" : "721647c3aa29837f",
+  "name" : "Test_009 verify Warehouse Text ",
+  "fullName" : "tests.parts.Spotorderparts.Test_009_verifyWarehouseText",
+  "historyId" : "3f339d96ddcb8c2d9b8ff8072ca27238",
+  "time" : {
+    "start" : 1704804982844,
+    "stop" : 1704805165462,
+    "duration" : 182618
+  },
+  "description" : "Test Description: verify Warehouse Text () ",
+  "descriptionHtml" : "<p>Test Description: verify Warehouse Text ()</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "initialization",
+    "time" : {
+      "start" : 1704804013515,
+      "stop" : 1704804032789,
+      "duration" : 19274
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "testStage" : {
+    "description" : "Test Description: verify Warehouse Text () ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "4e4860318a874844",
+      "name" : "Page Screenshot",
+      "source" : "4e4860318a874844.png",
+      "type" : "image/png",
+      "size" : 143243
+    }, {
+      "uid" : "14dd85ff1138233e",
+      "name" : "Page Screenshot",
+      "source" : "14dd85ff1138233e.png",
+      "type" : "image/png",
+      "size" : 89966
+    }, {
+      "uid" : "6d44fdd06cf087e7",
+      "name" : "Page Screenshot",
+      "source" : "6d44fdd06cf087e7.png",
+      "type" : "image/png",
+      "size" : 105508
+    }, {
+      "uid" : "b3a30d076cd87455",
+      "name" : "Page Screenshot",
+      "source" : "b3a30d076cd87455.png",
+      "type" : "image/png",
+      "size" : 144634
+    }, {
+      "uid" : "df8911cc73037d9c",
+      "name" : "Page Screenshot",
+      "source" : "df8911cc73037d9c.png",
+      "type" : "image/png",
+      "size" : 143981
+    }, {
+      "uid" : "dfdac69f7b90053a",
+      "name" : "Page Screenshot",
+      "source" : "dfdac69f7b90053a.png",
+      "type" : "image/png",
+      "size" : 12610
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 6,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 0
+  },
+  "afterStages" : [ {
+    "name" : "afterMethodTakeScreenShot",
+    "time" : {
+      "start" : 1704805165462,
+      "stop" : 1704805165514,
+      "duration" : 52
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "f289be9d8a9192b8",
+      "name" : "Page Screenshot",
+      "source" : "f289be9d8a9192b8.png",
+      "type" : "image/png",
+      "size" : 12610
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests.parts.Spotorderparts"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.parts.Spotorderparts"
+  }, {
+    "name" : "testMethod",
+    "value" : "Test_009_verifyWarehouseText"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Surefire suite"
+  }, {
+    "name" : "suite",
+    "value" : "Surefire test"
+  }, {
+    "name" : "subSuite",
+    "value" : "tests.parts.Spotorderparts"
+  }, {
+    "name" : "host",
+    "value" : "PC-9"
+  }, {
+    "name" : "thread",
+    "value" : "19920@PC-9.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "721647c3aa29837f.json",
+  "parameterValues" : [ ]
+}
