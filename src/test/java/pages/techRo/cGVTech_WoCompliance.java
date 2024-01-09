@@ -27,6 +27,9 @@ public class cGVTech_WoCompliance extends TestDriverActions {
     @FindBy(xpath = "(//a[text()='Clean ABS Connections'])[1]")
     public WebElement text_Hyperlink;
 
+    @FindBy(xpath = "//a[contains(@id,':0:clPopupWoact')]//span")
+    public WebElement text_Hyperlink1;
+
     @FindBy(xpath = "//td[@style='user-select: none;']")
     public WebElement label_VMRS;
 
@@ -52,7 +55,7 @@ public class cGVTech_WoCompliance extends TestDriverActions {
     public WebElement label_TextVMRS;
 
 
-    @FindBy(xpath = "//label[text()='Description:']/parent::span/parent::div/following-sibling::div[3]/child::table/child::tbody/child::tr/child::td[2]/child::table ")
+    @FindBy(xpath = "//span[contains(@id,':1:itWoactDescription')]//parent::div ")
     public WebElement input_TextValue;
 
 
@@ -135,8 +138,8 @@ public class cGVTech_WoCompliance extends TestDriverActions {
     @FindBy(xpath = "(//a[text()='Clean ABS Connections'])[1]")
     public List<WebElement> txt_NotCleanABSConnection;
 
-    @FindBy(xpath = "(//a[contains(.,'Connections')][contains(@id,':clPopupWoaS')])[1]")
-    public WebElement txt_cleanABSConnection;
+    @FindBy(xpath = "(//a[contains(@id,':0:clPopupWoaS')])[1]")
+    public WebElement txt_Hyperlinlk2;
 
 
 
@@ -148,7 +151,7 @@ public class cGVTech_WoCompliance extends TestDriverActions {
     public WebElement bth_UnitReadyButton;
 
 
-    @FindBy(xpath = "//div[text()='Please complete all inspection forms.']")
+    @FindBy(xpath = "//td[contains(@id,':ptTRO:pw1::tb')]")
     public WebElement txt_PleaseSelectTheFollowingJobSandEnterThe3Cs;
 
 
@@ -192,7 +195,6 @@ public class cGVTech_WoCompliance extends TestDriverActions {
 //        WaitActions.getWaits().waitForElementTobeClickable(txt_scanEmployeeBadge);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_scanEmployeeBadge);
         WebElementActions.getActions().inputText(txt_scanEmployeeBadge, prop.getProperty("TechBadge"));
-        WebElementActions.getActions().inputText(txt_scanEmployeeBadge, "john");
         TestListener.saveScreenshotPNG(driver);
 
 
@@ -204,6 +206,7 @@ public class cGVTech_WoCompliance extends TestDriverActions {
       //  WaitActions.getWaits().waitForElementTobeClickable(btn_GO);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_GO);
         WebElementActions.getActions().clickElement(btn_GO);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
@@ -211,7 +214,10 @@ public class cGVTech_WoCompliance extends TestDriverActions {
     /**verify SelectWork Title*/
     public void verifySelectWork () throws InterruptedException {
 
+         WaitActions.getWaits().loadingWait(loder);
+         Thread.sleep(5000);
         if (txt_SelectAssignedWork.size()>0){
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_SelectButton);
             WebElementActions.getActions().clickElement(btn_SelectButton);
 
         }else{
@@ -251,8 +257,9 @@ public class cGVTech_WoCompliance extends TestDriverActions {
     public void clickOnHyperLink() throws InterruptedException {
 
       //  WaitActions.getWaits().waitForElementTobeClickable(text_Hyperlink);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(text_Hyperlink);
-        WebElementActions.getActions().clickElement(text_Hyperlink);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(text_Hyperlink1);
+        WebElementActions.getActions().clickElement(text_Hyperlink1);
+        WaitActions.getWaits().loadingWait(loder);
 
 
 
@@ -527,6 +534,7 @@ public class cGVTech_WoCompliance extends TestDriverActions {
      //   WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_PleaseSelectTheFollowingJobSandEnterThe3Cs);
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_PleaseSelectTheFollowingJobSandEnterThe3Cs);
         Assert.assertTrue(txt_PleaseSelectTheFollowingJobSandEnterThe3Cs.isDisplayed());
+        WaitActions.getWaits().loadingWait(loder);
 
     }
 
@@ -545,8 +553,8 @@ public class cGVTech_WoCompliance extends TestDriverActions {
     /**Click on VMRS CleanABSConnection  */
     public void clickOnCleanABSConnection () throws InterruptedException {
      //   WaitActions.getWaits().waitForElementTobeClickable(txt_cleanABSConnection);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_cleanABSConnection);
-        WebElementActions.getActions().clickElement(txt_cleanABSConnection);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_Hyperlinlk2);
+        WebElementActions.getActions().clickElement(txt_Hyperlinlk2);
 
     }
     /**type Correction textarea */

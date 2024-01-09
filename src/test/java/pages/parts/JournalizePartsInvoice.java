@@ -41,7 +41,7 @@ public class JournalizePartsInvoice extends TestDriverActions {
     @FindBy(xpath = "(//a[text()='Export Journals'])[1]")
     WebElement ExportJournals;
 
-    @FindBy(xpath = "//span[text()='Posted By']/following::td[7]")
+    @FindBy(xpath = "//span[text()='Posted By']/following::th[1]")
     WebElement date_cell;
 
     @FindBy(xpath = "//a[text()='Sign Out']")
@@ -136,7 +136,7 @@ public class JournalizePartsInvoice extends TestDriverActions {
      * click on service board
      */
     public void clickOnServiceBoard() throws InterruptedException {
-//        WaitActions.getWaits().waitForElementTobeClickable(service_board);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(service_board);
         WebElementActions.getActions().clickUsingJS(service_board);
 

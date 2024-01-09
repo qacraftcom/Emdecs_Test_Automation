@@ -31,8 +31,11 @@ public class ECServiceManager_Journalize extends TestDriverActions {
     @FindBy(xpath = "(//div[contains(@id,'::db')]/child::table)[1]")
     public WebElement label_NoDataPresent;
 
-    @FindBy(xpath = "(//a[contains(text(),'Service Board')]/parent::div)[1]")
+   /*@FindBy(xpath = "(//a[contains(text(),'Service Board')]/parent::div)[1]")
     public WebElement label_ServiceBoard;
+   */
+    @FindBy(xpath = "(//a[text()='Complete RO'])[1]")
+    public WebElement label_CompleteRO;
 
     @FindBy(xpath = "(//a[contains(text(),'Financial Manager')])[1]")
     public WebElement txt_FinancialManager;
@@ -54,6 +57,8 @@ public class ECServiceManager_Journalize extends TestDriverActions {
 
     /**goto Financials */
     public void gotoFinancials () throws InterruptedException, FileNotFoundException {
+        WaitActions.getWaits().loadingWait(loder);
+        Thread.sleep(3000);
         ReusableActions.getActions().clickParentMenu("Financials");
         ReusableActions.getActions().clickChildMenu("Financial Manager");
         TestListener.saveScreenshotPNG(driver);
@@ -63,7 +68,7 @@ public class ECServiceManager_Journalize extends TestDriverActions {
 
     /** click On Generate Journals Button*/
     public void clickOnGenerateJournals () throws InterruptedException {
-     //   WaitActions.getWaits().waitForElementTobeClickable(btn_GenerateJournals);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_GenerateJournals);
         WebElementActions.getActions().clickElement(btn_GenerateJournals);
         WaitActions.getWaits().loadingWait(loder);
@@ -72,14 +77,14 @@ public class ECServiceManager_Journalize extends TestDriverActions {
     }
     /** select  On Assert Disposal Boolean*/
     public void clickOnAssertDisposal () throws InterruptedException {
-     //   WaitActions.getWaits().waitForElementTobeClickable(txt_AssertDisposal);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_AssertDisposal);
         WebElementActions.getActions().clickElement(txt_AssertDisposal);
         TestListener.saveScreenshotPNG(driver);
     }
     /** click On Table Generate Journals Button */
     public void clickOnTableGenerateJournalsButton () throws InterruptedException {
-      //  WaitActions.getWaits().waitForElementTobeClickable(label_GenerateButton);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_GenerateButton);
         WebElementActions.getActions().clickElement(label_GenerateButton);
         WaitActions.getWaits().loadingWait(loder);
@@ -92,16 +97,16 @@ public class ECServiceManager_Journalize extends TestDriverActions {
 
     }
     /**click On Service Board */
-    public void clickOnServiceBoard () throws InterruptedException {
-      //  WaitActions.getWaits().waitForElementTobeClickable(label_ServiceBoard);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_ServiceBoard);
-        WebElementActions.getActions().clickElement(label_ServiceBoard);
+    public void clickOnCompleteRo () throws InterruptedException {
+
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_CompleteRO);
+        WebElementActions.getActions().clickElement(label_CompleteRO);
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
     /**click On Financial Manager */
     public void clickOnFinancialManagerText () throws InterruptedException {
-      //  WaitActions.getWaits().waitForElementTobeClickable(txt_FinancialManager);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_FinancialManager);
         WebElementActions.getActions().clickElement(txt_FinancialManager);
         TestListener.saveScreenshotPNG(driver);
@@ -109,7 +114,7 @@ public class ECServiceManager_Journalize extends TestDriverActions {
     }
     /** click On  Journal Sources */
     public void clickOnJournalSources () throws InterruptedException {
-      //  WaitActions.getWaits().waitForElementTobeClickable(label_JournalSources);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_JournalSources);
         WebElementActions.getActions().clickElement(label_JournalSources);
         WaitActions.getWaits().loadingWait(loder);
@@ -118,7 +123,7 @@ public class ECServiceManager_Journalize extends TestDriverActions {
     /** click On Sign Out */
 
     public void clickOnSignOut () throws InterruptedException {
-      //  WaitActions.getWaits().waitForElementTobeClickable(label_SignOut);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_SignOut);
         WebElementActions.getActions().clickElement(label_SignOut);
         TestListener.saveScreenshotPNG(driver);

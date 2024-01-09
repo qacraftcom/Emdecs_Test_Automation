@@ -94,7 +94,6 @@ public class ECServiceManager_ChangeCustomerPOafterInvoicing extends TestDriverA
      * click on Update Customer PO Number
      */
       public void clickOnUpdateCustomerPoNumber() throws InterruptedException {
- //       WaitActions.getWaits().waitForElementTobeClickable(label_updateCustomerPoNum);
           WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_updateCustomerPoNum);
         WebElementActions.getActions().clickElement(label_updateCustomerPoNum);
 
@@ -106,7 +105,7 @@ public class ECServiceManager_ChangeCustomerPOafterInvoicing extends TestDriverA
      * verify the elements
      */
       public void verifyElement() throws InterruptedException {
-//          WaitActions.getWaits().WaitUntilWebElementIsVisible(subtitle_UpdateCustomerPoNum);
+
           WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(subtitle_UpdateCustomerPoNum);
           Assert.assertTrue(subtitle_UpdateCustomerPoNum.isDisplayed());
           Assert.assertTrue(label_invoicedTo.isDisplayed());

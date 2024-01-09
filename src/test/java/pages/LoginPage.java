@@ -1,5 +1,6 @@
 package pages;
 
+import actions.LoginActions;
 import actions.WaitActions;
 import actions.WebElementActions;
 import org.openqa.selenium.Keys;
@@ -9,11 +10,15 @@ import org.openqa.selenium.support.FindBy;
 import tests.TestDriverActions;
 import utils.TestListener;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 
 public class LoginPage extends TestDriverActions {
-
+    Properties properties;
 
    // WebDriver driver;
 
@@ -157,6 +162,50 @@ public class LoginPage extends TestDriverActions {
 
       TestListener.saveScreenshotPNG(driver);
   }
+
+  /* public void loginforKonaQaAndKonaEu() throws InterruptedException, IOException {
+      //  public void loginforKonaQaAndKonaEu() throws InterruptedException, IOException {
+     //  System.out.println("Before Username.....");
+        //String envoirment = System.getProperty("browser", "chrome");
+      //  String configFileName = "./%s-config.properties";
+      //  String configFileName = System.getProperty("user.dir") + "/src/test/java/utils/spotorderpartsQA.properties";
+       // String EnvironmentName = System.getProperty("url","qa");
+        System.out.println("Before Username2.....");
+       System.out.println("TestEnvironment: " + LoginActions.environmentName);
+       // Check if the environmentName contains "spotorderpartskonaQA"
+       if (LoginActions.environmentName.contains("spotorderpartskonaQA")) {
+           // Use String.format to replace %s with the environment name in the file path
+           String configFileName = String.format(
+                   "%s/src/test/java/utils/%s.properties",
+                   System.getProperty("user.dir"),
+                   LoginActions.environmentName
+           );
+
+           System.out.println("Config File: " + configFileName);
+
+           // Now configFileName contains the dynamic path based on the environment name
+           // Use configFileName in the rest of your code...
+       } else {
+           // Handle other cases or provide a default configuration file name
+           System.out.println("Unknown environment: " + LoginActions.environmentName);
+       }
+
+      }
+         /* if (Appconfig.environmentName.contains("receviepartkonaeu")) {
+              String configFileName = System.getProperty("user.dir") + "/src/test/java/utils/%s-config.properties";
+              configFileName = String.format(configFileName,Appconfig.environmentName);
+              //   System.out.println("configFileName"+ configFileName);
+              properties = new Properties();
+              properties.load(new FileInputStream(new File(configFileName)));
+              //driver.get(properties.getProperty("url"));
+          }
+          */
+
+
+
+        
+
+
 
     /**
      * Verify validation message

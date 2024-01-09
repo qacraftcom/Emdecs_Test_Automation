@@ -1,5 +1,6 @@
 package pages.serviceBoard;
 
+import actions.LoginActions;
 import actions.ReusableActions;
 import actions.WaitActions;
 import actions.WebElementActions;
@@ -248,7 +249,7 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
     @FindBy(xpath = "(//span[text()='Description'])[2]/following::a[1]")
     WebElement icon_Plus_airDiscBreaks;
 
-    @FindBy(xpath ="//label[text()='Standard Hours:']/following::textarea[1]")
+    @FindBy(xpath = "//label[text()='Standard Hours:']/following::textarea[1]")
     WebElement note_ExternalNote_ServiceProgram;
 
     @FindBy(xpath = "//textarea[text()='Air Disc Brakes']")
@@ -423,6 +424,8 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
 
 
     public void gotoServiceBoard() throws FileNotFoundException, InterruptedException {
+        WaitActions.getWaits().loadingWait(loder);
+        Thread.sleep(3000);
         ReusableActions.getActions().clickParentMenu("Service");
         ReusableActions.getActions().clickChildMenu("Service Board");
 
@@ -440,47 +443,49 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
 
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
-     }
+    }
 
     /**
      * move to right side horizontally
      * move to left side horizontally
      */
-      public void moveRightToLeft() throws InterruptedException {
-          Thread.sleep(2000);
-          WebElementActions.getActions().moveOnTargetElement(btn_estimate);
-          Thread.sleep(3000);
-          WebElementActions.getActions().moveOnTargetElement(ele_Location);
+    public void moveRightToLeft() throws InterruptedException {
+        Thread.sleep(2000);
+        WebElementActions.getActions().moveOnTargetElement(btn_estimate);
+        Thread.sleep(3000);
+        WebElementActions.getActions().moveOnTargetElement(ele_Location);
 
-          TestListener.saveScreenshotPNG(driver);
-      }
+        TestListener.saveScreenshotPNG(driver);
+    }
+
     /**
      * click on estimate link
      */
-      public void clickOnEstimateLink() throws InterruptedException {
-          WebElementActions.getActions().moveOnTargetElement(btn_estimate);
-          WebElementActions.getActions().clickElement(btn_estimate);
+    public void clickOnEstimateLink() throws InterruptedException {
+        WebElementActions.getActions().moveOnTargetElement(btn_estimate);
+        WebElementActions.getActions().clickElement(btn_estimate);
 
-          WaitActions.getWaits().loadingWait(loder);
-          TestListener.saveScreenshotPNG(driver);
-      }
+        WaitActions.getWaits().loadingWait(loder);
+        TestListener.saveScreenshotPNG(driver);
+    }
+
     /**
      * click on YES button
      */
-     public void clickOnYESbutton() throws InterruptedException {
- //        WaitActions.getWaits().waitForElementTobeClickable(btn_yes);
-         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_yes);
-         WebElementActions.getActions().clickElement(btn_yes);
+    public void clickOnYESbutton() throws InterruptedException {
+        //        WaitActions.getWaits().waitForElementTobeClickable(btn_yes);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_yes);
+        WebElementActions.getActions().clickElement(btn_yes);
 
-         WaitActions.getWaits().loadingWait(loder);
-         TestListener.saveScreenshotPNG(driver);
-     }
+        WaitActions.getWaits().loadingWait(loder);
+        TestListener.saveScreenshotPNG(driver);
+    }
 
     /**
      * verify element of Repair Estimate Page
      */
     public void repairEstimatePage() throws InterruptedException {
- //       WaitActions.getWaits().WaitUntilWebElementIsVisible(asterisk_location);
+        //       WaitActions.getWaits().WaitUntilWebElementIsVisible(asterisk_location);
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(asterisk_location);
         Assert.assertTrue(asterisk_location.isDisplayed());
         Assert.assertTrue(label_location.isDisplayed());
@@ -553,14 +558,15 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
     /**
      * Type external note
      */
-     public void externalNote() throws InterruptedException {
+    public void externalNote() throws InterruptedException {
 //         Thread.sleep(2000);
 //         WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_notes);
-         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_notes);
-         WebElementActions.getActions().inputText(txt_notes,"External note");
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_notes);
+        WebElementActions.getActions().inputText(txt_notes, "External note");
 
-         TestListener.saveScreenshotPNG(driver);
-     }
+        TestListener.saveScreenshotPNG(driver);
+    }
+
     /**
      * click on Add Labour
      */
@@ -569,7 +575,7 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
 //        try {
 //            WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_addLabour);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_addLabour);
-            WebElementActions.getActions().clickElement(btn_addLabour);
+        WebElementActions.getActions().clickElement(btn_addLabour);
 //        }
 /*        catch(Throwable e)
         {
@@ -578,25 +584,27 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
+
     /**
      * element verify on work requird page
      */
-     public void workRequiredPage() throws InterruptedException {
+    public void workRequiredPage() throws InterruptedException {
 
- //        WaitActions.getWaits().WaitUntilWebElementIsVisible(label_owner2);
-         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_owner2);
-         Assert.assertTrue(label_owner2.isDisplayed());
-         Assert.assertTrue(txt_owner2.isDisplayed());
-         Assert.assertTrue(label_unit2.isDisplayed());
-         Assert.assertTrue(txt_unit2.isDisplayed());
-         Assert.assertTrue(btn_serviceProgram.isDisplayed());
-         Assert.assertTrue(btn_motor.isDisplayed());
-         Assert.assertTrue(btn_vmrs.isDisplayed());
-         Assert.assertTrue(btn_unitHistory.isDisplayed());
-         Assert.assertTrue(btn_otherHistory.isDisplayed());
+        //        WaitActions.getWaits().WaitUntilWebElementIsVisible(label_owner2);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_owner2);
+        Assert.assertTrue(label_owner2.isDisplayed());
+        Assert.assertTrue(txt_owner2.isDisplayed());
+        Assert.assertTrue(label_unit2.isDisplayed());
+        Assert.assertTrue(txt_unit2.isDisplayed());
+        Assert.assertTrue(btn_serviceProgram.isDisplayed());
+        Assert.assertTrue(btn_motor.isDisplayed());
+        Assert.assertTrue(btn_vmrs.isDisplayed());
+        Assert.assertTrue(btn_unitHistory.isDisplayed());
+        Assert.assertTrue(btn_otherHistory.isDisplayed());
 
-         TestListener.saveScreenshotPNG(driver);
-     }
+        TestListener.saveScreenshotPNG(driver);
+    }
+
     /**
      * click on VMRS Tab
      */
@@ -609,28 +617,30 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
+
     /**
      * click on Unit History tab
      */
-     public void clickOnUnitHistoryTab() throws InterruptedException {
+    public void clickOnUnitHistoryTab() throws InterruptedException {
 //         Thread.sleep(2000);
 //         WaitActions.getWaits().waitForElementTobeClickable(btn_unitHistory);
-         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_unitHistory);
-         WebElementActions.getActions().clickElement(btn_unitHistory);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_unitHistory);
+        WebElementActions.getActions().clickElement(btn_unitHistory);
 
-         WaitActions.getWaits().loadingWait(loder);
+        WaitActions.getWaits().loadingWait(loder);
 
-         TestListener.saveScreenshotPNG(driver);
-     }
+        TestListener.saveScreenshotPNG(driver);
+    }
+
     /**
      * Click on Other History Tab
      */
     public void clickOnOtherHistorytab() throws InterruptedException {
 //         Thread.sleep(3000);
 //        try {
- //           WaitActions.getWaits().waitForElementTobeClickable(btn_otherHistory);
+        //           WaitActions.getWaits().waitForElementTobeClickable(btn_otherHistory);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_otherHistory);
-            WebElementActions.getActions().clickElement(btn_otherHistory);
+        WebElementActions.getActions().clickElement(btn_otherHistory);
  /*       }
         catch(Throwable e)
         {
@@ -641,73 +651,81 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
 
         TestListener.saveScreenshotPNG(driver);
     }
+
     /**
      * click on Service Program
      */
-     public void clickOnServiceProgramTab() throws InterruptedException {
+    public void clickOnServiceProgramTab() throws InterruptedException {
 //         Thread.sleep(2000);
 //         try {
-  //           WaitActions.getWaits().waitForElementTobeClickable(btn_serviceProgram);
-         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_serviceProgram);
-             WebElementActions.getActions().clickElement(btn_serviceProgram);
+        //           WaitActions.getWaits().waitForElementTobeClickable(btn_serviceProgram);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_serviceProgram);
+        WebElementActions.getActions().clickElement(btn_serviceProgram);
  /*        }
          catch(Throwable e)
          {
              e.printStackTrace();
          }  */
 
-         WaitActions.getWaits().loadingWait(loder);
-         TestListener.saveScreenshotPNG(driver);
-     }
+        WaitActions.getWaits().loadingWait(loder);
+        TestListener.saveScreenshotPNG(driver);
+    }
+
     /**
      * Click on America Breacking System img
      */
     public void clickOnAmericaBreakingSystemImg() throws InterruptedException {
- //       WaitActions.getWaits().waitForElementTobeClickable(img_America_Breacking_system);
+        //       WaitActions.getWaits().waitForElementTobeClickable(img_America_Breacking_system);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(img_America_Breacking_system);
         WebElementActions.getActions().clickElement(img_America_Breacking_system);
 
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
+
     /**
      * click on Air Disc Breaks + icon
      */
-     public void clickOnAirDiscBreaksPlusIcon() throws InterruptedException {
-          Thread.sleep(3000);
+    public void clickOnAirDiscBreaksPlusIcon() throws InterruptedException {
+        Thread.sleep(3000);
 //         WaitActions.getWaits().waitForElementTobeClickable(icon_Plus_airDiscBreaks);
-         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(icon_Plus_airDiscBreaks);
-         WebElementActions.getActions().clickElement(icon_Plus_airDiscBreaks);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(icon_Plus_airDiscBreaks);
+        WebElementActions.getActions().clickElement(icon_Plus_airDiscBreaks);
 
-         WaitActions.getWaits().loadingWait(loder);
-         TestListener.saveScreenshotPNG(driver);
+        WaitActions.getWaits().loadingWait(loder);
+        TestListener.saveScreenshotPNG(driver);
 
 //         WaitActions.getWaits().WaitUntilWebElementIsVisible(label_airDiscBreakes);
 //         Assert.assertTrue(label_airDiscBreakes.isDisplayed());
-     }
+    }
+
     /**
      * Type - External Notes
      */
-      public void typeExternalNotes() throws InterruptedException {
-//          Thread.sleep(2000);
-//          WaitActions.getWaits().waitForElementTobeClickable(note_ExternalNote_ServiceProgram);
-          WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(note_ExternalNote_ServiceProgram);
-          WebElementActions.getActions().inputText(note_ExternalNote_ServiceProgram,prop.getProperty("notes") );
+    public void typeExternalNotes() throws InterruptedException {
+        if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU")) {
 
-          TestListener.saveScreenshotPNG(driver);
-      }
+
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(note_ExternalNote_ServiceProgram);
+            WebElementActions.getActions().inputText(note_ExternalNote_ServiceProgram, appProp.getProperty("notes"));
+
+            TestListener.saveScreenshotPNG(driver);
+        }
+    }
+
     /**
      * click on Add button
      */
-      public void clickOnAddButton() throws InterruptedException {
+    public void clickOnAddButton() throws InterruptedException {
 //          Thread.sleep(2000);
 //          WaitActions.getWaits().waitForElementTobeClickable(btn_add);
-          WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_add);
-          WebElementActions.getActions().clickElement(btn_add);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_add);
+        WebElementActions.getActions().clickElement(btn_add);
 
-          WaitActions.getWaits().loadingWait(loder);
-          TestListener.saveScreenshotPNG(driver);
-      }
+        WaitActions.getWaits().loadingWait(loder);
+        TestListener.saveScreenshotPNG(driver);
+    }
+
     /**
      * click on cross icon
      */
@@ -720,147 +738,148 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
+
     /**
      * click on Delete Icon
      */
-     public void clickOnDeleteIcon() throws InterruptedException {
+    public void clickOnDeleteIcon() throws InterruptedException {
 //        Thread.sleep(2000);
 //         try {
 //             WaitActions.getWaits().waitForElementTobeClickable(icon_delete1);
-         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(icon_delete1);
-             WebElementActions.getActions().clickElement(icon_delete1);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(icon_delete1);
+        WebElementActions.getActions().clickElement(icon_delete1);
  /*        }
          catch(Throwable e)
          {
              e.printStackTrace();
          }   */
-         WaitActions.getWaits().loadingWait(loder);
-         TestListener.saveScreenshotPNG(driver);
-     }
+        WaitActions.getWaits().loadingWait(loder);
+        TestListener.saveScreenshotPNG(driver);
+    }
+
     /**
      * verify message No Data To Display
      */
-      public void nodataToDisplay() throws InterruptedException {
+    public void nodataToDisplay() throws InterruptedException {
 //          WaitActions.getWaits().WaitUntilWebElementIsVisible(noDataToDisplay1);
 //          Thread.sleep(2000);
-          WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(noDataToDisplay1);
-          Assert.assertTrue(noDataToDisplay1.isDisplayed());
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(noDataToDisplay1);
+        Assert.assertTrue(noDataToDisplay1.isDisplayed());
 
-          TestListener.saveScreenshotPNG(driver);
-      }
+        TestListener.saveScreenshotPNG(driver);
+    }
+
     /**
      * click on  Accessories Group img (VMRS)
      */
-      public void clickOnAccessoriesImgVMRS() throws InterruptedException {
+    public void clickOnAccessoriesImgVMRS() throws InterruptedException {
 //          Thread.sleep(2000);
 //          WaitActions.getWaits().waitForElementTobeClickable(VMRS_accessoriesImg);
-          WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(VMRS_accessoriesImg);
-          WebElementActions.getActions().clickElement(VMRS_accessoriesImg);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(VMRS_accessoriesImg);
+        WebElementActions.getActions().clickElement(VMRS_accessoriesImg);
 
-          TestListener.saveScreenshotPNG(driver);
-      }
+        TestListener.saveScreenshotPNG(driver);
+    }
+
     /**
      * click on Plus icon Accessories group VMRS
      */
-      public void clickOnPlusIconVMRS() throws InterruptedException {
-          Thread.sleep(2000);
+    public void clickOnPlusIconVMRS() throws InterruptedException {
+        Thread.sleep(2000);
 //          WaitActions.getWaits().waitForElementTobeClickable(plusicon_vmrs_accessories);
-          WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(plusicon_vmrs_accessories);
-          WebElementActions.getActions().clickElement(plusicon_vmrs_accessories);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(plusicon_vmrs_accessories);
+        WebElementActions.getActions().clickElement(plusicon_vmrs_accessories);
 
-          WaitActions.getWaits().loadingWait(loder);
-          TestListener.saveScreenshotPNG(driver);
-      }
+        WaitActions.getWaits().loadingWait(loder);
+        TestListener.saveScreenshotPNG(driver);
+    }
+
     /**
      * Verify element present on VMRS Tab
      */
-      public void verifyVMRSElement() throws InterruptedException {
- //         WaitActions.getWaits().WaitUntilWebElementIsVisible(label_VMRSName);
-          WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_VMRSName);
-          Assert.assertTrue(label_VMRSName.isDisplayed());
-          Assert.assertTrue(label_cause_Reason.isDisplayed());
-          Assert.assertTrue(label_unscheduleService.isDisplayed());
-          Assert.assertTrue(label_task.isDisplayed());
-          Assert.assertTrue(label_risk.isDisplayed());
+    public void verifyVMRSElement() throws InterruptedException {
+        //         WaitActions.getWaits().WaitUntilWebElementIsVisible(label_VMRSName);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_VMRSName);
+        Assert.assertTrue(label_VMRSName.isDisplayed());
+        Assert.assertTrue(label_cause_Reason.isDisplayed());
+        Assert.assertTrue(label_unscheduleService.isDisplayed());
+        Assert.assertTrue(label_task.isDisplayed());
+        Assert.assertTrue(label_risk.isDisplayed());
 
-          TestListener.saveScreenshotPNG(driver);
-      }
+        TestListener.saveScreenshotPNG(driver);
+    }
+
     /**
      * click on Remove icon of Unschedule service
      */
-      public void clickOnCrossIconUnschedule() throws InterruptedException {
-//          Thread.sleep(2000);
-//          WaitActions.getWaits().waitForElementTobeClickable(crossIcon_unscheduleService);
-          WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(crossIcon_unscheduleService);
-          WebElementActions.getActions().clickElement(crossIcon_unscheduleService);
+    public void clickOnCrossIconUnschedule() throws InterruptedException {
 
-          WaitActions.getWaits().loadingWait(loder);
-          TestListener.saveScreenshotPNG(driver);
-      }
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(crossIcon_unscheduleService);
+        WebElementActions.getActions().clickElement(crossIcon_unscheduleService);
+
+        WaitActions.getWaits().loadingWait(loder);
+        TestListener.saveScreenshotPNG(driver);
+    }
+
     /**
      * click on Selected Reason
      */
-      public void clickOnSelectedReason() throws InterruptedException {
-//          Thread.sleep(2000);
-//          WaitActions.getWaits().waitForElementTobeClickable(hyperlink_selectReason);
-          WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(hyperlink_selectReason);
-          WebElementActions.getActions().clickElement(hyperlink_selectReason);
+    public void clickOnSelectedReason() throws InterruptedException {
 
-          WaitActions.getWaits().loadingWait(loder);
-          TestListener.saveScreenshotPNG(driver);
-      }
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(hyperlink_selectReason);
+        WebElementActions.getActions().clickElement(hyperlink_selectReason);
+
+        WaitActions.getWaits().loadingWait(loder);
+        TestListener.saveScreenshotPNG(driver);
+    }
+
     /**
      * click on select button of Accident
      */
     public void clickOnSelectButtonAccident() throws InterruptedException {
-//        Thread.sleep(2000);
-//        WaitActions.getWaits().waitForElementTobeClickable(btn_select);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_select);
         WebElementActions.getActions().clickElement(btn_select);
 
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
+
     /**
      * click on Task Hyperlink
      */
     public void clickOnTaskHyperlink() throws InterruptedException {
- //       Thread.sleep(2000);
- //       WaitActions.getWaits().waitForElementTobeClickable(task_hyperlink);
- //       Thread.sleep(2000);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(task_hyperlink);
         WebElementActions.getActions().clickElement(task_hyperlink);
 
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
+
     /**
      * click on select button (open after task)
      */
-     public void clickOnTaskSelectButton() throws InterruptedException {
-//         Thread.sleep(2000);
-//         WaitActions.getWaits().waitForElementTobeClickable(btn_select1);
-         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_select1);
-         WebElementActions.getActions().clickElement(btn_select1);
+    public void clickOnTaskSelectButton() throws InterruptedException {
 
-         WaitActions.getWaits().loadingWait(loder);
-         TestListener.saveScreenshotPNG(driver);
-     }
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_select1);
+        WebElementActions.getActions().clickElement(btn_select1);
+
+        WaitActions.getWaits().loadingWait(loder);
+        TestListener.saveScreenshotPNG(driver);
+    }
+
     /**
      * click on Add button
      */
     public void clickOnAddButtonVmrs() throws InterruptedException {
 
- //       Thread.sleep(2000);
-//        WaitActions.getWaits().waitForElementTobeClickable(okBtn);   //extra pop up generated
-//        WebElementActions.getActions().clickElement(okBtn);
 
-//        WaitActions.getWaits().waitForElementTobeClickable(workRequird_add_btn);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(workRequird_add_btn);
         WebElementActions.getActions().clickElement(workRequird_add_btn);
 
-        if(okBtn.isDisplayed()) {
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(okBtn);   //extra pop up generated
+        if (okBtn.isDisplayed()) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(okBtn);   //extra pop up generated
             WebElementActions.getActions().clickElement(okBtn);
         }
 
@@ -868,50 +887,51 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
+
     /**
      * click on Add Parts
      */
-     public void clickOnAddParts() throws InterruptedException {
+    public void clickOnAddParts() throws InterruptedException {
 //         try {
 //             WaitActions.getWaits().waitForElementTobeClickable(btn_addParts);
-         Thread.sleep(2000);
-         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_addParts);
-             WebElementActions.getActions().clickElement(btn_addParts);
+        Thread.sleep(2000);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_addParts);
+        WebElementActions.getActions().clickElement(btn_addParts);
   /*        }
         catch(Throwable e)
          {
              e.printStackTrace();
          }   */
 
-         WaitActions.getWaits().loadingWait(loder);
-         TestListener.saveScreenshotPNG(driver);
-     }
+        WaitActions.getWaits().loadingWait(loder);
+        TestListener.saveScreenshotPNG(driver);
+    }
+
     /**
      * Send Part number
      */
     public void sendPartNumber() throws InterruptedException {
 
-//            Thread.sleep(10000);
-//            WaitActions.getWaits().waitForElementTobeClickable(txt_parts_AirdiscBrakes);
-     //       txt_parts_AirdiscBrakes.sendKeys(prop.getProperty("partNumber"));
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_parts_AirdiscBrakes);
-            WebElementActions.getActions().inputText(txt_parts_AirdiscBrakes,prop.getProperty("partNumber"));
-  //          Thread.sleep(2000);
- //       WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(autoList);
+        if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU")) {
+
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_parts_AirdiscBrakes);
+            WebElementActions.getActions().inputText(txt_parts_AirdiscBrakes, appProp.getProperty("partNumber"));
+
             WebElementActions.getActions().clickElement(autoList);
             Thread.sleep(2000);
             txt_parts_AirdiscBrakes.clear();
             Thread.sleep(5000);
 
-            WebElementActions.getActions().inputText(txt_parts_AirdiscBrakes, prop.getProperty("partNumber"));
+            WebElementActions.getActions().inputText(txt_parts_AirdiscBrakes, appProp.getProperty("partNumber"));
             Thread.sleep(3000);
             WebElementActions.getActions().clickElement(autoList);
 
             Thread.sleep(1000);
-            WebElementActions.getActions().inputText(txt_quantity, prop.getProperty("quantity"));
+            WebElementActions.getActions().inputText(txt_quantity, appProp.getProperty("quantity"));
 
             TestListener.saveScreenshotPNG(driver);
 
+        }
     }
 
     /**
@@ -919,104 +939,106 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
      * Verify the quantity no 2
      */
     public void clickOnAddPArt2() throws InterruptedException {
-//        Thread.sleep(2000);
-//        WaitActions.getWaits().waitForElementTobeClickable( btn_addParts_AddParts);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_addParts_AddParts);
-        WebElementActions.getActions().clickElement( btn_addParts_AddParts);
+        WebElementActions.getActions().clickElement(btn_addParts_AddParts);
         Thread.sleep(2000);
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(verify_2);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(verify_2);
         Assert.assertTrue(verify_2.isDisplayed());
 
         TestListener.saveScreenshotPNG(driver);
     }
+
     /**
      * click on close button
      */
-     public void clickOnCloseButton() throws InterruptedException {
-//         Thread.sleep(2000);
-//         WaitActions.getWaits().waitForElementTobeClickable(btn_close);
-         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_close);
-         WebElementActions.getActions().clickElement(btn_close);
+    public void clickOnCloseButton() throws InterruptedException {
 
-         WaitActions.getWaits().loadingWait(loder);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_close);
+        WebElementActions.getActions().clickElement(btn_close);
 
-//         WaitActions.getWaits().WaitUntilWebElementIsVisible(label_partNumber);
-         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_partNumber);
-         Assert.assertTrue(label_partNumber.isDisplayed());
+        WaitActions.getWaits().loadingWait(loder);
 
-         TestListener.saveScreenshotPNG(driver);
-     }
+
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_partNumber);
+        Assert.assertTrue(label_partNumber.isDisplayed());
+
+        TestListener.saveScreenshotPNG(driver);
+    }
+
     /**
      * click on Accessories Group IMG
      */
-      public void clickOnAccessoriesGrpIMG() throws InterruptedException {
-//          Thread.sleep(2000);
-//          WaitActions.getWaits().waitForElementTobeClickable( Img_Accessories_Grp);
-          WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(Img_Accessories_Grp);
-          WebElementActions.getActions().clickElement( Img_Accessories_Grp);
+    public void clickOnAccessoriesGrpIMG() throws InterruptedException {
 
-          WaitActions.getWaits().loadingWait(loder);
-          TestListener.saveScreenshotPNG(driver);
-      }
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(Img_Accessories_Grp);
+        WebElementActions.getActions().clickElement(Img_Accessories_Grp);
+
+        WaitActions.getWaits().loadingWait(loder);
+        TestListener.saveScreenshotPNG(driver);
+    }
+
     /**
      * click on Non-Catalog Part
      */
     public void clickOnNonCatalogPart() throws InterruptedException {
-//        Thread.sleep(2000);
-//        WaitActions.getWaits().waitForElementTobeClickable(btn_nonCatalogPart);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_nonCatalogPart);
         WebElementActions.getActions().clickElement(btn_nonCatalogPart);
 
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
+
     /**
-     *  Type NCPpartNumber
+     * Type NCPpartNumber
      */
     public void typeNCPpartNumber() throws InterruptedException {
-//        Thread.sleep(2000);
-//        WaitActions.getWaits().waitForElementTobeClickable(txt_partNumber);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_partNumber);
-       String NCPpartNumber= WebElementActions.getActions().randomAlphaNumeric(10);
-       WebElementActions.getActions().inputText(txt_partNumber,NCPpartNumber);
+        String NCPpartNumber = WebElementActions.getActions().randomAlphaNumeric(10);
+        WebElementActions.getActions().inputText(txt_partNumber, NCPpartNumber);
 
         TestListener.saveScreenshotPNG(driver);
     }
+
     /**
      * Type description
      */
     public void typeDescription() throws InterruptedException {
-//        Thread.sleep(2000);
-//        WaitActions.getWaits().waitForElementTobeClickable(txt_description);
+        if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU")) {
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_description);
-        WebElementActions.getActions().inputText(txt_description,prop.getProperty("ncpPartDescription"));
+        WebElementActions.getActions().inputText(txt_description, appProp.getProperty("ncpPartDescription"));
 
         TestListener.saveScreenshotPNG(driver);
     }
+
+}
     /**
      * Type Unit Cost
      */
     public void typeUnitCost() throws InterruptedException {
-//        Thread.sleep(2000);
-//        WaitActions.getWaits().waitForElementTobeClickable(txt_unitCost);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_unitCost);
-        WebElementActions.getActions().inputText(txt_unitCost,prop.getProperty("unitCost"));
+        if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU")) {
 
-        TestListener.saveScreenshotPNG(driver);
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_unitCost);
+            WebElementActions.getActions().inputText(txt_unitCost, appProp.getProperty("unitCost"));
+
+            TestListener.saveScreenshotPNG(driver);
+        }
     }
     /**
      * click on Add Part
      */
     public void clickOnAddPartNCP() throws InterruptedException {
-//        Thread.sleep(2000);
-//        WaitActions.getWaits().waitForElementTobeClickable(btn_addpart_NCP);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_addpart_NCP);
         WebElementActions.getActions().clickElement(btn_addpart_NCP);
 
         WaitActions.getWaits().loadingWait(loder);
 
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_description_NCP_part);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_description_NCP_part);
         Assert.assertTrue(txt_description_NCP_part.isDisplayed());
 
@@ -1027,27 +1049,15 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
      * click on close button
      */
     public void clickOnCloseBtnAddParts() throws InterruptedException {
-//        try {
-//            WaitActions.getWaits().waitForElementTobeClickable(btn_close_addpart);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_close_addpart);
-            WebElementActions.getActions().clickElement(btn_close_addpart);
- /*       }
-        catch(Throwable e)
-        {
-            e.printStackTrace();
-        }  */
+        WebElementActions.getActions().clickElement(btn_close_addpart);
 
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
-    /**
-     * click On VMRS name
-     * verify text NCPpartNumber
-     * verify text NCPpart Description
-     */
     public void verifyVMRSname() throws InterruptedException {
-//        Thread.sleep(2000);
-//        WaitActions.getWaits().waitForElementTobeClickable(hyperlink_NMC_number);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(hyperlink_NMC_number);
         WebElementActions.getActions().clickElement(hyperlink_NMC_number);
 
@@ -1062,11 +1072,10 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
      * Extra Step - Click on save/Exit button
      */
     public void clickOnSaveandExitBtn() throws InterruptedException {
- //       WaitActions.getWaits().waitForElementTobeClickable(btn_saveAndExit);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_saveAndExit);
         WebElementActions.getActions().clickElement(btn_saveAndExit);
 
- //       WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
     /**
@@ -1074,20 +1083,19 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
      * click on core return button
      */
      public void sendCorePart() throws InterruptedException {
-//         Thread.sleep(3000);
-//         WaitActions.getWaits().waitForElementTobeClickable(txt_parts_AirdiscBrakes);
-         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_parts_AirdiscBrakes);
-         txt_parts_AirdiscBrakes.sendKeys(prop.getProperty("CorePart"));
-         Thread.sleep(2000);
-         WebElementActions.getActions().clickElement(autoList);
-         Thread.sleep(2000);
+         if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU")) {
+             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_parts_AirdiscBrakes);
+             txt_parts_AirdiscBrakes.sendKeys(appProp.getProperty("CorePart"));
+             Thread.sleep(2000);
+             WebElementActions.getActions().clickElement(autoList);
+             Thread.sleep(2000);
 
-         Assert.assertTrue(btn_coreReturn.isDisplayed());
- //        WaitActions.getWaits().waitForElementTobeClickable(btn_coreReturn);
-         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_coreReturn);
-         WebElementActions.getActions().clickElement(btn_coreReturn);
+             Assert.assertTrue(btn_coreReturn.isDisplayed());
+             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_coreReturn);
+             WebElementActions.getActions().clickElement(btn_coreReturn);
 
-         TestListener.saveScreenshotPNG(driver);
+             TestListener.saveScreenshotPNG(driver);
+         }
      }
     /**
      * Delete cross icon of part
@@ -1151,12 +1159,4 @@ public class SubmitAnEstimate_ServiceManagerPage extends TestDriverActions {
 
 
 
-
-
-
-
-
-////ul[@class='AFAutoSuggestItemsContainer']/li[1]
-
-//(//tboli)[1]dy/tr/td/ul/
 }

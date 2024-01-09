@@ -1,10 +1,13 @@
 package pages.parts;
 
+import actions.LoginActions;
 import actions.ReusableActions;
 import actions.WaitActions;
 import actions.WebElementActions;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import tests.TestDriverActions;
 import utils.TestListener;
@@ -45,6 +48,9 @@ public class CreatePart extends TestDriverActions {
     @FindBy(xpath = "(//label[text()='Description:']/following::input)[1]")
     WebElement txt_description;
 
+    @FindBy(xpath = "//input[contains(@id,':0:it2::content')]")
+    public WebElement label_DescriptionTextArea;
+
     @FindBy(xpath = "//div[text()='New Part']/following::span[9]")
     WebElement asterisk_stockingUOM;
 
@@ -68,6 +74,13 @@ public class CreatePart extends TestDriverActions {
 
     @FindBy(xpath = "(//label[text()='Product Group:'])[1]/following::select[1]")
     WebElement dropdwn_productGroup;
+
+    @FindBy(xpath = "//select[contains(@id,'soc2::content')]")
+    public WebElement label_ProductGroupTextArea;
+
+
+    @FindBy(xpath = "//span[contains(.,'Create Part')]")
+    public WebElement label_CreatePart;
 
     @FindBy(xpath = "(//label[text()='Product Group:'])[1]/following::span[3]")
     WebElement asterisk_cost;
@@ -108,7 +121,7 @@ public class CreatePart extends TestDriverActions {
     @FindBy(xpath = "(//label[text()='GL Account Group:'])[1]")
     WebElement label_GLaccountGroup;
 
-    @FindBy(xpath = "(//label[text()='GL Account Group:'])[1]/following::select")
+    @FindBy(xpath = "(//label[text()='GL Account Group:'])[1]/following::select[1]")
     WebElement dropdwn_GlaccountGrp;
 
     @FindBy(xpath = "(//label[text()='Vendor:'])[1]")
@@ -220,6 +233,12 @@ public class CreatePart extends TestDriverActions {
     @FindBy(xpath = "(//span[text()='Create Part'])[1]")
     WebElement btn_createPart;
 
+    @FindBy(xpath = "//span[contains(.,'Create')]")
+    public WebElement btn_createpart1;
+
+    @FindBy(xpath = "//input[contains(@id,':0:it10::content')]")
+    public WebElement label_MaxTextArea;
+
     @FindBy(xpath = "//label[text()='Search:']/following::input[1]")
     WebElement txt_search;
 
@@ -266,6 +285,7 @@ public class CreatePart extends TestDriverActions {
 
 
     public static void gotoPartMaster() throws FileNotFoundException, InterruptedException {
+
         ReusableActions.getActions().clickParentMenu("Parts");
         ReusableActions.getActions().clickChildMenu("Part Master");
 
@@ -374,7 +394,8 @@ public class CreatePart extends TestDriverActions {
         Assert.assertTrue(label_max.isDisplayed());
         Assert.assertTrue(txt_max.isDisplayed());
         Assert.assertTrue(btn_cancle.isDisplayed());
-        Assert.assertTrue(btn_createPart.isDisplayed());
+        WebElementActions.getActions().moveOnTargetElement(btn_createpart1);
+        Assert.assertTrue(btn_createpart1.isDisplayed());
 
          TestListener.saveScreenshotPNG(driver);
 
@@ -401,9 +422,9 @@ public class CreatePart extends TestDriverActions {
      * enter cost
      */
     public void enterCost() throws InterruptedException {
-//        WaitActions.getWaits().waitForElementTobeClickable(txt_cost);
+   //   if(LoginActions.environmentName.contains("QA")||LoginActions.environmentName.contains("EU"))
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_cost);
-        WebElementActions.getActions().inputText(txt_cost,prop.getProperty("cost"));
+        WebElementActions.getActions().inputText(txt_cost,appProp.getProperty("cost"));
       //  WebElementActions.getActions().inputText(txt_cost,"5");
 
         TestListener.saveScreenshotPNG(driver);
@@ -414,56 +435,69 @@ public class CreatePart extends TestDriverActions {
      * enter description
      */
     public void enterDescription() throws InterruptedException {
-//        WaitActions.getWaits().waitForElementTobeClickable( txt_description);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_description);
-        WebElementActions.getActions().inputText(txt_description,prop.getProperty("Partdescription"));
+       // if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_description);
+            WebElementActions.getActions().inputText(txt_description, appProp.getProperty("Partdescription"));
+            TestListener.saveScreenshotPNG(driver);
 
-        TestListener.saveScreenshotPNG(driver);
-    }
+        }
+  //  }
 
-    /**
-     * enter product group
-     */
+    /**enter product group*/
     public void enterProductGroup() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(dropdwn_productGroup);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(dropdwn_productGroup);
-        WebElementActions.getActions().elementSelectByVisibilityText(dropdwn_productGroup,prop.getProperty("productGroup"));
+       // if (LoginActions.environmentName.contains("QA")||LoginActions.environmentName.contains("EU")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(dropdwn_productGroup);
+            WebElementActions.getActions().elementSelectByVisibilityText(dropdwn_productGroup, appProp.getProperty("productGroup"));
+            Thread.sleep(3000);
+            WaitActions.getWaits().loadingWait(loder);
+            TestListener.saveScreenshotPNG(driver);
 
-        TestListener.saveScreenshotPNG(driver);
-    }
+
+            }
+       // }
+
 
     /**
      * enter GL Account Group
      */
     public void enterGLAccountGroup() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(dropdwn_GlaccountGrp);
+      //  if (LoginActions.environmentName.contains("QA")){
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(dropdwn_GlaccountGrp);
-        WebElementActions.getActions().elementSelectByVisibilityText(dropdwn_GlaccountGrp,prop.getProperty("GLaccountGroup"));
-
+        WebElementActions.getActions().elementSelectByVisibilityText(dropdwn_GlaccountGrp,appProp.getProperty("GLaccountGroup"));
         TestListener.saveScreenshotPNG(driver);
     }
+   // }
 
     /**
      * click on create part
      */
     public void clickOnCreatePart() throws InterruptedException {
-//        WaitActions.getWaits().waitForElementTobeClickable(btn_createPart);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_createPart);
-        WebElementActions.getActions().clickElement(btn_createPart);
 
-        WaitActions.getWaits().loadingWait(loder);
+    //    if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU")) {
 
-        TestListener.saveScreenshotPNG(driver);
-    }
 
+       //   WebElementActions.getActions().moveOnTargetElement(btn_createpart1);
+        //   WebElementActions.getActions().clickElement(btn_createpart1);
+        WebElementActions.getActions().moveOnTargetElement(label_MaxTextArea);
+        Thread.sleep(3000);
+        WebElementActions.getActions().moveOnTargetElement(label_MaxTextArea);
+
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_createpart1);
+           Thread.sleep(7000);
+            WebElementActions.getActions().clickElement(btn_createpart1);
+
+            WaitActions.getWaits().loadingWait(loder);
+
+            TestListener.saveScreenshotPNG(driver);
+        }
+  //  }
     /**
      * enter part number in search field
      */
     public void enterPartNumberInSearchField() throws InterruptedException {
-//        WaitActions.getWaits().waitForElementTobeClickable(txt_search);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_search);
         WebElementActions.getActions().inputText(txt_search,partNumber);
-
         TestListener.saveScreenshotPNG(driver);
     }
 
@@ -484,8 +518,7 @@ public class CreatePart extends TestDriverActions {
      * click on part number Hyperlink
      */
     public void clickOnPartNumberHyperlink() throws InterruptedException {
-//        WaitActions.getWaits().waitForElementTobeClickable(hyperlink_partNumber);
- //       Thread.sleep(2000);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(hyperlink_partNumber);
         WebElementActions.getActions().clickElement(hyperlink_partNumber);
 
@@ -498,8 +531,7 @@ public class CreatePart extends TestDriverActions {
      * click on more Info Button
      */
      public void clickOnMoreInfoButton() throws InterruptedException {
-//         Thread.sleep(2000);
-//         WaitActions.getWaits().waitForElementTobeClickable(btn_moreInfo);
+
          WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_moreInfo);
          WebElementActions.getActions().clickElement(btn_moreInfo);
 
@@ -512,7 +544,7 @@ public class CreatePart extends TestDriverActions {
      * verify part number, description and active checkbox
      */
      public void verifyPartNumberDescriptionCheckbox() throws InterruptedException {
-//         WaitActions.getWaits().WaitUntilWebElementIsVisible(txtfield_part);
+
          WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txtfield_part);
          Assert.assertTrue(txtfield_part.isDisplayed());
          Assert.assertTrue(txtfield_description.isDisplayed());
@@ -525,7 +557,7 @@ public class CreatePart extends TestDriverActions {
      * click on costs and Pricing Tab
      */
      public void clickOnCostAndPricingTab() throws InterruptedException {
-//         WaitActions.getWaits().waitForElementTobeClickable(tab_costsAndPricing);
+
          WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(tab_costsAndPricing);
          WebElementActions.getActions().clickElement(tab_costsAndPricing);
 
@@ -546,14 +578,12 @@ public class CreatePart extends TestDriverActions {
      * Extra step performed - not mentioned in script
      */
       public void clickOKbtnSaveExitBtn() throws InterruptedException {
-//          WaitActions.getWaits().waitForElementTobeClickable(btn_ok);
           WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_ok);
           WebElementActions.getActions().clickElement(btn_ok);
 
           WaitActions.getWaits().loadingWait(loder);
 
- //         WaitActions.getWaits().waitForElementTobeClickable(btn_saveExit);
- //         Thread.sleep(2000);
+
           WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_saveExit);
           WebElementActions.getActions().clickElement(btn_saveExit);
 
@@ -561,41 +591,15 @@ public class CreatePart extends TestDriverActions {
 
       }
 
-    /**
-     * click on signOut button
-     * verift the element userName
-     */
- /*   public void clickOnSignOut() throws InterruptedException {
-        Thread.sleep(2000);
-        WaitActions.getWaits().WaitUntilWebElementIsVisible(sign_out);
-        WaitActions.getWaits().waitForElementTobeClickable(sign_out);
-        Thread.sleep(5000);
-        WebElementActions.getActions().clickElement(sign_out);
-
-        WaitActions.getWaits().WaitUntilWebElementIsVisible(inputbox_Username);
-        Assert.assertTrue(inputbox_Username.isDisplayed());
-
-        TestListener.saveScreenshotPNG(driver);
-    }*/
-
     public void clickOnSignOut() throws InterruptedException {
-//        WaitActions.getWaits().waitForElementTobeClickable(btn_signOut);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_signOut);
         Thread.sleep(3000);
         WebElementActions.getActions().clickUsingJS(btn_signOut);
 
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(inputbox_Username);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(inputbox_Username);
         Assert.assertTrue(inputbox_Username.isDisplayed());
 
         TestListener.saveScreenshotPNG(driver);
     }
-
-
-
-
-
-
-
-
 }

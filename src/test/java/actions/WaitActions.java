@@ -2,10 +2,11 @@ package actions;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.*;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import tests.TestDriverActions;
 
@@ -217,19 +218,6 @@ public class WaitActions extends TestDriverActions {
             e.printStackTrace();
         }
 
-    }
-
-    public void fluentWait(WebElement element, int timeOut) {
-        Wait<WebDriver> wait = null;
-        try {
-            wait = new FluentWait<WebDriver>((WebDriver) driver)
-                    .withTimeout(Duration.ofSeconds(30))
-                    .pollingEvery(Duration.ofSeconds(2))
-                    .ignoring(Exception.class);
-            wait.until(ExpectedConditions.visibilityOf(element));
-            element.click();
-        }catch(Exception e) {
-        }
     }
 
 

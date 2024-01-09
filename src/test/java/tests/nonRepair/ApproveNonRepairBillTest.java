@@ -1,4 +1,4 @@
-package tests.nonrepair;
+package tests.nonRepair;
 
 import io.qameta.allure.Description;
 import org.testng.annotations.Test;

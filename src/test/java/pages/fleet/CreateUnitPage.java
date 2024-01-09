@@ -1,5 +1,6 @@
 package pages.fleet;
 
+import actions.LoginActions;
 import actions.ReusableActions;
 import actions.WaitActions;
 import actions.WebElementActions;
@@ -29,6 +30,15 @@ public class CreateUnitPage extends TestDriverActions {
     public WebElement txt_description;
     @FindBy(xpath = "(//label[contains(text(),'VIN')]//following::div//input)[1]")
     public WebElement txt_VIN;
+
+    @FindBy(xpath = "//input[contains(@id,'it3::content')]")
+    public WebElement label_YearTextArea;
+
+    @FindBy(xpath = "(//a[contains(@id,'cilH')]/img)[1]")
+    public WebElement label_SearchImgOne;
+
+    @FindBy(xpath = "(//span[text()='Select'])[1]")
+    public WebElement btn_SelectButton;
 
     @FindBy(xpath="//label[contains(text(),'Owner:')]/preceding-sibling::span")
     public WebElement label_owner_asterisk;
@@ -213,15 +223,15 @@ public class CreateUnitPage extends TestDriverActions {
      * Search by owner
      */
     public void searchOwner() throws InterruptedException {
+        if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_search);
+            WebElementActions.getActions().inputText(txt_search, appProp.getProperty("Owner"));
+            Assert.assertTrue(txt_search.isDisplayed());
 
-       // WaitActions.getWaits().waitForElementTobeClickable(txt_search);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_search);
-        WebElementActions.getActions().inputText(txt_search, prop.getProperty("Owner"));
-        Assert.assertTrue(txt_search.isDisplayed());
+            WaitActions.getWaits().loadingWait(loder);
 
-        WaitActions.getWaits().loadingWait(loder);
-
-        TestListener.saveScreenshotPNG(driver);
+            TestListener.saveScreenshotPNG(driver);
+        }
     }
 
     /**
@@ -331,10 +341,11 @@ public class CreateUnitPage extends TestDriverActions {
      * Enter Description
      */
     public void enterDescription() throws InterruptedException {
-      //  WaitActions.getWaits().waitForElementTobeClickable(txt_description);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_description);
-        WebElementActions.getActions().inputText(txt_description, prop.getProperty("description"));
-        TestListener.saveScreenshotPNG(driver);
+        if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_description);
+            WebElementActions.getActions().inputText(txt_description, appProp.getProperty("description"));
+            TestListener.saveScreenshotPNG(driver);
+        }
     }
 
     /**
@@ -347,11 +358,34 @@ public class CreateUnitPage extends TestDriverActions {
         TestListener.saveScreenshotPNG(driver);
     }
 
+    /**type Year*/
+    public void typeYear () throws InterruptedException {
+        if (LoginActions.environmentName.contains("EU")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_YearTextArea);
+            WebElementActions.getActions().inputText(label_YearTextArea, appProp.getProperty("year"));
+
+        }
+    }
+    /**Click On SearchImage */
+    public void clickOnSearchImage () throws InterruptedException {
+        if (LoginActions.environmentName.contains("EU")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_SearchImgOne);
+            WebElementActions.getActions().clickElement(label_SearchImgOne);
+        }
+    }
+    /**click OnSelect Button */
+    public void clickOnSelectButton () throws InterruptedException {
+        if (LoginActions.environmentName.contains("EU")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_SelectButton);
+            WebElementActions.getActions().clickElement(btn_SelectButton);
+        }
+    }
+
     /**
      * click on save and exit button
      */
     public void clickOnSaveAndExit() throws InterruptedException {
-       // WaitActions.getWaits().waitForElementTobeClickable(btn_saveAndExit);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_saveAndExit);
         WebElementActions.getActions().clickElement(btn_saveAndExit);
 

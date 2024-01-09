@@ -1,0 +1,7 @@
+#surefire_0
+#Tue Jan 09 12:34:27 IST 2024
+basedir=F\:\\GithubFinal\\Emdecs_Test_Automation
+test=tests.parts.CreatePart
+user.dir=F\:\\GithubFinal\\Emdecs_Test_Automation
+env=EU
+localRepository=C\:\\Users\\pc9-q\\.m2\\repository

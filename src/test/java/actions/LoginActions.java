@@ -14,7 +14,8 @@ import java.net.URI;
 import java.util.Properties;
 
 public class LoginActions extends TestDriverActions {
-    public static String environmentName = System.getProperty("env", "QA");
+
+    public static String environmentName = System.getProperty("env","QA");
 
     public String getAppUrl() throws IOException {
 

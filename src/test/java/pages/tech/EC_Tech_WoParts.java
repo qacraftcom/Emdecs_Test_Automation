@@ -1,7 +1,9 @@
 package pages.tech;
 
+import actions.LoginActions;
 import actions.WaitActions;
 import actions.WebElementActions;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
@@ -9,8 +11,10 @@ import tests.TestDriverActions;
 import utils.TestListener;
 
 import java.util.List;
+import java.util.Random;
 
 public class EC_Tech_WoParts extends TestDriverActions {
+    Random randomGenerator = new Random();
 
     @FindBy(xpath = "//span[text()='Scan Employee Badge']/following::input[1]")
     public WebElement TechBadge;
@@ -30,7 +34,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "//label[text()='Part #:']")
     public WebElement label_part_hash;
 
-    @FindBy(xpath = "//label[text()='Part #:']/following::input[1]")
+    @FindBy(xpath = "//label[contains(.,'Part #:')]/following::input[1]")
     public WebElement txt_part;
 
     @FindBy(xpath = "//label[text()='Part #:']/following::a[1]/img")
@@ -105,8 +109,16 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "//span[text()='Bin Number']")
     WebElement label_BinNumber;
 
-    @FindBy(xpath = "//span[text()='Issue Part']")
+
+    @FindBy(xpath = "//div[contains(@id,':1:cbIssuePar')]/a/span")
     WebElement btn_IssuePart;
+
+    @FindBy(xpath = "//div[contains(@id,':0:cbIssuePart')]/a/span")
+    public  WebElement label_IssuePart;
+
+    @FindBy(xpath = "//div[contains(@id,':risspar:3:cbIssuePart')]/a/span")
+    WebElement txt_IssuePart;
+
 
     @FindBy(xpath = "//span[text()='Total Charge']/following::td[3]")
     WebElement label_partDescription1;
@@ -117,16 +129,24 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "//span[text()='Total Charge']/following::span[7]/a")
     WebElement EA1;
 
-    @FindBy(xpath = "//span[text()='Total Charge']/following::a[9]/img")
+    @FindBy(xpath = "//a[contains(@id,':1:tWAP:1:cRTWAP1')]//img")
     WebElement crossIcon;
+
+    @FindBy(xpath = "//img[contains(@id,':cRTWAP1::icon')]")
+    public WebElement img_CrossIcon;
+
+    @FindBy(xpath = "//a[contains(@id,':1:tWAP:3:cRTWAP1')]//img")
+    public WebElement label_CrossIcon;
 
     @FindBy(xpath = "//span[text()='Non-Catalog Part']/following::td[2]/a/img")
     WebElement DeleteIcon;
 
+    @FindBy(xpath = "//img[contains(@id,':0:cilWAP::icon')]")
+    public WebElement label_DeleteICon;
     @FindBy(xpath = "(//span[text()='Cancel'])[2]")
     WebElement btn_cancle;
 
-    @FindBy(xpath = "//span[text()='Core Return']")
+    @FindBy(xpath = "//div[contains(@id,':risspar:1:cbIssuePart')]//a//span")
     WebElement btn_coreReturn;
 
     @FindBy(xpath = "//span[text()='Non-Catalog Part']")
@@ -140,6 +160,9 @@ public class EC_Tech_WoParts extends TestDriverActions {
 
     @FindBy(xpath = "(//label[text()='Part#:'])[1]/following::input[1]")
     WebElement txtfield_part;
+
+    @FindBy(xpath = "//input[contains(@id,':itItemasCode::content')]")
+    public WebElement label_PartTextArea;
 
     @FindBy(xpath = "(//label[text()='Description:'])[1]")
     WebElement label_description1;
@@ -161,7 +184,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "//label[text()='Unit Cost:']/following::input[1]")
     WebElement txtfield_UnitCost;
 
-   @FindBy(xpath = "//div[contains(@id,'cbCancel')]")
+   @FindBy(xpath = "(//span[text()='Cancel'])[2]")
     WebElement cancle;
 
     @FindBy(xpath = "(//span[text()='Issue Part'])[2]")
@@ -179,7 +202,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "//span[text()='Total Charge']/following::a[4]")
     WebElement EA1_2;
 
-   @FindBy(xpath = "(//a[text()='Labour'])[1]")
+   @FindBy(xpath = "(//a[contains(.,'Lab')])[1]")
     WebElement btn_Labour;
 
     @FindBy(xpath = "//span[text()='Start']/following::a[2]")
@@ -267,7 +290,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "//input[@name='username']")
     public WebElement inputbox_Username;
 
-    @FindBy(xpath = "//span[text()='Total Charge']/following::a[7]/img")
+    @FindBy(xpath = "//a[contains(@id,':cRTWAP1')]/img")
     WebElement crossIcon_core;
 
     @FindBy(xpath = "//span[text()='Non-Catalog Part']/following::td[2]/a/img")
@@ -279,7 +302,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "//span[text()='Pause']")
     WebElement pause;
 
-    @FindBy(xpath = "//span[text()='Moises Olivas']/following::a[2]/span")
+    @FindBy(xpath = "//div[contains(@id,'ctbUnd')]")
     WebElement pause_unpause;
 
 
@@ -304,10 +327,10 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "//span[text()='Search']")
     WebElement search_btn;
 
-    @FindBy(xpath = "//div[contains(@id,'rSPS:3:r6:7:s1:ctbClose')]")
+    @FindBy(xpath = "(//span[text()='Cancel'])[1]")
     WebElement cancle_btn;
 
-    @FindBy(xpath = "//div[contains(@id,'cbSelectCus')]/a/span")
+    @FindBy(xpath = "(//span[text()='Select'])[2]")
     WebElement select_button;
 
 //new added element
@@ -318,8 +341,11 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "(//span[text()='OK'])[2]")
     WebElement OK_btn;
 
-    @FindBy(xpath = "//a[contains(@id,'clPopupWoact')]")
+    @FindBy(xpath = "(//a[text()='Accessories Group'])[1]")
     WebElement VMRSName_Accessories;
+
+    @FindBy(xpath = "(//span[text()='Aerodynamic Devices'])[2]")
+    public WebElement VMRSName_AerodynamicDevices1;
 
     @FindBy(xpath="//a[contains(@id,'clPopupWoact')]")
     List<WebElement> VMRSName;
@@ -327,7 +353,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
 //    @FindBy(xpath = "//a[text()='Aerodynamic Devices']")   //(//a[text()='Aerodynamic Devices'])[1]
 //    List<WebElement> FirstWorkRequired;
 
-    @FindBy(xpath = "//a[contains(@id,'clPopupWoact')]")
+    @FindBy(xpath = "(//span[text()='Aerodynamic Devices'])[2]")
     WebElement FirstWorkRequired_AeroDynamic;
 
     @FindBy(xpath = "//label[text()='Cause/Reason:']/following::a[1]")
@@ -336,8 +362,11 @@ public class EC_Tech_WoParts extends TestDriverActions {
     @FindBy(xpath = "//label[text()='Task:']/following::a[1]")
     WebElement task ;
 
-    @FindBy(xpath = "//span[text()='Notes']/following::span[5]")
+    @FindBy(xpath = "//div[contains(@id,':0:cbSelectSerrea')]/a/span")
     WebElement select_cause_Reason;
+
+    @FindBy(xpath = "//div[contains(@id,':0:cbSelectWotas')]/a/span")
+    public WebElement label_select_cause_Reason;
 
     @FindBy(xpath = "(//span[text()='Cancel'])[2]")
     WebElement cancleBtn ;
@@ -375,16 +404,16 @@ public class EC_Tech_WoParts extends TestDriverActions {
      * Enter TechBadge in the textfield
      */
     public void enterTechBadge() throws InterruptedException {
-// WaitActions.getWaits().waitForElementTobeClickable(TechBadge);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(TechBadge);
-        WebElementActions.getActions().inputText(TechBadge,prop.getProperty("TechBadge"));
-        TestListener.saveScreenshotPNG(driver);
+        if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU")) {
+
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(TechBadge);
+            WebElementActions.getActions().inputText(TechBadge, appProp.getProperty("TechBadge"));
+            TestListener.saveScreenshotPNG(driver);
+        }
     }
-    /**
-     * click on Go button
-     */
+    /**click on Go button*/
     public void clickOnGoBtn() throws InterruptedException {
-// WaitActions.getWaits().WaitUntilWebElementIsVisible(go_btn);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(go_btn);
         WebElementActions.getActions().clickElement(go_btn);
 
@@ -418,8 +447,6 @@ public class EC_Tech_WoParts extends TestDriverActions {
 
             WaitActions.getWaits().loadingWait(loder);
         }
-
-// WaitActions.getWaits().waitForElementTobeClickable(tab_moreUnits);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(tab_moreUnits);
         Thread.sleep(4000);
         WebElementActions.getActions().clickElement(tab_moreUnits);
@@ -434,9 +461,11 @@ public class EC_Tech_WoParts extends TestDriverActions {
      * Enter Unit Number(118888)  //span[text()='More Units']
      */
     public void enterUnitNumber() throws InterruptedException {
-
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(SearchUnit);
-        WebElementActions.getActions().inputText(SearchUnit,prop.getProperty("UnitNumber"));
+        if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(SearchUnit);
+            WebElementActions.getActions().inputText(SearchUnit, appProp.getProperty("UnitNumber"));
+            WaitActions.getWaits().loadingWait(loder);
+        }
     }
 
     /**
@@ -444,13 +473,14 @@ public class EC_Tech_WoParts extends TestDriverActions {
      * @throws InterruptedException
      */
     public void clickSelect() throws InterruptedException {
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(select1);
         WebElementActions.getActions().clickElement(select1);
+        WaitActions.getWaits().loadingWait(loder);
     }
 
     public void clickOnUnitNumber() throws InterruptedException {
         Thread.sleep(2000);
-// WaitActions.getWaits().WaitUntilWebElementIsVisible(hyperlink_Unit);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(hyperlink_Unit);
         WebElementActions.getActions().clickElement(hyperlink_Unit);
 
@@ -481,18 +511,17 @@ public class EC_Tech_WoParts extends TestDriverActions {
      * verify parts tab Element (Check the Generic setup of the screen)
      */
     public void verifyElementOfPart() throws InterruptedException {
-// WaitActions.getWaits().WaitUntilWebElementIsVisible(label_Labour);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_Labour);
         Assert.assertTrue(label_Labour.isDisplayed());
-// WaitActions.getWaits().WaitUntilWebElementIsVisible(label_part_hash);
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_part_hash);
         Assert.assertTrue(label_part_hash.isDisplayed());
         Assert.assertTrue(txt_part.isDisplayed());
-// WaitActions.getWaits().WaitUntilWebElementIsVisible(search_icon);
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(search_icon);
         Assert.assertTrue(search_icon.isDisplayed());
         Assert.assertTrue(label_Quantity.isDisplayed());
         Assert.assertTrue(txt_quantity.isDisplayed());
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
@@ -513,68 +542,70 @@ public class EC_Tech_WoParts extends TestDriverActions {
 // Assert.assertTrue(column_attachIcon.isDisplayed());
 // Assert.assertTrue(column_crossIcon.isDisplayed());
 // Assert.assertTrue(label_NodataDisplay.isDisplayed());
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
     /**
      * Enter Part
      */
     public void enterPart() throws InterruptedException {
-// Thread.sleep(3000);
-// WaitActions.getWaits().waitForElementTobeClickable(txt_part);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_part);
-        WebElementActions.getActions().inputText(txt_part,prop.getProperty("PartName"));
 
-        Thread.sleep(3000);
-// WaitActions.getWaits().waitForElementTobeClickable(number_15_762);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(number_15_762);
-        WebElementActions.getActions().clickElement(number_15_762);
-        Thread.sleep(5000);
+        if (LoginActions.environmentName.contains("QA")||LoginActions.environmentName.contains("EU")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_part);
+            WebElementActions.getActions().inputText(txt_part, appProp.getProperty("PartName"));
 
-// WaitActions.getWaits().waitForElementTobeClickable(txt_part);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_part);
-        WebElementActions.getActions().inputText(txt_part,prop.getProperty("PartName"));
-        Thread.sleep(3000);
-        WebElementActions.getActions().inputText(txt_part,prop.getProperty("PartName"));
+            Thread.sleep(3000);
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(number_15_762);
+            WebElementActions.getActions().clickElement(number_15_762);
+            Thread.sleep(7000);
 
-// WaitActions.getWaits().loadingWait(loder);
-        WebElementActions.getActions().clickElement(number_15_762);
 
-        WaitActions.getWaits().loadingWait(loder);
-        TestListener.saveScreenshotPNG(driver);
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_part);
+            WebElementActions.getActions().inputText(txt_part, appProp.getProperty("PartName"));
+            Thread.sleep(4000);
+            WebElementActions.getActions().inputText(txt_part, appProp.getProperty("PartName"));
 
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(number_15_762);
+            WebElementActions.getActions().clickElement(number_15_762);
+
+            WaitActions.getWaits().loadingWait(loder);
+            TestListener.saveScreenshotPNG(driver);
+
+        }
     }
-    /**
-     * Verify Part Details Pannel
-     */
+    /**Verify Part Details Pannel*/
     public void verifyPartDetailsPannel() throws InterruptedException {
-// WaitActions.getWaits().WaitUntilWebElementIsVisible(label_warehouse);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_warehouse);
         Assert.assertTrue(label_warehouse.isDisplayed());
         Assert.assertTrue(txt_warehouse.isDisplayed());
-// WaitActions.getWaits().WaitUntilWebElementIsVisible(label_partDescription);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_partDescription);
-        Assert.assertTrue(label_partDescription.isDisplayed());
-        Assert.assertTrue(txt_partDescription.isDisplayed());
-        Assert.assertTrue(label_OnHandEA.isDisplayed());
-        Assert.assertTrue(txt_OnHandEA.isDisplayed());
-        Assert.assertTrue(label_StoreRoom.isDisplayed());
-        Assert.assertTrue(label_RowNumber.isDisplayed());
-        Assert.assertTrue(label_Shelf.isDisplayed());
-        Assert.assertTrue(label_BinNumber.isDisplayed());
-        TestListener.saveScreenshotPNG(driver);
-    }
-    /**
-     * click on Issue Part
-     */
-    public void clickOnIssuePart() throws InterruptedException {
-// WaitActions.getWaits().waitForElementTobeClickable(btn_IssuePart);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_IssuePart);
-//        Thread.sleep(2000);
-        WebElementActions.getActions().clickElement(btn_IssuePart);
+            WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_partDescription);
+            Assert.assertTrue(label_partDescription.isDisplayed());
+            Assert.assertTrue(txt_partDescription.isDisplayed());
+            Assert.assertTrue(label_OnHandEA.isDisplayed());
+            Assert.assertTrue(txt_OnHandEA.isDisplayed());
+            Assert.assertTrue(label_StoreRoom.isDisplayed());
+            Assert.assertTrue(label_RowNumber.isDisplayed());
+            Assert.assertTrue(label_Shelf.isDisplayed());
+            Assert.assertTrue(label_BinNumber.isDisplayed());
+            WaitActions.getWaits().loadingWait(loder);
+            TestListener.saveScreenshotPNG(driver);
+        }
 
+    /**click on Issue Part*/
+    public void clickOnIssuePart() throws InterruptedException {
+        if(LoginActions.environmentName.contains("QA")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_IssuePart);
+            WebElementActions.getActions().clickElement(btn_IssuePart);
+        }
+        if(LoginActions.environmentName.contains("EU")){
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_IssuePart);
+            WebElementActions.getActions().clickElement(label_IssuePart);
+        }
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
+
     /**
      * The part should now show with a quantity of 1
      */
@@ -585,32 +616,53 @@ public class EC_Tech_WoParts extends TestDriverActions {
 // WaitActions.getWaits().WaitUntilWebElementIsVisible(label_EA1);
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_EA1);
         Assert.assertTrue(label_EA1.isDisplayed());
-// Assert.assertTrue(EA1.isDisplayed());
-        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(crossIcon);
-        Assert.assertTrue(crossIcon.isDisplayed());
-// WaitActions.getWaits().WaitUntilWebElementIsVisible(DeleteIcon);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(DeleteIcon);
-        Assert.assertTrue(DeleteIcon.isDisplayed());
+       if(LoginActions.environmentName.contains("QA")) {
+           WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(crossIcon);
+           Assert.assertTrue(crossIcon.isDisplayed());
+           WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(DeleteIcon);
+           Assert.assertTrue(DeleteIcon.isDisplayed());
+       }
+        if(LoginActions.environmentName.contains("EU")){
+            WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(img_CrossIcon);
+            Assert.assertTrue(img_CrossIcon.isDisplayed());
+            WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_DeleteICon);
+            Assert.assertTrue(label_DeleteICon.isDisplayed());
+
+        }
+
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
     /**
      * click on cross button
      */
     public void clickOnCrossBtn() throws InterruptedException {
-// WaitActions.getWaits().waitForElementTobeClickable(crossIcon);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(crossIcon);
-        WebElementActions.getActions().clickElement(crossIcon);
+        if(LoginActions.environmentName.contains("QA")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(crossIcon);
+            WebElementActions.getActions().clickElement(crossIcon);
+        }
+        if(LoginActions.environmentName.contains("EU")){
 
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(img_CrossIcon);
+            WebElementActions.getActions().clickElement(img_CrossIcon);
+        }
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
+
     }
     /**
      * click on Delete button
      */
     public void clickOnDeleteBtn() throws InterruptedException {
-// WaitActions.getWaits().waitForElementTobeClickable(DeleteIcon);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(DeleteIcon);
-        WebElementActions.getActions().clickElement(DeleteIcon);
+        if(LoginActions.environmentName.contains("QA")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(DeleteIcon);
+            WebElementActions.getActions().clickElement(DeleteIcon);
+        }
+        if(LoginActions.environmentName.contains("EU")){
+
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_DeleteICon);
+            WebElementActions.getActions().clickElement(label_DeleteICon);
+        }
 
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
@@ -629,48 +681,51 @@ public class EC_Tech_WoParts extends TestDriverActions {
      */
     public void enterCorePart() throws InterruptedException {
 
-// WaitActions.getWaits().waitForElementTobeClickable(txt_part);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_part);
-        WebElementActions.getActions().inputText(txt_part,prop.getProperty("CorePart"));
+        if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_part);
+            WebElementActions.getActions().inputText(txt_part, appProp.getProperty("CorePart"));
+            Thread.sleep(3000);
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(corePart);
+            WebElementActions.getActions().clickElement(corePart);
+            Thread.sleep(5000);
+            WebElementActions.getActions().inputText(txt_part, appProp.getProperty("CorePart"));
+            Thread.sleep(3000);
+            WebElementActions.getActions().inputText(txt_part, appProp.getProperty("CorePart"));
+            Thread.sleep(3000);
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(corePart);
+            WebElementActions.getActions().clickElement(corePart);
+            Thread.sleep(3000);
+            WaitActions.getWaits().loadingWait(loder);
+            TestListener.saveScreenshotPNG(driver);
 
-        Thread.sleep(3000);
-        WebElementActions.getActions().clickElement(corePart);
-        Thread.sleep(5000);
-
-        WebElementActions.getActions().inputText(txt_part,prop.getProperty("CorePart"));
-        Thread.sleep(3000);
-        WebElementActions.getActions().inputText(txt_part,prop.getProperty("CorePart"));
-        Thread.sleep(3000);
-        WebElementActions.getActions().clickElement(corePart);
-
-        WaitActions.getWaits().loadingWait(loder);
-        TestListener.saveScreenshotPNG(driver);
-
+        }
     }
     /**
      * click on Search icon
      */
     public void clickOnSearchIcon() throws InterruptedException {
 
-// WaitActions.getWaits().waitForElementTobeClickable(search_icon);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(search_icon);
         WebElementActions.getActions().clickUsingJS(search_icon);
-
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
     /**
      * type core part
      */
-    public void typeCorePart()
-    {
-        WebElementActions.getActions().inputText(input_parts,prop.getProperty("CorePart"));
+    public void typeCorePart() throws InterruptedException {
+
+        if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(input_parts);
+            WebElementActions.getActions().inputText(input_parts, appProp.getProperty("CorePart"));
+            WaitActions.getWaits().loadingWait(loder);
+        }
     }
     /**
      * click on search button
      */
     public void clickOnSearchBtn() throws InterruptedException {
-// WaitActions.getWaits().waitForElementTobeClickable(search_btn);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(search_btn);
         WebElementActions.getActions().clickElement(search_btn);
         WaitActions.getWaits().loadingWait(loder);
@@ -680,7 +735,6 @@ public class EC_Tech_WoParts extends TestDriverActions {
      */
     public void selectButton() throws InterruptedException {
 
-// WaitActions.getWaits().waitForElementTobeClickable(select_button);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(select_button);
         WebElementActions.getActions().clickElement(select_button);
         WaitActions.getWaits().loadingWait(loder);
@@ -689,7 +743,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
      * click on cancle button
      */
     public void clickOnCancleButton() throws InterruptedException {
-// WaitActions.getWaits().waitForElementTobeClickable(cancle_btn);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(cancle_btn);
         WebElementActions.getActions().clickElement(cancle_btn);
         WaitActions.getWaits().loadingWait(loder);
@@ -699,11 +753,10 @@ public class EC_Tech_WoParts extends TestDriverActions {
      */
     public void clickOnCoreReturn() throws InterruptedException {
 
-// WaitActions.getWaits().waitForElementTobeClickable(btn_coreReturn);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_coreReturn);
         Thread.sleep(2000);
         WebElementActions.getActions().clickElement(btn_coreReturn);
-
+        Thread.sleep(10000);
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
@@ -713,10 +766,9 @@ public class EC_Tech_WoParts extends TestDriverActions {
      */
     public void clickOnCrossBtnCore() throws InterruptedException {
 
-// WaitActions.getWaits().waitForElementTobeClickable(crossIcon_core);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(crossIcon_core);
         WebElementActions.getActions().clickElement(crossIcon_core);
-
+        Thread.sleep(10000);
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
@@ -724,10 +776,10 @@ public class EC_Tech_WoParts extends TestDriverActions {
      * click on Delete button
      */
     public void clickOnDeleteBtnCore() throws InterruptedException {
-// WaitActions.getWaits().waitForElementTobeClickable(deleteIcon_core);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(deleteIcon_core);
         WebElementActions.getActions().clickElement(deleteIcon_core);
-
+        Thread.sleep(10000);
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
@@ -737,15 +789,15 @@ public class EC_Tech_WoParts extends TestDriverActions {
      */
     public void againEnterCorePart() throws InterruptedException {
 
-// Thread.sleep(3000);
-        WebElementActions.getActions().inputText(txt_part,prop.getProperty("CorePart"));
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_part);
+        WebElementActions.getActions().inputText(txt_part,appProp.getProperty("CorePart"));
         TestListener.saveScreenshotPNG(driver);
     }
     /**
      * click on cancle button
      */
     public void clickOnCancleBtn() throws InterruptedException {
-// WaitActions.getWaits().waitForElementTobeClickable(btn_cancle);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_cancle);
         WebElementActions.getActions().clickElement(btn_cancle);
 
@@ -757,10 +809,11 @@ public class EC_Tech_WoParts extends TestDriverActions {
      * click on Non-catalog part
      */
     public void clickOnNonCatalogPart() throws InterruptedException {
-// Thread.sleep(2000);
-
+        System.out.println("clickOnNonCatalogPart()");
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_NonCatalogPart);
         WebElementActions.getActions().clickElement(btn_NonCatalogPart);
-
+        System.out.println("btn_NonCatalogPart...:"+btn_NonCatalogPart);
+        Thread.sleep(10000);
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
@@ -768,7 +821,6 @@ public class EC_Tech_WoParts extends TestDriverActions {
      * Verify element of Non-catalog part
      */
     public void verifyNonCatalogPartElement() throws InterruptedException {
-// WaitActions.getWaits().WaitUntilWebElementIsVisible(createIssueNonCatalogPart);
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(createIssueNonCatalogPart);
         Assert.assertTrue(createIssueNonCatalogPart.isDisplayed());
         Assert.assertTrue(label_part1.isDisplayed());
@@ -782,6 +834,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
         Assert.assertTrue(txtfield_UnitCost.isDisplayed());
         Assert.assertTrue(cancle.isDisplayed());
         Assert.assertTrue(IssuePart.isDisplayed());
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
     /**
@@ -791,38 +844,45 @@ public class EC_Tech_WoParts extends TestDriverActions {
     /**
      * type NCPartName
      */
-    public void typeNCPartName()
-    {
+    public void typeNCPartName() throws InterruptedException {
 
-        WebElementActions.getActions().inputText(txtfield_part,NCPartName);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_PartTextArea);
+        WebElementActions.getActions().inputText(label_PartTextArea,NCPartName);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
     /**
      * type NCPartDescription
      */
     public void typeNCPartDescription() throws InterruptedException {
-// WaitActions.getWaits().waitForElementTobeClickable(txtfield_description);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txtfield_description);
-        WebElementActions.getActions().inputText( txtfield_description,prop.getProperty("NCPartDescription"));
-        TestListener.saveScreenshotPNG(driver);
+        if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU")) {
+
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txtfield_description);
+            WebElementActions.getActions().inputText(txtfield_description, appProp.getProperty("NCPartDescription"));
+            WaitActions.getWaits().loadingWait(loder);
+            TestListener.saveScreenshotPNG(driver);
+        }
     }
     /**
      * type Unit cost
      */
     public void typeUnitcost() throws InterruptedException {
-// WaitActions.getWaits().waitForElementTobeClickable(txtfield_UnitCost);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txtfield_UnitCost);
-        WebElementActions.getActions().inputText(txtfield_UnitCost,prop.getProperty("Unitcost"));
-        TestListener.saveScreenshotPNG(driver);
+        if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU")) {
+
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txtfield_UnitCost);
+            WebElementActions.getActions().inputText(txtfield_UnitCost, appProp.getProperty("Unitcost"));
+            WaitActions.getWaits().loadingWait(loder);
+            TestListener.saveScreenshotPNG(driver);
+        }
     }
     /**
      * click on Issue Part
      */
     public void clickOnIssuePart2() throws InterruptedException {
-// WaitActions.getWaits().waitForElementTobeClickable(IssuePart);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(IssuePart);
         WebElementActions.getActions().clickElement(IssuePart);
-
+        Thread.sleep(3000);
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
@@ -830,15 +890,16 @@ public class EC_Tech_WoParts extends TestDriverActions {
      * The part should now show with a quantity of 1
      */
     public void verifyNonCatalogPartAdded() throws InterruptedException {
-// WaitActions.getWaits().WaitUntilWebElementIsVisible(ncpPartName);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(ncpPartName);
         Assert.assertTrue(ncpPartName.isDisplayed());
         Assert.assertTrue(NCPartDescription.isDisplayed());
         WaitActions.getWaits().WaitUntilWebElementIsVisible(EA1_label);
         Assert.assertTrue(EA1_label.isDisplayed());
         Assert.assertTrue(EA1_2.isDisplayed());
-        Assert.assertTrue(crossIcon.isDisplayed());
+        Assert.assertTrue(label_CrossIcon.isDisplayed());
         Assert.assertTrue(DeleteIcon.isDisplayed());
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
     /**
@@ -854,7 +915,7 @@ public class EC_Tech_WoParts extends TestDriverActions {
      * click on Labour Tab
      */
     public void clickOnLabour() throws InterruptedException {
-// WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_Labour);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_Labour);
         WebElementActions.getActions().clickElement(btn_Labour);
 
@@ -881,17 +942,6 @@ public class EC_Tech_WoParts extends TestDriverActions {
                 break;
             }
         }
-
- /*       for(int i=0;i<VMRSName.size();i++)
-        {
-            if(VMRSName.contains("Accessories Group"))
-            {
-                WebElementActions.getActions().moveOnTargetElement(VMRSName.get(i));
-
-                WebElementActions.getActions().clickElement(VMRSName.get(i));
-                break;
-            }
-        } */
 /* WebElementActions.getActions().moveOnTargetElement(firstrow_cell);
 
 // WaitActions.getWaits().WaitUntilWebElementIsVisible(VMRSName_Img);
@@ -910,6 +960,7 @@ WebElementActions.getActions().clickElement(VMRSName_Img); */
         Thread.sleep(3000);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(notes_textarea);
         WebElementActions.getActions().inputText(notes_textarea,"Complaint");
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
 
@@ -917,9 +968,10 @@ WebElementActions.getActions().clickElement(VMRSName_Img); */
      * click on cause/Reason
      */
     public void click_Cause_Reason() throws InterruptedException {
-// WaitActions.getWaits().waitForElementTobeClickable(complaint_textarea);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(cause_reason);
         WebElementActions.getActions().clickElement(cause_reason);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
 
@@ -927,9 +979,17 @@ WebElementActions.getActions().clickElement(VMRSName_Img); */
      * click on select
      */
     public void clickOnSelect() throws InterruptedException {
-// WaitActions.getWaits().waitForElementTobeClickable(complaint_textarea);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(select_cause_Reason);
         WebElementActions.getActions().clickElement(select_cause_Reason);
+        WaitActions.getWaits().loadingWait(loder);
+        TestListener.saveScreenshotPNG(driver);
+    }
+    public void clickOnSelect2() throws InterruptedException {
+
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable( label_select_cause_Reason);
+        WebElementActions.getActions().clickElement( label_select_cause_Reason);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
 
@@ -940,6 +1000,7 @@ WebElementActions.getActions().clickElement(VMRSName_Img); */
 // WaitActions.getWaits().waitForElementTobeClickable(complaint_textarea);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(cancleBtn);
         WebElementActions.getActions().clickElement(cancleBtn);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
 
@@ -994,7 +1055,7 @@ WebElementActions.getActions().clickElement(VMRSName_Img); */
      * click on "0% by Moises Olivas on" hyperlink
      */
     public void clickOnMoisesOlivashyperlink() throws InterruptedException {
-// WaitActions.getWaits().waitForElementTobeClickable(progrss_hyperlink);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(progrss_hyperlink);
         WebElementActions.getActions().clickElement(progrss_hyperlink);
 
@@ -1087,7 +1148,7 @@ WebElementActions.getActions().clickElement(hyperlink_AeroDynamicDevice); */
     public void typeCause_Reason2() throws InterruptedException {
 // WaitActions.getWaits().waitForElementTobeClickable(cause_textarea);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(cause_textarea);
-        WebElementActions.getActions().inputText(cause_textarea,"Cause/Reason2");
+        WebElementActions.getActions().inputText(cause_textarea,"cause2 ");
         TestListener.saveScreenshotPNG(driver);
     }
     /**
@@ -1096,7 +1157,7 @@ WebElementActions.getActions().clickElement(hyperlink_AeroDynamicDevice); */
     public void typeCorrection_Task2()throws InterruptedException {
 // WaitActions.getWaits().waitForElementTobeClickable(task_textarea);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(task_textarea);
-        WebElementActions.getActions().inputText(task_textarea,"Correction/Task2");
+        WebElementActions.getActions().inputText(task_textarea,"repair2");
         TestListener.saveScreenshotPNG(driver);
     }
 /**
@@ -1111,7 +1172,6 @@ WebElementActions.getActions().clickElement(hyperlink_AeroDynamicDevice); */
         Thread.sleep(2000);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(summary_tab);
         WebElementActions.getActions().clickElement(summary_tab);
-
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
@@ -1132,11 +1192,10 @@ WebElementActions.getActions().clickElement(hyperlink_AeroDynamicDevice); */
         Assert.assertTrue(RoDate.isDisplayed());
         Assert.assertTrue(ReadingType.isDisplayed());
         Assert.assertTrue(LabourParts.isDisplayed());
-// WaitActions.getWaits().WaitUntilWebElementIsVisible(UnitReady);
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(UnitReady);
         Assert.assertTrue(UnitReady.isDisplayed());
-// Assert.assertTrue(hyperlink_AeroDynamicDevice.isDisplayed());
         Assert.assertTrue(hyperlink_AccessoriesDevice.isDisplayed());
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
     /**
@@ -1205,7 +1264,6 @@ WebElementActions.getActions().clickElement(hyperlink_AeroDynamicDevice); */
 // WaitActions.getWaits().waitForElementTobeClickable(UnitReady);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(UnitReady);
         WebElementActions.getActions().clickElement(UnitReady);
-
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
@@ -1235,12 +1293,13 @@ WebElementActions.getActions().clickElement(hyperlink_AeroDynamicDevice); */
      * enter defer reason button
      */
     public void inputDeferReason() throws InterruptedException {
-// WaitActions.getWaits().waitForElementTobeClickable(btn_ok);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(defer_input);
-        WebElementActions.getActions().inputText(defer_input,prop.getProperty("DefereReason"));
+        if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(defer_input);
+            WebElementActions.getActions().inputText(defer_input, appProp.getProperty("DefereReason"));
 
-        WaitActions.getWaits().loadingWait(loder);
-        TestListener.saveScreenshotPNG(driver);
+            WaitActions.getWaits().loadingWait(loder);
+            TestListener.saveScreenshotPNG(driver);
+        }
     }
     /**
      * click on defer button

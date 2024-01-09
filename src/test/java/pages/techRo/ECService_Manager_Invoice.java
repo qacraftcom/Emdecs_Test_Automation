@@ -1,5 +1,6 @@
 package pages.techRo;
 
+import actions.LoginActions;
 import actions.ReusableActions;
 import actions.WaitActions;
 import actions.WebElementActions;
@@ -18,8 +19,14 @@ public class ECService_Manager_Invoice extends TestDriverActions {
     public WebElement input_SearchTextArea;
 
 
-    @FindBy(xpath = "//a[contains(.,'O104')]")
+    @FindBy(xpath = "//a[contains(@id,':0:sfRM:tWoR:0:cl2')]")
     public WebElement input_ReferenceNumber ;
+
+    @FindBy(xpath = "//label[contains(.,'RO Date:')]")
+    public WebElement label_RODate;
+
+    @FindBy(xpath = "//a[contains(@id,'idReadingDate::glyph')]")
+    public WebElement label_ReadingDateGraph;
 
     @FindBy(xpath = "//span[text()='Refresh']")
     public WebElement btn_Refresh;
@@ -29,13 +36,13 @@ public class ECService_Manager_Invoice extends TestDriverActions {
     public WebElement btn_Invoice;
 
     @FindBy(xpath = "//label[text()='RO Date:']")
-    public WebElement label_RODate;
+    public WebElement label_RODate1;
 
     @FindBy(xpath = "//input[contains(@id,':idReadingDate::content')]")
     public WebElement input_RoDate;
 
 
-    @FindBy(xpath = "//span[contains(@id,'olWON')]/child::label/following::div[contains(.,'O1')]")
+    @FindBy(xpath = "(//span[contains(@id,':0:olWON')]//following::div)[1]")
     public WebElement label_RoNumber;
 
     @FindBy(xpath = "//a[text()='Sign Out']")
@@ -52,13 +59,15 @@ public class ECService_Manager_Invoice extends TestDriverActions {
 
     /**click on complete Ro */
     public void goToCompleteROScreen() throws InterruptedException, FileNotFoundException {
+        WaitActions.getWaits().loadingWait(loder);
+        Thread.sleep(3000);
         ReusableActions.getActions().clickParentMenu("Service");
         ReusableActions.getActions().clickChildMenu("Complete RO");
         TestListener.saveScreenshotPNG(driver);
     }
     /**wait element present SearchList */
     public void verifyElementPresent () throws InterruptedException {
-      //  WaitActions.getWaits().WaitUntilWebElementIsVisible(input_ReferenceNumber);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(input_ReferenceNumber);
         Assert.assertTrue(input_ReferenceNumber.isDisplayed());
 
@@ -66,96 +75,58 @@ public class ECService_Manager_Invoice extends TestDriverActions {
 
     /** enter Data In Search TextArea */
     public void  enterDataInSearchTextArea () throws InterruptedException {
-
-      //  WaitActions.getWaits().waitForElementTobeClickable(input_SearchTextArea);
+         if(LoginActions.environmentName.contains("QA")||LoginActions.environmentName.contains("EU"))
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(input_SearchTextArea);
-        WebElementActions.getActions().inputText(input_SearchTextArea,prop.getProperty("input"));
+        WebElementActions.getActions().inputText(input_SearchTextArea,appProp.getProperty("input"));
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
 
     }
-    /**click On Refersh Button */
-    public void clickOnRefresh () throws InterruptedException {
-    //    WaitActions.getWaits().waitForElementTobeClickable(btn_Refresh);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_Refresh);
-        WebElementActions.getActions().clickElement(btn_Refresh);
-        TestListener.saveScreenshotPNG(driver);
-    }
-
 
     /**click On Ro Number */
     public void clickOnRoNumber  () throws InterruptedException {
 
-       // WaitActions.getWaits().waitForElementTobeClickable(input_ReferenceNumber);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(input_ReferenceNumber);
         WebElementActions.getActions().clickElement(input_ReferenceNumber);
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
-    }
 
-    /** verify Invoice Text */
-    public void verifyInvoiceText () throws InterruptedException {
-
-     //   WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_Invoice);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(btn_Invoice);
-        Assert.assertTrue(btn_Invoice.isDisplayed());
-
-    }
-
-    /**verify Ro Date */
-    public void verifyRoDate () throws InterruptedException {
-
-      //  WaitActions.getWaits().WaitUntilWebElementIsVisible(label_RODate);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_RODate);
-        Assert.assertTrue(label_RODate.isDisplayed());
-
-
-    }
-
-    /** click On Ro Date */
-    public void clickOnRoDate () throws InterruptedException {
-
-       // WaitActions.getWaits().waitForElementTobeClickable(input_RoDate);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(input_RoDate);
-        WebElementActions.getActions().clickElement(input_RoDate);
-        TestListener.saveScreenshotPNG(driver);
     }
 
     /**enter Yesterday Date */
     public void enterYesterdayDate () throws InterruptedException {
 
-        //WaitActions.getWaits().WaitUntilWebElementIsVisible(input_RoDate);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(input_RoDate);
-        WebElementActions.getActions().clickElement(input_RoDate);
-        input_RoDate.clear();
-      //  WaitActions.getWaits().WaitUntilWebElementIsVisible(input_RoDate);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(input_RoDate);
-        WebElementActions.getActions().inputText(input_RoDate,prop.getProperty("YesterdayDate"));
-        input_RoDate.clear();
-        Thread.sleep(1000);
-       // WaitActions.getWaits().WaitUntilWebElementIsVisible(input_RoDate);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(input_RoDate);
-        WebElementActions.getActions().inputText(input_RoDate,prop.getProperty("Date"));
-        input_RoDate.click();
-        TestListener.saveScreenshotPNG(driver);
-
+        WebElementActions.getActions().inputText(input_RoDate,appProp.getProperty("YesterdayDate"));
 
     }
-    /** verify Ro Number */
-    public void verifyRoNumber () throws InterruptedException {
 
-        Thread.sleep(1000);
-     //   WaitActions.getWaits().WaitUntilWebElementIsVisible(label_RoNumber);
+    /**verify RO Date ,ReadingDate Graph */
+    public void verifyRODate ()throws InterruptedException {
+        if (LoginActions.environmentName.contains("EU")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_RODate1);
+            Assert.assertTrue(label_RODate1.isDisplayed());
+
+            WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_ReadingDateGraph);
+            Assert.assertTrue(label_ReadingDateGraph.isDisplayed());
+        }
+    }
+
+    /** Store Ro Number */
+    public void storeRoNumber () throws InterruptedException {
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_RoNumber);
         System.out.println("RoNumber");
+
+        String originalWindow=driver.getWindowHandle () ;
 
 
     }
     /** click Invoice Button */
     public void clickInvoiceButton () throws InterruptedException {
 
-     //   WaitActions.getWaits().waitForElementTobeClickable(btn_Invoice);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_Invoice);
 
         WebElementActions.getActions().clickElement(btn_Invoice);
@@ -164,7 +135,7 @@ public class ECService_Manager_Invoice extends TestDriverActions {
     }
     /**click in Sign out Button */
     public void clickSignOut () throws InterruptedException {
-      //  WaitActions.getWaits().waitForElementTobeClickable(label_SignOut);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_SignOut);
         WebElementActions.getActions().clickElement(label_SignOut);
         TestListener.saveScreenshotPNG(driver);
@@ -172,7 +143,7 @@ public class ECService_Manager_Invoice extends TestDriverActions {
 
     /**click UserName TextArea */
     public void ClickUserNameTextArea () throws InterruptedException {
-      //  WaitActions.getWaits().WaitUntilWebElementIsVisible(label_UserNameTextArea);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_UserNameTextArea);
         Assert.assertTrue(label_UserNameTextArea.isDisplayed());
         TestListener.saveScreenshotPNG(driver);

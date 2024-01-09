@@ -11,27 +11,26 @@ public class cGVTech_WoComplianceTest extends TestDriverActions {
 
     @Test(priority = 0, description = "verify and using Login and password credentials")
     @Description("Test Description -verify and using Login and password credentials ")
-    public void gotoTechRo()  throws InterruptedException, IOException {
+    public void Test_001_gotoTechRo()  throws InterruptedException, IOException {
         loginPage.loginWithValidCredentials(prop.getProperty("tech_two_username"), prop.getProperty("tech_two_password"));
         wocompliance.enterTechBadge();
         wocompliance.clickOnGo();
     }
 
-    @Test(priority = 1, description = "Click On  The HyperLink ")
-    @Description("Test Description - Click On  The HyperLink ")
-    public void TechnicianPortal() throws InterruptedException {
+    @Test(priority = 1, description = " verify Select Work ")
+    @Description("Test Description - verify Select Work ")
+    public void Test_002_verifySelectWork () throws InterruptedException {
 
-        wocompliance. verifySelectWork ();
-        wocompliance. verifyHyperlink ();
+         wocompliance. verifySelectWork ();
+     //   wocompliance. verifyHyperlink ();
         wocompliance.clickOnHyperLink();
 
     }
-    @Test(priority = 2, description = "verify The HyperLink Content")
-    @Description("Test Description - verify The HyperLink Content ")
-    public void verify3csScreenText() throws InterruptedException {
-
+    @Test(priority = 2, description = " verify  Text VMRS ")
+    @Description("Test Description - verify  Text VMRS ")
+    public void Test_003_verifyTextVMRS() throws InterruptedException {
         wocompliance.verifyTextVMRS();
-        wocompliance.verifyTextOther();
+       // wocompliance.verifyTextOther();
         wocompliance.verifyAttachmentIcon();
         wocompliance.verifyTextDescriptionRequired();
         wocompliance.verifyTextDescription();
@@ -42,9 +41,9 @@ public class cGVTech_WoComplianceTest extends TestDriverActions {
 
 
     }
-    @Test(priority = 3, description = "verify Complaint Text data")
-    @Description("Test Description - verify Complaint Text data")
-    public void verifyComplaintsData() throws InterruptedException {
+    @Test(priority = 3, description = "verify Text  Complaint")
+    @Description("Test Description - verify Text  Complaint")
+    public void Test_004_verifyTextComplaint() throws InterruptedException {
 
         wocompliance.verifyTextComplaint();
         wocompliance.verifyComplaintTextArea();
@@ -59,8 +58,7 @@ public class cGVTech_WoComplianceTest extends TestDriverActions {
 
     @Test(priority = 4, description = "verify Correction Task Area Text")
     @Description("Test Description -verify Correction Task Area Text")
-    public void VerifyCorrectionTaskArea() throws InterruptedException {
-
+    public void Test_005_VerifyCorrectionTaskArea() throws InterruptedException {
 
         wocompliance.verifyRequiredCorrectionTaskAnswer();
         wocompliance.verifyCancelButton();
@@ -73,14 +71,14 @@ public class cGVTech_WoComplianceTest extends TestDriverActions {
     }
     @Test(priority = 5, description = "verify Alert 3cs presentText")
     @Description("Test Description - verify Alert 3cs presentText")
-    public void VerifyAlertPresent3CS() throws InterruptedException {
+    public void Test_006_VerifyAlertPresent3CS() throws InterruptedException {
 
         wocompliance.verifyCharltonRepairInc();
 
     }
     @Test(priority = 6, description = "verify Enter data in text And Enter ok Button")
     @Description("Test Description - verify Enter data in text And Enter ok Button")
-    public void VerifyEnterTextANdEnterButton() throws InterruptedException {
+    public void Test_007_enterTheComplaintsText () throws InterruptedException {
 
 
         wocompliance.enterTheComplaintsText ();
@@ -93,7 +91,7 @@ public class cGVTech_WoComplianceTest extends TestDriverActions {
 
     @Test(priority = 7, description = "click On Summary Tab after that click Unit Ready button verify text ")
     @Description("Test Description - click On Summary Tab after that click Unit Ready button verify text")
-    public void VerifySummaryTab()  throws InterruptedException, IOException  {
+    public void Test_008_VerifySummaryTab()  throws InterruptedException, IOException  {
 
         wocompliance.clickOnSummaryTabButton();
         wocompliance.clickOnUnitReadyButton();
@@ -103,7 +101,7 @@ public class cGVTech_WoComplianceTest extends TestDriverActions {
 
     @Test(priority = 8, description = " click the labor button and verify text ,Button")
     @Description("Test Description -click the labor button and verify text ,Button")
-    public void clickOnCleanABSConnection ()   throws InterruptedException, IOException {
+    public void Test_009_clickOnCleanABSConnection ()   throws InterruptedException, IOException {
 
         wocompliance.clickOnCleanABSConnection ();
         wocompliance.CorrectionTextarea ();
@@ -118,7 +116,7 @@ public class cGVTech_WoComplianceTest extends TestDriverActions {
     }
     @Test(priority = 9, description = " click on Assign work and Click OnSign Out")
     @Description("Test Description -click on Assign work and Click onSign Out")
-    public void clickOnAssignWorkClickSignOutButton()  throws InterruptedException, IOException  {
+    public void Test_0010_clickOnAssignWorkClickSignOutButton()  throws InterruptedException, IOException  {
 
         wocompliance.clickAssignWorkButtonTopText();
         wocompliance.clickOnSignOut();

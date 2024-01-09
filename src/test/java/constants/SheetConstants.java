@@ -25,7 +25,7 @@ public class SheetConstants {
     public static final int role_manager_credentials_rowNumber = 3;
 
     public static final String KONA_EU="https://daf.perfitcomputer.com/kona_eu/faces/index.jsf";
-    public static final String KONA_EC="https://daf.perfitcomputer.com/kona_ec/faces/index.jsf";
+    public static final String Kona_EC =" https://www.emdecs.com/kona/faces/signin/signin.jsf";
     public static final String KONA_NA="https://daf.perfitcomputer.com/kona_na/faces/index.jsf";
 
 

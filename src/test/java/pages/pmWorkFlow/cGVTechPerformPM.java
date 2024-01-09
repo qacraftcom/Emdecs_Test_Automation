@@ -13,20 +13,56 @@ import java.util.List;
 
 public class cGVTechPerformPM extends TestDriverActions {
 
+
     @FindBy(xpath = "//span[text()='Scan Employee Badge']/following::input[1]")
     WebElement txt_scanEmployeeBadge;
 
     @FindBy(xpath = "//span[text()='Go']")
     public WebElement btn_GO;
 
+    @FindBy(xpath = "//a[contains(.,'ASAP SHOP')]")
+    public List<WebElement> txt_AsapShop;
+
+    @FindBy(xpath = "(//span[text()='Select'])[1]")
+    public WebElement btn_Select;
+
+
+    @FindBy(xpath = "//span[contains(.,'Technician Portal')]")
+    public WebElement label_TechnicianPortal;
+
+
+    @FindBy(xpath = "//td[contains(.,'ASAP SHOP')]")
+    public List<WebElement> label_LabourAsapShop;
+
+
+    @FindBy(xpath = "//img[contains(@id,':0:ciAddVmrs::icon')]")
+    public WebElement img_Add;
+
+
+    @FindBy(xpath = "//img[contains(@id,':1:ciWorkRequired::icon')]")
+    public WebElement img_AccessoriesGroup;
+
+
     @FindBy(xpath = "//label[text()='Select assigned work.']")
     public List<WebElement> txt_SelectAssignedWork;
+
+    @FindBy(linkText = "More Work ...")
+    public WebElement label_MoreWork;
+
+
+    @FindBy(xpath = "//img[contains(@id,':cilvmrsys::icon')]")
+    public WebElement label_AccseriesGroup;
+
 
     @FindBy(xpath = "//span[text()='More Units']")
     public WebElement btn_MoreUnits;
 
+
+    @FindBy(xpath = "//input[contains(@id,':sqSu:dc_it1::content')]")
+    public WebElement label_SearchTextArea;
+
     @FindBy(xpath = "(//span[text()='Select'])[1]")
-    public WebElement btn_Select;
+    public WebElement btn_Button;
 
     @FindBy(xpath = "//textarea[contains(@id,'::content')]")
     public WebElement input_DomiclieLocationTextArea;
@@ -42,8 +78,13 @@ public class cGVTechPerformPM extends TestDriverActions {
     @FindBy(xpath = "//div[contains(@id,':phSerproIC::content')]//child::td//a/child::img")
     public WebElement img_PMInspection;
 
+
     @FindBy(xpath = "  //img[contains(@id,':0:ciAddSerproactIC::icon')]")
     public WebElement txt_PMInspection;
+
+
+    @FindBy(xpath = "//img[contains(@id,':0:ciAddVmrs::icon')]")
+    public WebElement img_ADD;
 
     @FindBy(xpath = "//span[text()='Add']")
     public WebElement btn_Add;
@@ -55,8 +96,8 @@ public class cGVTechPerformPM extends TestDriverActions {
     public WebElement txt_Hyperlink;
 
 
-    @FindBy(xpath = "//div[contains(@id,':ptTRO:rEquIns:')]/following::span[text()='Work In Progress']")
-    public List<WebElement> txt_VerifyWorkInProgress;
+    @FindBy(xpath = "(//span[text()='Completed'])[1]")
+    public List<WebElement> txt_Completed;
 
 
     @FindBy(xpath = "//span[text()='Close']")
@@ -497,7 +538,7 @@ public class cGVTechPerformPM extends TestDriverActions {
     @FindBy(xpath = " //span[text()='Sign']")
     public WebElement btn_SignButton;
 
-    @FindBy(xpath = "(//span[text()='Cancel'])[1]")
+    @FindBy(xpath = "//div[contains(@id,':rEquIns:3:cb6')]//a//span")
     public WebElement btn_CancelButton;
 
     @FindBy(xpath = "(//span[text()='Clear'])[1]")
@@ -519,10 +560,10 @@ public class cGVTechPerformPM extends TestDriverActions {
 
 
 
-    @FindBy(xpath = "//span[text()='Re-Sign']")
+    @FindBy(xpath = "//h1[text()='Signature']/parent::td//following::div[2]//a//span")
     public WebElement btn_SignIn;
 
-    @FindBy(xpath = "//div[contains(@id,':j_idt70')]/child::canvas")
+    @FindBy(xpath = "//td[contains(@id,':pwWOSIG::contentContainer')]//div[3]//div//canvas")
     public WebElement label_canvas;
 
     @FindBy(xpath = "//div[contains(@id,':s9:cb')]//span[text()='OK']")
@@ -532,13 +573,13 @@ public class cGVTechPerformPM extends TestDriverActions {
     @FindBy(xpath = "(//a[contains(.,'Lab')])[1]")
     public WebElement label_labor;
 
-    @FindBy(xpath = "//img[contains(@id,':7:ciDWoAct1::icon')]")
+    @FindBy(xpath = "(//div[contains(@id,':tWoAct::db')]//table//td[9]//table//a//img)[1]")
     public WebElement img_cancel;
 
     @FindBy(xpath = "//span[text()='Save / Exit']")
     public WebElement btn_SaveExitDeleteButton;
 
-    @FindBy(xpath = "(//div[contains(@id,':sfWIP:wipTB:6:pg')]/following::span[text()='Select'])[1]")
+    @FindBy(xpath = "(//div[contains(@id,':0:cbSelectWoact')]//a//span)[1]")
     public WebElement btn_SelectButton;
 
     @FindBy(xpath = "//span[text()='Assigned Work']")
@@ -556,8 +597,8 @@ public class cGVTechPerformPM extends TestDriverActions {
 
     /*** Enter the Tech Badge data*/
     public void enterTechBadge() throws InterruptedException {
-
-//        WaitActions.getWaits().waitForElementTobeClickable(txt_scanEmployeeBadge);
+        WaitActions.getWaits().loadingWait(loder);
+        Thread.sleep(3000);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_scanEmployeeBadge);
         WebElementActions.getActions().inputText(txt_scanEmployeeBadge, prop.getProperty("Tech"));
         TestListener.saveScreenshotPNG(driver);
@@ -566,29 +607,26 @@ public class cGVTechPerformPM extends TestDriverActions {
     /*** Click on Go*/
     public void clickOnGo() throws InterruptedException {
 
-//        WaitActions.getWaits().waitForElementTobeClickable(btn_GO);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_GO);
         WebElementActions.getActions().clickElement(btn_GO);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
+
     }
 
 
     /** verify Select Work*/
     public void verifySelectWork() throws InterruptedException {
-
-        if (txt_SelectAssignedWork.size() > 0) {
+        WaitActions.getWaits().loadingWait(loder);
+        Thread.sleep(5000);
+        if (txt_SelectAssignedWork.size()>0) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_MoreUnits);
             WebElementActions.getActions().clickElement(btn_MoreUnits);
- //           WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_Select);
-            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_Select);
+            WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_SearchTextArea);
+            WebElementActions.getActions().inputText(label_SearchTextArea,prop.getProperty("UnitNumber"));
+            WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(btn_Select);
             WebElementActions.getActions().clickElement(btn_Select);
-//            WaitActions.getWaits().WaitUntilWebElementIsVisible(input_DomiclieLocationTextArea);
-            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(input_DomiclieLocationTextArea);
-            WebElementActions.getActions().inputText(input_DomiclieLocationTextArea, prop.getProperty("input"));
-//            WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_SaveExit);
-            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_SaveExit);
-            WebElementActions.getActions().clickElement(btn_SaveExit);
             WaitActions.getWaits().loadingWait(loder);
-            TestListener.saveScreenshotPNG(driver);
 
 
         } else {
@@ -596,58 +634,80 @@ public class cGVTechPerformPM extends TestDriverActions {
         }
 
     }
-    /**click On More links */
-   public void clickOnMoreLinks() throws InterruptedException {
-//       WaitActions.getWaits().waitForElementTobeClickable(txt_MoreLinkText);
-       WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_MoreLinkText);
-       WebElementActions.getActions().clickElement(txt_MoreLinkText);
-       TestListener.saveScreenshotPNG(driver);
 
-   }
+    /**verify Technician Portal */
+    public void verifyTechnicianPortal () throws InterruptedException {
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_TechnicianPortal);
+        Assert.assertTrue(label_TechnicianPortal.isDisplayed());
+        WaitActions.getWaits().loadingWait(loder);
+    }
+
+    /**click On More links */
+    public void clickOnMoreLinks() throws InterruptedException {
+        Thread.sleep(5000);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_MoreLinkText);
+        WebElementActions.getActions().clickElement(txt_MoreLinkText);
+        WaitActions.getWaits().loadingWait(loder);
+        TestListener.saveScreenshotPNG(driver);
+
+    }
     /**click on search Text Area */
     public void clickOnSearchTextArea() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(input_SearchTextArea);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(input_SearchTextArea);
+
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(input_SearchTextArea);
         WebElementActions.getActions().inputText(input_SearchTextArea, prop.getProperty("Enter"));
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
-     /**click On image */
+    /**click On image */
     public void clickOnInspectionImage() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(img_PMInspection);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(img_PMInspection);
         WebElementActions.getActions().clickElement(img_PMInspection);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
+
+
     }
-      /**click On Add Icon */
+    /**click On Add Icon */
     public void clickOnAddIcon() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_PMInspection);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_PMInspection);
+
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_PMInspection);
         WebElementActions.getActions().clickElement(txt_PMInspection);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
 
+
+
     }
-     /**click on Add Button */
+    /**click on Add Button */
     public void clickOnAddButton() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_Add);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_Add);
+
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(btn_Add);
         WebElementActions.getActions().clickElement(btn_Add);
+        Thread.sleep(7000);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
+
     }
-     /**click on image */
+    /**click on image */
     public void clickOnImage() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(img_Images);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(img_Images);
         WebElementActions.getActions().clickElement(img_Images);
+        Thread.sleep(3000);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
-        }
+    }
 
-     /**click on Hyperlink  */
+
+    /**click on Hyperlink  */
     public void clickOnHyperLink() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_Hyperlink);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_Hyperlink);
         WebElementActions.getActions().clickElement(txt_Hyperlink);
         WaitActions.getWaits().loadingWait(loder);
@@ -657,95 +717,92 @@ public class cGVTechPerformPM extends TestDriverActions {
     /**verify data and click On  Walkaround Exterior Inspection*/
     public void verifyData () throws InterruptedException {
 
-        System.out.println(txt_VerifyWorkInProgress.size());
-        if(txt_VerifyWorkInProgress.size()>0){
-//            WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_Close);
+        System.out.println(txt_Completed.size());
+        Thread.sleep(5000);
+        if(txt_Completed.size()>0){
             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_Close);
             WebElementActions.getActions().clickElement(btn_Close);
             WaitActions.getWaits().loadingWait(loder);
-//            WaitActions.getWaits().WaitUntilWebElementIsVisible(img_cancel);
             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(img_cancel);
             WebElementActions.getActions().clickElement(img_cancel);
-//            WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_SaveExitDeleteButton);
             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_SaveExitDeleteButton);
             WebElementActions.getActions().clickElement(btn_SaveExitDeleteButton);
-//            WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_SelectButton);
             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_SelectButton);
             WebElementActions.getActions().clickElement(btn_SelectButton);
+            WaitActions.getWaits().loadingWait(loder);
+            WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_Hyperlink);
+            WebElementActions.getActions().clickElement(txt_Hyperlink);
             WaitActions.getWaits().loadingWait(loder);
             TestListener.saveScreenshotPNG(driver);
 
         }else {
 
-    //        WaitActions.getWaits().WaitUntilWebElementIsVisible(box_WalkAroundExteriorInspectionBox);
             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(box_WalkAroundExteriorInspectionBox);
             WebElementActions.getActions().clickElement(box_WalkAroundExteriorInspectionBox);
+            WaitActions.getWaits().loadingWait(loder);
             TestListener.saveScreenshotPNG(driver);
 
         }
     }
 
 
-      /**select checking And Inspection Mounting Text Boolean pass */
+    /**select checking And Inspection Mounting Text Boolean pass */
     public void selectCheckingAndInspectionMounting() throws InterruptedException {
-    //    WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckingAndInspectionMounting);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckingAndInspectionMounting);
         WebElementActions.getActions().clickElement(txt_CheckingAndInspectionMounting);
+        WaitActions.getWaits().loadingWait(loder);
 
     }
-     /**enter GPS series Number Textarea value  */
+    /**enter GPS series Number Textarea value  */
     public void EnterGPSSeriesNumber() throws InterruptedException {
- //       WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_ListTHeGPS);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_ListTHeGPS);
+
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_ListTHeGPS);
         WebElementActions.getActions().inputText(txt_ListTHeGPS, prop.getProperty("GPSSeriesNumber"));
+        WaitActions.getWaits().loadingWait(loder);
 
     }
-     /**enter  The GPS Transmit Date TextArea  value */
+    /**enter  The GPS Transmit Date TextArea  value */
     public void clickEnterTheGPSTransmitDate() throws InterruptedException {
 
-//       WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_TransmitTosDate);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_TransmitTosDate);
-       WebElementActions.getActions().inputText(txt_TransmitTosDate,prop.getProperty("GPSTransmitDate"));
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_TransmitTosDate);
+        WebElementActions.getActions().inputText(txt_TransmitTosDate,prop.getProperty("GPSTransmitDate"));
 
     }
-       /**select Enter Confirm Trailer Text Boolean pass */
+    /**select Enter Confirm Trailer Text Boolean pass */
     public void selectEnterConfirmTrailer() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_ConfirmTrailer);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_ConfirmTrailer);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_ConfirmTrailer);
         WebElementActions.getActions().clickElement(txt_ConfirmTrailer);
 
     }
-      /**select confirm Trailer License Plate Text Boolean pass */
+    /**select confirm Trailer License Plate Text Boolean pass */
     public void selectConfirmTrailerLicensePlate() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_ConfirmTrailerLicensePlate);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_ConfirmTrailerLicensePlate);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_ConfirmTrailerLicensePlate);
         WebElementActions.getActions().clickElement(txt_ConfirmTrailerLicensePlate);
     }
-      /**select confirm Trailer valid  Text Boolean pass */
+    /**select confirm Trailer valid  Text Boolean pass */
     public void selectConfirmTrailerValid() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_ConfirmTrailerValid);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_ConfirmTrailerValid);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_ConfirmTrailerValid);
         WebElementActions.getActions().clickElement(txt_ConfirmTrailerValid);
 
     }
-     /** select scan Barcode Text Boolean pass */
+    /** select scan Barcode Text Boolean pass */
     public void selectScanBarCode() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_ScanBarCode);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_ScanBarCode);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_ScanBarCode);
         WebElementActions.getActions().clickElement(txt_ScanBarCode);
 
     }
-     /**select check All FedEx Text Boolean pass */
+    /**select check All FedEx Text Boolean pass */
     public void selectCheckAllFedEx() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckAllFedEx);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckAllFedEx);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_CheckAllFedEx);
         WebElementActions.getActions().clickElement(txt_CheckAllFedEx);
+        WaitActions.getWaits().loadingWait(loder);
 
     }
+
     /**click on Done validate Button*/
     public void clickOnDoneValidate () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_DoneValidate);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_DoneValidate);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(btn_DoneValidate);
         WebElementActions.getActions().clickElement(btn_DoneValidate);
         WaitActions.getWaits().loadingWait(loder);
 
@@ -754,66 +811,61 @@ public class cGVTechPerformPM extends TestDriverActions {
     }
     /**click on save And Exit Button  */
     public void clickOnSaveAndExit () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_SaveAndExit);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_SaveAndExit);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(btn_SaveAndExit);
         WebElementActions.getActions().clickElement(btn_SaveAndExit);
         WaitActions.getWaits().loadingWait(loder);
 
     }
     /**verify number of Questions Answered sub Text */
     public void verifyNumberOfQuestionsAnsweredSub () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_NumberOfQuestionsAnswerResult);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_NumberOfQuestionsAnswerResult);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_NumberOfQuestionsAnswerResult);
         Assert.assertTrue(txt_NumberOfQuestionsAnswerResult.isDisplayed());
 
     }
     /**click walk Around Exterior Inspection Box */
     public void clickWalkaroundExteriorInspectionBox() throws InterruptedException {
 
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(box_WalkAroundExteriorInspectionBox);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(box_WalkAroundExteriorInspectionBox);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(box_WalkAroundExteriorInspectionBox);
         WebElementActions.getActions().clickElement(box_WalkAroundExteriorInspectionBox);
+        WaitActions.getWaits().loadingWait(loder);
 
 
     }
     /** click on Show Error Only Button  */
     public void clickOnShowErrorOnly () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_ShowErrorOnly);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_ShowErrorOnly);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_ShowErrorOnly);
         WebElementActions.getActions().clickElement(txt_ShowErrorOnly);
+        Thread.sleep(3000);
         WaitActions.getWaits().loadingWait(loder);
+
+
     }
-      /**select check All Lights Text boolean pass*/
+    /**select check All Lights Text boolean pass*/
     public void selectCheckAllLights () throws InterruptedException {
- //       WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckAllLights);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckAllLights);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_CheckAllLights);
         WebElementActions.getActions().clickElement(txt_CheckAllLights);
 
     }
     /**select Inspect Gland Text Boolean pass */
     public void  selectInspectGland () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectGland);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectGland);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_InspectGland);
         WebElementActions.getActions().clickElement(txt_InspectGland);
 
     }
     /**select checking  Breaking System Text Boolean pass */
     public void selectCheckingBreakingSystem () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckingBreakingSystem);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckingBreakingSystem);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_CheckingBreakingSystem);
         WebElementActions.getActions().clickElement(txt_CheckingBreakingSystem);
 
     }
     /**select check ABS Function Text Boolean pass  */
     public void selectCheckABSFunction () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckABSFunction);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckABSFunction);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_CheckABSFunction);
         WebElementActions.getActions().clickElement(txt_CheckABSFunction);
 
     }
     /**enter Check ABS Function Textarea value */
     public void enterCheckABSFunctionTextArea () throws InterruptedException {
-//        WaitActions.getWaits().waitForElementTobeClickable(input_CheckABSFunctionTextArea);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(input_CheckABSFunctionTextArea);
         WebElementActions.getActions().inputText(input_CheckABSFunctionTextArea,prop.getProperty("CheckABSFunctionTextArea"));
         TestListener.saveScreenshotPNG(driver);
@@ -822,208 +874,205 @@ public class cGVTechPerformPM extends TestDriverActions {
 
     /**select Inspect Front Text boolean pass  */
     public void selectInspectFront () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectFront);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectFront);
         WebElementActions.getActions().clickElement(txt_InspectFront);
         TestListener.saveScreenshotPNG(driver);
     }
-   /**select Inspect Back Text Boolean pass*/
+    /**select Inspect Back Text Boolean pass*/
     public void selectInspectBack () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectBack);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectBack);
         WebElementActions.getActions().clickElement(txt_InspectBack);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
     /**select CheckBody For Damage Text Boolean pass  */
     public void selectCheckBodyForDamage () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckBodyForDamage);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckBodyForDamage);
         WebElementActions.getActions().clickElement(txt_CheckBodyForDamage);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
+
+    }
+
+    /**click on Done validate Button*/
+    public void clickOnDoneValidate2 () throws InterruptedException {
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(btn_DoneValidate);
+        WebElementActions.getActions().clickElement(btn_DoneValidate);
+        Thread.sleep(5000);
+        WaitActions.getWaits().loadingWait(loder);
     }
 
     /**select Inspect MudFlag Text Boolean pass */
     public  void selectInspectMudFlag () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectMudFlag);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectMudFlag);
         WebElementActions.getActions().clickElement(txt_InspectMudFlag);
+        WaitActions.getWaits().loadingWait(loder);
 
     }
     /**select Inspect condition Text Boolean pass */
     public void selectInspectCondition () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectCondition);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectCondition);
         WebElementActions.getActions().clickElement(txt_InspectCondition);
+        WaitActions.getWaits().loadingWait(loder);
+
 
     }
     /**select Inspect Drop Text Boolean pass  */
     public void selectInspectDrop () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectDrop);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectDrop);
         WebElementActions.getActions().clickElement(txt_InspectDrop);
 
     }
     /**select Inspect Safety  Text Boolean pass */
     public void selectInspectSafety () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectSafety);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectSafety);
         WebElementActions.getActions().clickElement(txt_InspectSafety);
 
     }
     /**select Check And Operate Text Boolean pass  */
     public void selectCheckAndOperate () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckAndOperate);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckAndOperate);
         WebElementActions.getActions().clickElement(txt_CheckAndOperate);
 
     }
 
 
-     /**select Inspect cracks Text Boolean pass */
+    /**select Inspect cracks Text Boolean pass */
     public void selectInspectCracks () throws InterruptedException {
 
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectCracks);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectCracks);
         WebElementActions.getActions().clickElement(txt_InspectCracks);
 
     }
     /**select check And Lubricate Text Boolean pass  */
     public void selectCheckAndLubricate () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckAndLubricate);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckAndLubricate);
         WebElementActions.getActions().clickElement(txt_CheckAndLubricate);
     }
     /** click On Done validate Button  Text Boolean Pass */
     public void clickOnDoneValidateButton () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_DoneValidate);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_DoneValidate);
         WebElementActions.getActions().clickElement(btn_DoneValidate);
+        TestListener.saveScreenshotPNG(driver);
+
+    }
+
+    /**click On Inspect Rear Impact Guard  Text Boolean pass */
+    public void clickOnInspectRearImpactGuard () throws InterruptedException {
+
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(box_InspectRearImpactGuard);
+        WebElementActions.getActions().clickElement(box_InspectRearImpactGuard);
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
-    }
-
-      /**click On Inspect Rear Impact Guard  Text Boolean pass */
-    public void clickOnInspectRearImpactGuard () throws InterruptedException {
-
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(box_InspectRearImpactGuard);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(box_InspectRearImpactGuard);
-        WebElementActions.getActions().clickElement(box_InspectRearImpactGuard);
-        TestListener.saveScreenshotPNG(driver);
-
 
     }
-     /**select Missing Guard Text Boolean pass */
+    /**select Missing Guard Text Boolean pass */
     public void selectMissingGuard () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_MissingGuard);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_MissingGuard);
         WebElementActions.getActions().clickElement(txt_MissingGuard);
 
     }
     /**select Guard Not Securely Text Boolean pass  */
     public void selectGuardNotSecurely () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_GuardNotSecurely);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_GuardNotSecurely);
         WebElementActions.getActions().clickElement(txt_GuardNotSecurely);
+
 
     }
     /**select Guard Horizontal member Text Boolean pass */
     public void selectGuardHorizontalMemberNotExtend () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_GuardHorizontalMemberNotExtend);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_GuardHorizontalMemberNotExtend);
         WebElementActions.getActions().clickElement(txt_GuardHorizontalMemberNotExtend);
+
 
     }
     /**select Guard Horizontal member more Text Boolean pass */
     public void selectGuardHorizontalMemberMore () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_GuardHorizontalMemberMore);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_GuardHorizontalMemberMore);
         WebElementActions.getActions().clickElement(txt_GuardHorizontalMemberMore);
+
 
     }
     /**Select Guard Horizontal Member More Than  Text Boolean pass*/
     public void selectGuardHorizontalMemberMoreThan () throws InterruptedException {
- //       WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_GuardHorizontalMemberMoreThan);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_GuardHorizontalMemberMoreThan);
         WebElementActions.getActions().clickElement(txt_GuardHorizontalMemberMoreThan);
+
 
     }
     /**select Guard Horizontal Member Text  Boolean pass */
     public void selectGuardHorizontalMember () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_GuardHorizontalMember);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_GuardHorizontalMember);
         WebElementActions.getActions().clickElement(txt_GuardHorizontalMember);
+
 
     }
     /**select Inspect Rear Imapct Guard Text Boolean pass*/
     public void selectInspectRearImpactGuard () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectRearImpactGuard);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectRearImpactGuard);
         WebElementActions.getActions().clickElement(txt_InspectRearImpactGuard);
+
     }
     /**click Done Validate Button */
     public void clickDoneValidateButton () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_DoneValidateButton);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_DoneValidateButton);
         WebElementActions.getActions().clickElement(btn_DoneValidateButton);
-        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
     /** click Under Vehicle Box */
     public void clickUnderVehicle () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(box_UnderVehicle);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(box_UnderVehicle);
         WebElementActions.getActions().clickElement(box_UnderVehicle);
         TestListener.saveScreenshotPNG(driver);
     }
     /** select Inspecting pin Text Boolean pass  */
     public void selectInspectKingPin () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectKingPin);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectKingPin);
         WebElementActions.getActions().clickElement(txt_InspectKingPin);
+
 
     }
     /** select Inspect Landing Gear Text Boolean pass  */
     public void selectInspectLandingGear () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectLandingGear);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectLandingGear);
         WebElementActions.getActions().clickElement(txt_InspectLandingGear);
+
 
     }
     /** select Operate ANd Landing Gear Text Boolean pass  */
     public void selectOperateLAndLandingGear () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_OperateLAndLandingGear);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_OperateLAndLandingGear);
         WebElementActions.getActions().clickElement(txt_OperateLAndLandingGear);
 
     }
     /**select Inspect Cross Member  Text Boolean pass */
     public void selectInspectCrossMember () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectCrossMember);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectCrossMember);
         WebElementActions.getActions().clickElement(txt_InspectCrossMember);
+
 
     }
     /**select Inspect Frame Cracks Text Boolean pass */
     public void selectInspectFrameCracks () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectFrameCracks);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectFrameCracks);
         WebElementActions.getActions().clickElement(txt_InspectFrameCracks);
 
-    }
-       /**click Inspect Rear Impact Guard Button */
-    public void clickInspectRearImpactGuardButton () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_UnderTheVehicleButton);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_UnderTheVehicleButton);
-        WebElementActions.getActions().clickElement(btn_UnderTheVehicleButton);
-       WaitActions.getWaits().loadingWait(loder);
 
     }
-     /**click Foundation Brake Inspection Text Boolean pass */
+    /**click Inspect Rear Impact Guard Button */
+    public void clickInspectRearImpactGuardButton () throws InterruptedException {
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_UnderTheVehicleButton);
+        WebElementActions.getActions().clickElement(btn_UnderTheVehicleButton);
+
+
+    }
+    /**click Foundation Brake Inspection Text Boolean pass */
     public void clickFoundationBrakeInspection () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(box_FoundationBrakeInspection);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(box_FoundationBrakeInspection);
         WebElementActions.getActions().clickElement(box_FoundationBrakeInspection);
         TestListener.saveScreenshotPNG(driver);
@@ -1031,135 +1080,128 @@ public class cGVTechPerformPM extends TestDriverActions {
     }
     /**select Check and Lubricate Slack Text Boolean passs*/
     public void  selectCheckAndLubricateSlack () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckAndLubricateSlack);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckAndLubricateSlack);
         WebElementActions.getActions().clickElement(txt_CheckAndLubricateSlack);
 
     }
     /**select Check And Lubricate Inboard Text Boolean pass */
     public void selectCheckANdLubricateInboard () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckANdLubricateInboard);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckANdLubricateInboard);
         WebElementActions.getActions().clickElement(txt_CheckANdLubricateInboard);
-
     }
     /**select check And Lubricate Slacks Adjuster Text Boolean pass */
     public void selectCheckAndLubricateSlackAdjuster () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckAndLubricateSlackAdjuster);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckAndLubricateSlackAdjuster);
         WebElementActions.getActions().clickElement(txt_CheckAndLubricateSlackAdjuster);
+
 
     }
     /**select Inspect Condition Text Boolean Pass  */
     public void selectInspectConditionBrake () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectConditionBrake);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectConditionBrake);
         WebElementActions.getActions().clickElement(txt_InspectConditionBrake);
 
+
     }
-     /**select Inspect Brake Chamber Text Boolean pass */
+    /**select Inspect Brake Chamber Text Boolean pass */
     public void selectInspectBrakeChamber () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectBrakeChamber);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectBrakeChamber);
         WebElementActions.getActions().clickElement(txt_InspectBrakeChamber);
+
 
     }
     /**select Inspect condition Of Break Lining Text Boolean pass */
     public  void  selectInspectConditionOfBrakeLining () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectConditionOfBrakeLining);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectConditionOfBrakeLining);
         WebElementActions.getActions().clickElement(txt_InspectConditionOfBrakeLining);
+        WaitActions.getWaits().loadingWait(loder);
     }
-     /**select Check Brake Lining To Drum Text Boolean pass */
+    /**select Check Brake Lining To Drum Text Boolean pass */
     public void selectCheckBrakeLiningToDrum () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckBrakeLiningToDrum);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckBrakeLiningToDrum);
         WebElementActions.getActions().clickElement(txt_CheckBrakeLiningToDrum);
+        WaitActions.getWaits().loadingWait(loder);
 
     }
     /** select charge Air System Text Boolean pass */
     public void selectChargeAirSystem () throws InterruptedException {
- //       WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_ChargeAirSystem);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_ChargeAirSystem);
         WebElementActions.getActions().clickElement(txt_ChargeAirSystem);
+        WaitActions.getWaits().loadingWait(loder);
     }
     /** select Release parking Break*/
     public void selectReleaseParkingBreak () throws InterruptedException {
- //       WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_ReleaseParkingBreak);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_ReleaseParkingBreak);
         WebElementActions.getActions().clickElement(txt_ReleaseParkingBreak);
+        WaitActions.getWaits().loadingWait(loder);
     }
 
 
 
-  /** click On Done Validate Label*/
+    /** click On Done Validate Label*/
     public void clickOnDoneValidateLabel () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_DoneValidateLabel);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_DoneValidateLabel);
         WebElementActions.getActions().clickElement(btn_DoneValidateLabel);
         WaitActions.getWaits().loadingWait(loder);
     }
 
-   /**enter Record Lf*/
+    /**enter Record Lf*/
     public void enterRecordLf () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RecordLf);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RecordLf);
         WebElementActions.getActions().inputText(txt_RecordLf, prop.getProperty("column"));
+        WaitActions.getWaits().loadingWait(loder);
     }
     /** enter Record Rf*/
     public void enterRecordRf () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RecordRf);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RecordRf);
         WebElementActions.getActions().inputText(txt_RecordRf, prop.getProperty("column"));
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
     /**enter Record Lr*/
     public void enterRecordLr () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RecordLr);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RecordLr);
         WebElementActions.getActions().inputText(txt_RecordLr, prop.getProperty("column"));
         TestListener.saveScreenshotPNG(driver);
     }
     /**enter the RecordRr*/
     public void enterRecordRr () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RecordRr);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RecordRr);
         WebElementActions.getActions().inputText(txt_RecordRr, prop.getProperty("column"));
         TestListener.saveScreenshotPNG(driver);
     }
-     /**select Apply Service*/
+    /**select Apply Service*/
     public void selectApplyService () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_ApplyService);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_ApplyService);
         WebElementActions.getActions().clickElement(txt_ApplyService);
+        WaitActions.getWaits().loadingWait(loder);
 
     }
     /**enter Record Lf PushRod */
     public void enterRecordLfPushRod () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RecordLfPushRod);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RecordLfPushRod);
         WebElementActions.getActions().inputText(txt_RecordLfPushRod,prop.getProperty("value"));
+        WaitActions.getWaits().loadingWait(loder);
 
     }
     /**enter Record Rf Push Rod */
     public void enterRecordRfPushRod () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RecordRfPushRod);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RecordRfPushRod);
         WebElementActions.getActions().inputText(txt_RecordRfPushRod,prop.getProperty("value"));
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
     /** enter Lf Push Rod Travel */
     public void enterLfPushRodTravel () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_LfPushRodTravel);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_LfPushRodTravel);
         WebElementActions.getActions().inputText(txt_LfPushRodTravel,prop.getProperty("value"));
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
     /**enter Rf Push Rod Travel */
     public void enterRfPushRodTravel () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RfPushRodTravel);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RfPushRodTravel);
         WebElementActions.getActions().inputText(txt_RfPushRodTravel,prop.getProperty("value"));
         TestListener.saveScreenshotPNG(driver);
@@ -1167,122 +1209,114 @@ public class cGVTechPerformPM extends TestDriverActions {
     }
     /**select Adjust Manual Slack */
     public void selectAdjustManualSlack () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_AdjustManualSlack);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_AdjustManualSlack);
         WebElementActions.getActions().clickElement(txt_AdjustManualSlack);
+        WaitActions.getWaits().loadingWait(loder);
 
 
     }
     /**click Done Validate label*/
     public void clickDoneValidateLabel () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_DoneValidateLabel);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_DoneValidateLabel);
         WebElementActions.getActions().clickElement(btn_DoneValidateLabel);
         WaitActions.getWaits().loadingWait(loder);
 
     }
-     /**click On Box Suspension System*/
+    /**click On Box Suspension System*/
     public void clickOnBoxSuspensionSystem () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(box_SuspensionSystem);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(box_SuspensionSystem);
         WebElementActions.getActions().clickElement(box_SuspensionSystem);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
     /**select Inspect  The Tandem Boolean */
     public void selectInspectTheTandem () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectTheTandem);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectTheTandem);
         WebElementActions.getActions().clickElement(txt_InspectTheTandem);
+        WaitActions.getWaits().loadingWait(loder);
 
     }
     /** select Checking Wheel Bearing Boolean*/
     public void selectCheckWheelBearing () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckWheelBearing);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckWheelBearing);
         WebElementActions.getActions().clickElement(txt_CheckWheelBearing);
+        WaitActions.getWaits().loadingWait(loder);
 
     }
     /** select Check u  bolt Text Boolean*/
     public void selectCheckUBolt () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckUBolt);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckUBolt);
         WebElementActions.getActions().clickElement(txt_CheckUBolt);
     }
     /** select Inspect Torque Rod Text Boolean */
     public void selectInspectTorqueRod () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectTorqueRod);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectTorqueRod);
         WebElementActions.getActions().clickElement(txt_InspectTorqueRod);
+        WaitActions.getWaits().loadingWait(loder);
 
     }
     /** select Inspect Air Spring TExt Boolean */
     public void selectInspectAirSpring () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectAirSpring);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectAirSpring);
         WebElementActions.getActions().clickElement(txt_InspectAirSpring);
+        WaitActions.getWaits().loadingWait(loder);
     }
     /**select Check Ride Height Text Boolean */
     public void selectCheckRideHeight () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckRideHeight);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckRideHeight);
         WebElementActions.getActions().clickElement(txt_CheckRideHeight);
+        WaitActions.getWaits().loadingWait(loder);
 
     }
     /**select Inspect Air Ride TExt Boolean*/
     public void selectInspectAirRide () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectAirRide);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectAirRide);
         WebElementActions.getActions().clickElement(txt_InspectAirRide);
+        WaitActions.getWaits().loadingWait(loder);
 
     }
     /** select Check Suspension Dump value Text Boolean */
     public void selectCheckSuspensionDumpValue () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckSuspensionDumpValue);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckSuspensionDumpValue);
         WebElementActions.getActions().clickElement(txt_CheckSuspensionDumpValue);
 
     }
     /** click On Validate Button */
     public  void clickValidate () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_Validate);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_Validate);
         WebElementActions.getActions().clickElement(btn_Validate);
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
-     /**click On Wheel Tire  Text Box */
+    /**click On Wheel Tire  Text Box */
     public void clickWheelTire () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(box_WheelTire);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(box_WheelTire);
         WebElementActions.getActions().clickElement(box_WheelTire);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
     /** select Inspect Wheel Text Box */
     public void selectInspectWheels () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectWheels);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectWheels);
         WebElementActions.getActions().clickElement(txt_InspectWheels);
 
     }
     /** select Check For Missing Text Box */
     public void selectCheckForMissing () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckForMissing);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckForMissing);
         WebElementActions.getActions().clickElement(txt_CheckForMissing);
 
     }
     /**enter Dual Meting  Lf TextArea value */
     public void enterDualMetingLf () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_DualMetingLf);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_DualMetingLf);
         WebElementActions.getActions().inputText(txt_DualMetingLf,prop.getProperty("RecordOffset"));
 
     }
     /**enter Dual Meting Rf TextArea Value */
     public void enterDualMetingRf () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_DualMetingRf);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_DualMetingRf);
         WebElementActions.getActions().inputText(txt_DualMetingRf,prop.getProperty("RecordOffset"));
         TestListener.saveScreenshotPNG(driver);
@@ -1290,7 +1324,6 @@ public class cGVTechPerformPM extends TestDriverActions {
     }
     /** enter Dual Meting Lr TextArea Value */
     public void enterDualMetingLr () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_DualMetingLr);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_DualMetingLr);
         WebElementActions.getActions().inputText(txt_DualMetingLr,prop.getProperty("RecordOffset"));
         TestListener.saveScreenshotPNG(driver);
@@ -1298,7 +1331,6 @@ public class cGVTechPerformPM extends TestDriverActions {
     }
     /** enter Dual Meting Rr TextArea Value */
     public void enterDualMetingRr () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_DualMetingRr);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_DualMetingRr);
         WebElementActions.getActions().inputText(txt_DualMetingRr,prop.getProperty("RecordOffset"));
         TestListener.saveScreenshotPNG(driver);
@@ -1306,19 +1338,18 @@ public class cGVTechPerformPM extends TestDriverActions {
     }
     /**select for Tire Damage Text Boolean Pass */
     public void selectForTireDamage () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_TiresForDamage);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_TiresForDamage);
         WebElementActions.getActions().clickElement(txt_TiresForDamage);
+        WaitActions.getWaits().loadingWait(loder);
     }
     /**select PSI Inflation System  Text Boolean Pass */
     public void selectPSIInflationSystem () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_PSIInflation);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_PSIInflation);
         WebElementActions.getActions().clickElement(txt_PSIInflation);
+        WaitActions.getWaits().loadingWait(loder);
     }
-     /**click On Validate Button */
+    /**click On Validate Button */
     public void clickOnValidateButton () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_ValidateButtonWheelAndTire);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_ValidateButtonWheelAndTire);
         WebElementActions.getActions().clickElement(txt_ValidateButtonWheelAndTire);
         WaitActions.getWaits().loadingWait(loder);
@@ -1326,13 +1357,12 @@ public class cGVTechPerformPM extends TestDriverActions {
     }
     /**select valve Stem flow Text Boolean Pass */
     public void selectValveStemFlow() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_ValveStem);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_ValveStem);
         WebElementActions.getActions().clickElement(txt_ValveStem) ;
+        WaitActions.getWaits().loadingWait(loder);
     }
     /** enter Record LFO Tread Depth Texteara */
     public void enterRecordLFOTreadDepth () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_TreadDepth);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_TreadDepth);
         WebElementActions.getActions().inputText(txt_TreadDepth,prop.getProperty("TreadDepth"));
         TestListener.saveScreenshotPNG(driver);
@@ -1341,7 +1371,6 @@ public class cGVTechPerformPM extends TestDriverActions {
     }
     /**enter Recore LFO Tire Pressure Textarea */
     public void enterRecordLFOTirePressure () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_TreadPressure);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_TreadPressure);
         WebElementActions.getActions().inputText(txt_TreadPressure,prop.getProperty("TirePressure")) ;
         TestListener.saveScreenshotPNG(driver);
@@ -1349,36 +1378,31 @@ public class cGVTechPerformPM extends TestDriverActions {
     }
     /**enter Record LFI TRead Depth Textarea  value */
     public void enterRecordLfiTreadDepth () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RecordLfiTreadDepth);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RecordLfiTreadDepth);
         WebElementActions.getActions().inputText(txt_RecordLfiTreadDepth,prop.getProperty("TreadDepth"));
         TestListener.saveScreenshotPNG(driver);
 
     }
-     /** enter Record LFI Pressure Textarea Value */
+    /** enter Record LFI Pressure Textarea Value */
     public void enterRecordLfiTirePressure  () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RecordLfiTirePressure);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RecordLfiTirePressure);
         WebElementActions.getActions().inputText(txt_RecordLfiTirePressure,prop.getProperty("TirePressure"));
         TestListener.saveScreenshotPNG(driver);
     }
     /** enter Record LRO Tread Depth TextArea Value  */
     public  void enterRecordLroTreadDepth () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RecordLroTreadDepth);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RecordLroTreadDepth);
         WebElementActions.getActions().inputText(txt_RecordLroTreadDepth,prop.getProperty("TreadDepth"));
         TestListener.saveScreenshotPNG(driver);
     }
     /** enter Record  Lor Tire Pressure Textarea Value */
     public void enterRecordLroTirePressure() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RecordLroTirePressure);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RecordLroTirePressure);
         WebElementActions.getActions().inputText(txt_RecordLroTirePressure,prop.getProperty("TirePressure"));
         TestListener.saveScreenshotPNG(driver);
     }
     /** enter Record LRI Tread Depth TextArea Value */
     public void enterRecordLriTreadDepth() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RecordLriTreadDepth);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RecordLriTreadDepth);
         WebElementActions.getActions().inputText(txt_RecordLriTreadDepth,prop.getProperty("TreadDepth"));
         TestListener.saveScreenshotPNG(driver);
@@ -1390,74 +1414,65 @@ public class cGVTechPerformPM extends TestDriverActions {
 
     }
 
-     /**enter Record LRI Tire Pressure Textarea value */
+    /**enter Record LRI Tire Pressure Textarea value */
     public void enterRecordLriTirePressure () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RecordLriTirePressure);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RecordLriTirePressure);
         WebElementActions.getActions().inputText(txt_RecordLriTirePressure,prop.getProperty("TirePressure")) ;
         TestListener.saveScreenshotPNG(driver);
     }
     /** enter RRP Tread Depth Textarea Value */
     public void enterRROTreadDepth() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RROTreadDepth);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RROTreadDepth);
         WebElementActions.getActions().inputText(txt_RROTreadDepth,prop.getProperty("TreadDepth"));
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
     /**enter RRO Tire Pressure Textarea Value */
     public void enterRROTirePressure () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RROTirePressure);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RROTirePressure);
         WebElementActions.getActions().inputText(txt_RROTirePressure,prop.getProperty("TirePressure")) ;
         TestListener.saveScreenshotPNG(driver);
     }
     /** enter  RRI Tread Depth Textarea value*/
     public void enterRRITreadDepth () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(Txt_RRITreadDepth);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(Txt_RRITreadDepth);
         WebElementActions.getActions().inputText(Txt_RRITreadDepth,prop.getProperty("TreadDepth"));
         TestListener.saveScreenshotPNG(driver);
     }
     /**enter RRI Tire Pressure Textarea value */
     public void enterRRITirePressure () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RRITirePressure);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RRITirePressure);
         WebElementActions.getActions().inputText(txt_RRITirePressure,prop.getProperty("TirePressure")) ;
         TestListener.saveScreenshotPNG(driver);
     }
     /** enter RFO Tread Depth Textarea Value */
     public void enterRFOTreadDepth () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RFOTreadDepth);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RFOTreadDepth);
         WebElementActions.getActions().inputText(txt_RFOTreadDepth,prop.getProperty("TreadDepth"));
         TestListener.saveScreenshotPNG(driver);
     }
-      /** enter RFO Tire Pressure */
+    /** enter RFO Tire Pressure */
     public void enterRFOTirePressure() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RFOTirePressure);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RFOTirePressure);
         WebElementActions.getActions().inputText(txt_RFOTirePressure,prop.getProperty("TirePressure")) ;
         TestListener.saveScreenshotPNG(driver);
     }
     /** enter RFI Tread Depth */
     public void enterRFITreadDepth () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RFITreadDepth);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RFITreadDepth);
         WebElementActions.getActions().inputText(txt_RFITreadDepth,prop.getProperty("TreadDepth"));
         TestListener.saveScreenshotPNG(driver);
     }
     /** enter RFI Tire Pressure */
     public void enterRFITirePressure() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_RFITirePressure);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_RFITirePressure);
         WebElementActions.getActions().inputText(txt_RFITirePressure,prop.getProperty("TirePressure")) ;
         TestListener.saveScreenshotPNG(driver);
     }
 
 
-     /**click On Roll Up Door Box */
+    /**click On Roll Up Door Box */
     public void clickOnRollUpDoorBox () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(box_RollUpDoor);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(box_RollUpDoor);
         WebElementActions.getActions().clickElement(box_RollUpDoor);
         WaitActions.getWaits().loadingWait(loder);
@@ -1466,168 +1481,152 @@ public class cGVTechPerformPM extends TestDriverActions {
     }
     /**select Check Condition Boolean pass  */
     public void selectCheckCondition () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckCondition);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckCondition);
         WebElementActions.getActions().clickElement(txt_CheckCondition);
     }
     /**select Lubricate Door Boolean Pass */
     public void selectLubricateDoor () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_lubricateDoor);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_lubricateDoor);
         WebElementActions.getActions().clickElement(txt_lubricateDoor);
+        WaitActions.getWaits().loadingWait(loder);
     }
     /** select Inspect Roller  Boolean pass */
     public void selectInspectRoller () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectRoller);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectRoller);
         WebElementActions.getActions().clickElement(txt_InspectRoller);
     }
-     /** select Inspect Door pull Boolean pass */
+    /** select Inspect Door pull Boolean pass */
     public void selectInspectDoorPull () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectDoorPull);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectDoorPull);
         WebElementActions.getActions().clickElement(txt_InspectDoorPull);
     }
     /**select check and  verify Boolean pass */
     public void selectCheckAndVerify () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_checkAndVerify);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_checkAndVerify);
         WebElementActions.getActions().clickElement(txt_checkAndVerify);
     }
     /** select  Inspect Cables Boolean Pass */
     public void selectInspectCables () throws InterruptedException {
 
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectCables);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectCables);
         WebElementActions.getActions().clickElement(txt_InspectCables);
     }
     /** select Inspect Operator Boolean pass */
     public void selectInspectOperator () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectOperator);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectOperator);
         WebElementActions.getActions().clickElement(txt_InspectOperator);
     }
     /** select Inspect Lubricate Boolean pass */
     public void selectInspectLubricate () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectLubricate);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectLubricate);
         WebElementActions.getActions().clickElement(txt_InspectLubricate);
+        WaitActions.getWaits().loadingWait(loder);
     }
 
     /** select Inspect Track Text Boolean pass */
     public void selectInspectTrack () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectTrack);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectTrack);
         WebElementActions.getActions().clickElement(txt_InspectTrack);
+        WaitActions.getWaits().loadingWait(loder);
     }
     /** select Inspect Still Text Boolean pass */
     public void selectInspectSill () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectSill);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectSill);
         WebElementActions.getActions().clickElement(txt_InspectSill);
+        WaitActions.getWaits().loadingWait(loder);
     }
     /** click On  Roll Up Door Validate Button */
 
     public void clickRollUpDoorButton () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_RollUpDoorButton);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_RollUpDoorButton);
         WebElementActions.getActions().clickElement(btn_RollUpDoorButton);
+        WaitActions.getWaits().loadingWait(loder);
 
 
     }
     /** click on swing  Door Box  */
     public void clickSwingDoor () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(box_SwingDoor);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(box_SwingDoor);
         WebElementActions.getActions().clickElement(box_SwingDoor);
         TestListener.saveScreenshotPNG(driver);
     }
     /** select condition Door Text Boolean pass */
     public void selectConditionDoor () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_ConditionDoor);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_ConditionDoor);
         WebElementActions.getActions().clickElement(txt_ConditionDoor);
     }
     /** select Operate And Lubricate Text Boolean pass */
     public void selectOperateAndLubricate () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_OperateAndLubricate);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_OperateAndLubricate);
+         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_OperateAndLubricate);
         WebElementActions.getActions().clickElement(txt_OperateAndLubricate);
     }
     /** select Check And verify Proper Text Boolean pass */
     public void selectCheckAndVerifyProper () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckAndVerifyProper);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckAndVerifyProper);
         WebElementActions.getActions().clickElement(txt_CheckAndVerifyProper);
     }
     /** select Inspect All Door Text Boolean pass */
     public void selectInspectAllDoor () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectAllDoor);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectAllDoor);
         WebElementActions.getActions().clickElement(txt_InspectAllDoor);
     }
     /**click on Swing  Door validate Button */
     public void  clickOnSwingDoorButton () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_SwingDoorButton);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_SwingDoorButton);
         WebElementActions.getActions().clickElement(btn_SwingDoorButton);
         TestListener.saveScreenshotPNG(driver);
     }
     /** click On Interior Box */
     public void clickOnInteriorBox () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(box_InteriorBox);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(box_InteriorBox);
         WebElementActions.getActions().clickElement(box_InteriorBox);
 
     }
     /**select Cargo Net Track Text Boolean pass */
     public void selectCargoNetTrack () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CargoNetTrack);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CargoNetTrack);
         WebElementActions.getActions().clickElement(txt_CargoNetTrack);
+        WaitActions.getWaits().loadingWait(loder);
 
     }
     /**select Inspect Interior Wall Text Boolean pass */
     public void selectInspectInteriorWall () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectInteriorWall);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectInteriorWall);
         WebElementActions.getActions().clickElement(txt_InspectInteriorWall);
+        WaitActions.getWaits().loadingWait(loder);
 
     }
     /**select check Floor Text Boolean pass */
     public void selectCheckFloor () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_CheckFloor);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_CheckFloor);
         WebElementActions.getActions().clickElement(txt_CheckFloor);
+        WaitActions.getWaits().loadingWait(loder);
     }
     /**select Inspect Condition Of convey Text Boolean pass */
     public  void selectInspectConditionOfConvey() throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectConditionOfConvey);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectConditionOfConvey);
         WebElementActions.getActions().clickElement(txt_InspectConditionOfConvey);
+        WaitActions.getWaits().loadingWait(loder);
     }
     /** select inspect Load Decks Text Boolean pass */
     public void selectInspectLoadDecks () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectLoadDecks);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectLoadDecks);
         WebElementActions.getActions().clickElement(txt_InspectLoadDecks);
+        WaitActions.getWaits().loadingWait(loder);
     }
     /** select Inspect Roof Blows Text Boolean pass */
     public void selectInspectRoofBlows  () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectRoofBlows);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectRoofBlows);
         WebElementActions.getActions().clickElement(txt_InspectRoofBlows);
     }
     /**select Conduct Light check Text Boolean pass */
     public void selectConductLightCheck () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_ConductLightCheck);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_ConductLightCheck);
         WebElementActions.getActions().clickElement(txt_ConductLightCheck);
 
     }
     /**click Interior validate button */
     public void clickInteriorButton () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_InteriorButton);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_InteriorButton);
         WebElementActions.getActions().clickElement(btn_InteriorButton);
         WaitActions.getWaits().loadingWait(loder);
@@ -1635,64 +1634,65 @@ public class cGVTechPerformPM extends TestDriverActions {
     }
     /**click On Defect Summary Button */
     public void clickOnDefectSummary () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_DefectSummary);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_DefectSummary);
-        WebElementActions.getActions().clickElement(btn_DefectSummary);
+        WebElementActions.getActions().clickUsingJS(btn_DefectSummary);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
 
 
     /** verify Inspection Notes */
     public void verifyInspectionNotes () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_InspectionNotes);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_InspectionNotes);
+        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_InspectionNotes);
         Assert.assertTrue(txt_InspectionNotes.isDisplayed());
 
     }
+
     /**verify Text Description */
     public void  verifyTextDescription () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_Description);
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_Description);
         Assert.assertTrue(txt_Description.isDisplayed());
 
     }
     /** verify Text Notes */
     public void  verifyNotes () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_Notes);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_Notes);
         Assert.assertTrue(txt_Notes.isDisplayed());
 
     }
 
-      /**click on SignIn */
+    /**click on SignIn */
     public void clickOnSignIn () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_SignButton);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_SignButton);
         WebElementActions.getActions().clickElement(btn_SignButton);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
-       /**verify Cancel Button */
+    /**verify Cancel Button */
     public void verifyCancelButton () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_CancelButton);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(btn_CancelButton);
         Assert.assertTrue(btn_CancelButton.isDisplayed());
+        WaitActions.getWaits().loadingWait(loder);
 
     }
     /** verify Clear Button  */
     public void  verifyClearButton () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_Clear);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_Clear);
         Assert.assertTrue(txt_Clear.isDisplayed());
+        WaitActions.getWaits().loadingWait(loder);
 
     }
     /**verify Continue Button */
     public void verifyContinueButton () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_Continue);
         WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(txt_Continue);
         Assert.assertTrue(txt_Continue.isDisplayed());
+        WaitActions.getWaits().loadingWait(loder);
     }
-     /**handle canvas */
+    /**handle canvas */
     public void handleCanvas () {
 
         int canvas_Width = label_Signature.getSize().getWidth();
@@ -1710,43 +1710,42 @@ public class cGVTechPerformPM extends TestDriverActions {
         action.moveToElement(label_Signature).click();
         TestListener.saveScreenshotPNG(driver);
 
-            }
+    }
 
 
     /**click On Continue Button */
     public void clickToContinue () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_Continue);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_Continue);
         WebElementActions.getActions().clickElement(txt_Continue);
+        Thread.sleep(3000);
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
     /** click On Summary Tab */
     public void ClickSummaryTab () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_Summary);
-        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_Continue);
+
+        WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_Summary);
         WebElementActions.getActions().clickElement(btn_Summary);
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
-
     }
-     /**click On Unit Ready */
+    /**click On Unit Ready */
     public void  clickOnUnitReady () throws InterruptedException {
 
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(txt_UnitReady);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_UnitReady);
         WebElementActions.getActions().clickElement(txt_UnitReady);
-         WaitActions.getWaits().loadingWait(loder);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
     /** click On Unit Ready Ok Button */
     public void clickOnUnitReadyOk () throws InterruptedException {
-//        WaitActions.getWaits().waitForElementTobeClickable(btn_UnitReadyOkButton);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_UnitReadyOkButton);
         WebElementActions.getActions().clickElement(btn_UnitReadyOkButton);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
@@ -1754,16 +1753,16 @@ public class cGVTechPerformPM extends TestDriverActions {
 
     /** click on SignIn  */
     public void clickOnSinIn () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_SignIn);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_SignIn);
         WebElementActions.getActions().clickElement(btn_SignIn);
+        Thread.sleep(3000);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
 
     }
     /** handel Canvas */
     public void labelCanvas () {
-
         int canvas_Width = label_canvas.getSize().getWidth();
         int canvas_Height = label_canvas.getSize().getHeight();
         int canvas_Center_X = canvas_Width/2;
@@ -1782,35 +1781,34 @@ public class cGVTechPerformPM extends TestDriverActions {
     }
     /**click On Ok Button */
     public void clickOnOkButton () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_Ok);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_Ok);
         WebElementActions.getActions().clickElement(btn_Ok);
+        WaitActions.getWaits().loadingWait(loder);
 
     }
     /**click on labor */
     public void clickOnLabor () throws InterruptedException {
 
-//        WaitActions.getWaits().waitForElementTobeClickable(label_labor);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(label_labor);
         WebElementActions.getActions().clickElement(label_labor);
+        Thread.sleep(5000);
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
 
-      /** click On Hyperlink */
+    /** click On Hyperlink */
     public void cancelHyperLink () throws InterruptedException {
 
-//         WaitActions.getWaits().WaitUntilWebElementIsVisible(img_cancel);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(img_cancel);
-         WebElementActions.getActions().clickElement(img_cancel);
+        WebElementActions.getActions().clickUsingJS(img_cancel);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
     /** click Save And Exit Button */
     public void  clickSaveAndExitButton () throws InterruptedException {
 
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_SaveExitDeleteButton);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_SaveExitDeleteButton);
         WebElementActions.getActions().clickElement(btn_SaveExitDeleteButton);
         WaitActions.getWaits().loadingWait(loder);
@@ -1819,23 +1817,23 @@ public class cGVTechPerformPM extends TestDriverActions {
     /**Select Hyperlink  */
     public void selectHyperLink () throws InterruptedException {
 
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_SelectButton);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_SelectButton);
         WebElementActions.getActions().clickElement(btn_SelectButton);
+        Thread.sleep(5000);
         WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
     }
-      /** click On Assign  Work  label */
+    /** click On Assign  Work  label */
     public void clickOnAssignWork () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(btn_AssignWork);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_AssignWork);
         WebElementActions.getActions().clickElement(btn_AssignWork);
+        WaitActions.getWaits().loadingWait(loder);
         TestListener.saveScreenshotPNG(driver);
 
     }
     /**click On Sign Out */
     public void clickOnSignOut () throws InterruptedException {
-//        WaitActions.getWaits().WaitUntilWebElementIsVisible(Label_SignOut);
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(Label_SignOut);
         WebElementActions.getActions().clickElement(Label_SignOut);
         TestListener.saveScreenshotPNG(driver);
@@ -1843,6 +1841,20 @@ public class cGVTechPerformPM extends TestDriverActions {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
