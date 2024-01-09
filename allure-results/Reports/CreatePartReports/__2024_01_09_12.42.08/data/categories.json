@@ -1,0 +1,77 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "java.lang.NullPointerException",
+      "children" : [ {
+        "name" : "Test_003 Enter part number and create new part",
+        "uid" : "43be4b22e7c36933",
+        "parentUid" : "5592898b36d684905e31486a23088bda",
+        "status" : "broken",
+        "time" : {
+          "start" : 1704783948802,
+          "stop" : 1704783984861,
+          "duration" : 36059
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "5592898b36d684905e31486a23088bda"
+    }, {
+      "name" : "element click intercepted: Element <span class=\"xfx\">...</span> is not clickable at point (744, 138). Other element would receive the click: <select id=\"reg2:0:rQPart:0:socCM::content\" name=\"reg2:0:rQPart:0:socCM\" style=\"width:100px;\" class=\"x2h\" title=\"Standard\" _afov=\"1\">...</select>\n  (Session info: chrome=120.0.6099.200)\nBuild info: version: '4.4.0', revision: 'e5c75ed026a'\nSystem info: host: 'PC-9', ip: '192.168.29.154', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [2ac8482801974aa1ecd44350d0efb9c3, clickElement {id=A75940D6688F53A49D37EB3393E4F325_element_393}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.200, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\\Users\\pc9-q\\AppData\\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51467}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51467/devtoo..., se:cdpVersion: 120.0.6099.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nElement: [[ChromeDriver: chrome on WINDOWS (2ac8482801974aa1ecd44350d0efb9c3)] -> xpath: //span[text()='Refresh']]\nSession ID: 2ac8482801974aa1ecd44350d0efb9c3",
+      "children" : [ {
+        "name" : "Test_004 Search Part number ",
+        "uid" : "110154c973ecaaee",
+        "parentUid" : "a5aeaf798cfd30b6b99c26316b3e34ea",
+        "status" : "broken",
+        "time" : {
+          "start" : 1704783984944,
+          "stop" : 1704784001486,
+          "duration" : 16542
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a5aeaf798cfd30b6b99c26316b3e34ea"
+    }, {
+      "name" : "Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: (//a[text()='Costs & Pricing'])[1]' (tried for 40 second(s) with 500 milliseconds interval)",
+      "children" : [ {
+        "name" : "T_005 Verify the Description and click Cost and Pricing Tab",
+        "uid" : "28161265d37e5935",
+        "parentUid" : "07d34757757432b696fff3f68524e160",
+        "status" : "broken",
+        "time" : {
+          "start" : 1704784001562,
+          "stop" : 1704784164888,
+          "duration" : 163326
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "07d34757757432b696fff3f68524e160"
+    }, {
+      "name" : "Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on WINDOWS (2ac8482801974aa1ecd44350d0efb9c3)] -> xpath: (//span[text()='OK'])[1]] (tried for 40 second(s) with 500 milliseconds interval)\nBuild info: version: '4.4.0', revision: 'e5c75ed026a'\nSystem info: host: 'PC-9', ip: '192.168.29.154', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.200, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\\Users\\pc9-q\\AppData\\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51467}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51467/devtoo..., se:cdpVersion: 120.0.6099.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: 2ac8482801974aa1ecd44350d0efb9c3",
+      "children" : [ {
+        "name" : "T_006 click on Sign out",
+        "uid" : "ed1b9e611dec7f53",
+        "parentUid" : "a5551d8f3df555ddfd30adeaf2ce1ebd",
+        "status" : "broken",
+        "time" : {
+          "start" : 1704784164985,
+          "stop" : 1704784328867,
+          "duration" : 163882
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a5551d8f3df555ddfd30adeaf2ce1ebd"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
+}

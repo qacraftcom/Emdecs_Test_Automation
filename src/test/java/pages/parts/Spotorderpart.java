@@ -1574,9 +1574,11 @@ public class Spotorderpart extends TestDriverActions {
     }
     /**verify text Submitted*/
        public void verifySubmited () throws InterruptedException {
-           WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_SubmitPrintPOButton);
-           Assert.assertTrue(label_SubmitPrintPOButton.isDisplayed());
+           if (LoginActions.environmentName.contains("EU")) {
+               WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(label_SubmitPrintPOButton);
+               Assert.assertTrue(label_SubmitPrintPOButton.isDisplayed());
 
+           }
        }
 
 

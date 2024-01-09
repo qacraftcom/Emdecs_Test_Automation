@@ -22,6 +22,7 @@ public class CreatePart extends TestDriverActions {
     public void gotoPartsMaster() throws FileNotFoundException, InterruptedException {
         loginPage.loginWithValidCredentials(appProp.getProperty("username"),appProp.getProperty("password"));
         relatedItem.gotoPartMaster();
+
     }
 
 

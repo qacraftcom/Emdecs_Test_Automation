@@ -359,7 +359,7 @@ public class CreatePart extends TestDriverActions {
      * verify all the element
      */
      public void clickOnCollapseButton() throws InterruptedException {
-//         WaitActions.getWaits().waitForElementTobeClickable(arrow_advanced);
+
          WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(arrow_advanced);
         WebElementActions.getActions().clickElement(arrow_advanced);
 
@@ -411,7 +411,7 @@ public class CreatePart extends TestDriverActions {
      */
 
     public void enterPartNumber() throws InterruptedException {
-//        WaitActions.getWaits().waitForElementTobeClickable(txt_part1);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_part1);
         WebElementActions.getActions().inputText(txt_part1, partNumber);
 
@@ -422,10 +422,9 @@ public class CreatePart extends TestDriverActions {
      * enter cost
      */
     public void enterCost() throws InterruptedException {
-   //   if(LoginActions.environmentName.contains("QA")||LoginActions.environmentName.contains("EU"))
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_cost);
         WebElementActions.getActions().inputText(txt_cost,appProp.getProperty("cost"));
-      //  WebElementActions.getActions().inputText(txt_cost,"5");
 
         TestListener.saveScreenshotPNG(driver);
     }
@@ -435,17 +434,16 @@ public class CreatePart extends TestDriverActions {
      * enter description
      */
     public void enterDescription() throws InterruptedException {
-       // if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU")) {
+
             WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(txt_description);
             WebElementActions.getActions().inputText(txt_description, appProp.getProperty("Partdescription"));
             TestListener.saveScreenshotPNG(driver);
 
         }
-  //  }
 
     /**enter product group*/
     public void enterProductGroup() throws InterruptedException {
-       // if (LoginActions.environmentName.contains("QA")||LoginActions.environmentName.contains("EU")) {
+
             WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(dropdwn_productGroup);
             WebElementActions.getActions().elementSelectByVisibilityText(dropdwn_productGroup, appProp.getProperty("productGroup"));
             Thread.sleep(3000);
@@ -454,27 +452,23 @@ public class CreatePart extends TestDriverActions {
 
 
             }
-       // }
 
 
     /**
      * enter GL Account Group
      */
     public void enterGLAccountGroup() throws InterruptedException {
-      //  if (LoginActions.environmentName.contains("QA")){
-        WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(dropdwn_GlaccountGrp);
-        WebElementActions.getActions().elementSelectByVisibilityText(dropdwn_GlaccountGrp,appProp.getProperty("GLaccountGroup"));
-        TestListener.saveScreenshotPNG(driver);
+        if (LoginActions.environmentName.contains("QA")) {
+            WaitActions.getWaits().waitForElementToBeRefreshedAndIsVisible(dropdwn_GlaccountGrp);
+            WebElementActions.getActions().elementSelectByVisibilityText(dropdwn_GlaccountGrp, appProp.getProperty("GLaccountGroup"));
+            TestListener.saveScreenshotPNG(driver);
+        }
     }
-   // }
 
     /**
      * click on create part
      */
     public void clickOnCreatePart() throws InterruptedException {
-
-    //    if (LoginActions.environmentName.contains("QA") || LoginActions.environmentName.contains("EU")) {
-
 
        //   WebElementActions.getActions().moveOnTargetElement(btn_createpart1);
         //   WebElementActions.getActions().clickElement(btn_createpart1);
@@ -490,7 +484,7 @@ public class CreatePart extends TestDriverActions {
 
             TestListener.saveScreenshotPNG(driver);
         }
-  //  }
+
     /**
      * enter part number in search field
      */
@@ -505,7 +499,7 @@ public class CreatePart extends TestDriverActions {
      * click on refresh button
      */
     public void clickOnRefreshButton() throws InterruptedException {
-//        WaitActions.getWaits().waitForElementTobeClickable(btn_refresh);
+
         WaitActions.getWaits().waitForElementToBeRefreshedAndClickable(btn_refresh);
         WebElementActions.getActions().clickElement(btn_refresh);
 

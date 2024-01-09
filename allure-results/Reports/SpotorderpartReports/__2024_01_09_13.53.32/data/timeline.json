@@ -1,0 +1,130 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "PC-9",
+    "children" : [ {
+      "name" : "7448@PC-9.main(1)",
+      "children" : [ {
+        "name" : "Test_001 Login to the page and go to Order Part screen ",
+        "uid" : "5c7d8c16bf3b49f0",
+        "parentUid" : "aa3f9c2b22494ca5504dec8d82da6986",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704787356440,
+          "stop" : 1704787386551,
+          "duration" : 30111
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Test_009 verify Warehouse Text ",
+        "uid" : "189fdf4da096770f",
+        "parentUid" : "aa3f9c2b22494ca5504dec8d82da6986",
+        "status" : "failed",
+        "time" : {
+          "start" : 1704788322304,
+          "stop" : 1704788612235,
+          "duration" : 289931
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Test_003  input Partial Part Number ",
+        "uid" : "de2e7ee298c0b58e",
+        "parentUid" : "aa3f9c2b22494ca5504dec8d82da6986",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704787468883,
+          "stop" : 1704787533745,
+          "duration" : 64862
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Test_007 verify PO  ",
+        "uid" : "7e6b0ae218e092e",
+        "parentUid" : "aa3f9c2b22494ca5504dec8d82da6986",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704787938726,
+          "stop" : 1704788130548,
+          "duration" : 191822
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Test_006 input Core Parent Part and sign out  ",
+        "uid" : "f75769261ec5365b",
+        "parentUid" : "aa3f9c2b22494ca5504dec8d82da6986",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704787787095,
+          "stop" : 1704787938649,
+          "duration" : 151554
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Test_004 click On Add Button ",
+        "uid" : "2a198bd8a00f520b",
+        "parentUid" : "aa3f9c2b22494ca5504dec8d82da6986",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704787533807,
+          "stop" : 1704787607100,
+          "duration" : 73293
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Test_008 verify Required Part  ",
+        "uid" : "6108063654436309",
+        "parentUid" : "aa3f9c2b22494ca5504dec8d82da6986",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704788130650,
+          "stop" : 1704788322211,
+          "duration" : 191561
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Test_005 verify Search Part Description ",
+        "uid" : "a9dfd88b6391513b",
+        "parentUid" : "aa3f9c2b22494ca5504dec8d82da6986",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704787607163,
+          "stop" : 1704787786983,
+          "duration" : 179820
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Test_002 click On The Spot order Tab ",
+        "uid" : "3ba02c9a2159683f",
+        "parentUid" : "aa3f9c2b22494ca5504dec8d82da6986",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704787386682,
+          "stop" : 1704787468775,
+          "duration" : 82093
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "aa3f9c2b22494ca5504dec8d82da6986"
+    } ],
+    "uid" : "2215092bebd5f8b7a7a78f4cc7ca416f"
+  } ]
+}

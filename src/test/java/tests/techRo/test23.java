@@ -1,4 +1,8 @@
 package tests.techRo;
 
-public class test23 {
+import org.openqa.selenium.support.FindBy;
+import tests.TestDriverActions;
+
+public class test23 extends TestDriverActions {
+    //@FindBy(xpath = "")
 }

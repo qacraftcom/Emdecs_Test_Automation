@@ -1,0 +1,137 @@
+{
+  "uid" : "3d368349c0ae57f2",
+  "name" : "T_006 click on Sign out",
+  "fullName" : "tests.parts.CreatePart.signOut_verify_username",
+  "historyId" : "6314624f2a28acdc3ee51f77f93dea32",
+  "time" : {
+    "start" : 1704785315350,
+    "stop" : 1704785350997,
+    "duration" : 35647
+  },
+  "description" : "Test Description:  Sign out and verify username",
+  "descriptionHtml" : "<p>Test Description:  Sign out and verify username</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "initialization",
+    "time" : {
+      "start" : 1704785123003,
+      "stop" : 1704785141051,
+      "duration" : 18048
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "testStage" : {
+    "description" : "Test Description:  Sign out and verify username",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "6332809ec9bd8533",
+      "name" : "Page Screenshot",
+      "source" : "6332809ec9bd8533.png",
+      "type" : "image/png",
+      "size" : 86861
+    }, {
+      "uid" : "b8acd96bf9f542f3",
+      "name" : "Page Screenshot",
+      "source" : "b8acd96bf9f542f3.png",
+      "type" : "image/png",
+      "size" : 12595
+    }, {
+      "uid" : "b1ad2d6ebc3dfda",
+      "name" : "Page Screenshot",
+      "source" : "b1ad2d6ebc3dfda.png",
+      "type" : "image/png",
+      "size" : 12595
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 3,
+    "hasContent" : true,
+    "stepsCount" : 0
+  },
+  "afterStages" : [ {
+    "name" : "afterMethodTakeScreenShot",
+    "time" : {
+      "start" : 1704785350999,
+      "stop" : 1704785351047,
+      "duration" : 48
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "50201ea2e06f754b",
+      "name" : "Page Screenshot",
+      "source" : "50201ea2e06f754b.png",
+      "type" : "image/png",
+      "size" : 12595
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 1,
+    "hasContent" : true,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests.parts.CreatePart"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.parts.CreatePart"
+  }, {
+    "name" : "testMethod",
+    "value" : "signOut_verify_username"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Surefire suite"
+  }, {
+    "name" : "suite",
+    "value" : "Surefire test"
+  }, {
+    "name" : "subSuite",
+    "value" : "tests.parts.CreatePart"
+  }, {
+    "name" : "host",
+    "value" : "PC-9"
+  }, {
+    "name" : "thread",
+    "value" : "17188@PC-9.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "feature",
+    "value" : "PartsRelatedItem Test"
+  }, {
+    "name" : "epic",
+    "value" : "Regression Test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "3d368349c0ae57f2.json",
+  "parameterValues" : [ ]
+}

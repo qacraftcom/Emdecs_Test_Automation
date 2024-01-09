@@ -1,0 +1,61 @@
+[ {
+  "uid" : "17a5c48cc7d6a1b0",
+  "name" : "Test_002 click on NewParts and verify all element",
+  "time" : {
+    "start" : 1704785431770,
+    "stop" : 1704785467601,
+    "duration" : 35831
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2c17f284ef7e2ddd",
+  "name" : "Test_001 Login to the page and Go To Parts Master",
+  "time" : {
+    "start" : 1704785407566,
+    "stop" : 1704785431634,
+    "duration" : 24068
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6dc88a8adb39aa9",
+  "name" : "Test_003 Enter part number and create new part",
+  "time" : {
+    "start" : 1704785467656,
+    "stop" : 1704785519151,
+    "duration" : 51495
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5de45b6eaf22b19d",
+  "name" : "Test_004 Search Part number ",
+  "time" : {
+    "start" : 1704785519208,
+    "stop" : 1704785559259,
+    "duration" : 40051
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f8c5e03ad811c4a",
+  "name" : "T_005 Verify the Description and click Cost and Pricing Tab",
+  "time" : {
+    "start" : 1704785559304,
+    "stop" : 1704785570613,
+    "duration" : 11309
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "57e526633453951a",
+  "name" : "T_006 click on Sign out",
+  "time" : {
+    "start" : 1704785570664,
+    "stop" : 1704785606291,
+    "duration" : 35627
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

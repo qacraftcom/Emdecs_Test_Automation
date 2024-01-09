@@ -1,0 +1,143 @@
+{
+  "uid" : "17a5c48cc7d6a1b0",
+  "name" : "Test_002 click on NewParts and verify all element",
+  "fullName" : "tests.parts.CreatePart.click_NewPart_Verify_All_Elements",
+  "historyId" : "cafa68534346fd8a209147d7d688fb37",
+  "time" : {
+    "start" : 1704785431770,
+    "stop" : 1704785467601,
+    "duration" : 35831
+  },
+  "description" : "Test Description:  Click on NewParts and Verify all element",
+  "descriptionHtml" : "<p>Test Description:  Click on NewParts and Verify all element</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "initialization",
+    "time" : {
+      "start" : 1704785390310,
+      "stop" : 1704785407533,
+      "duration" : 17223
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "testStage" : {
+    "description" : "Test Description:  Click on NewParts and Verify all element",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "51a56c639525b472",
+      "name" : "Page Screenshot",
+      "source" : "51a56c639525b472.png",
+      "type" : "image/png",
+      "size" : 112620
+    }, {
+      "uid" : "3830f65774edc924",
+      "name" : "Page Screenshot",
+      "source" : "3830f65774edc924.png",
+      "type" : "image/png",
+      "size" : 112602
+    }, {
+      "uid" : "2b1727198da2372b",
+      "name" : "Page Screenshot",
+      "source" : "2b1727198da2372b.png",
+      "type" : "image/png",
+      "size" : 123538
+    }, {
+      "uid" : "492024d1b9ceec26",
+      "name" : "Page Screenshot",
+      "source" : "492024d1b9ceec26.png",
+      "type" : "image/png",
+      "size" : 123538
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 4,
+    "hasContent" : true,
+    "stepsCount" : 0
+  },
+  "afterStages" : [ {
+    "name" : "afterMethodTakeScreenShot",
+    "time" : {
+      "start" : 1704785467605,
+      "stop" : 1704785467654,
+      "duration" : 49
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "dfce1d4d82852103",
+      "name" : "Page Screenshot",
+      "source" : "dfce1d4d82852103.png",
+      "type" : "image/png",
+      "size" : 123538
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 1,
+    "hasContent" : true,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests.parts.CreatePart"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.parts.CreatePart"
+  }, {
+    "name" : "testMethod",
+    "value" : "click_NewPart_Verify_All_Elements"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Surefire suite"
+  }, {
+    "name" : "suite",
+    "value" : "Surefire test"
+  }, {
+    "name" : "subSuite",
+    "value" : "tests.parts.CreatePart"
+  }, {
+    "name" : "host",
+    "value" : "PC-9"
+  }, {
+    "name" : "thread",
+    "value" : "18520@PC-9.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "feature",
+    "value" : "PartsRelatedItem Test"
+  }, {
+    "name" : "epic",
+    "value" : "Regression Test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "17a5c48cc7d6a1b0.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,131 @@
+{
+  "uid" : "f8c5e03ad811c4a",
+  "name" : "T_005 Verify the Description and click Cost and Pricing Tab",
+  "fullName" : "tests.parts.CreatePart.verify_standard_field",
+  "historyId" : "e000d9d8220ab8dd45959b25fd9caff5",
+  "time" : {
+    "start" : 1704785559304,
+    "stop" : 1704785570613,
+    "duration" : 11309
+  },
+  "description" : "Test Description : Verify Standard field value",
+  "descriptionHtml" : "<p>Test Description : Verify Standard field value</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "initialization",
+    "time" : {
+      "start" : 1704785390310,
+      "stop" : 1704785407533,
+      "duration" : 17223
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "testStage" : {
+    "description" : "Test Description : Verify Standard field value",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "701a153b51164ffe",
+      "name" : "Page Screenshot",
+      "source" : "701a153b51164ffe.png",
+      "type" : "image/png",
+      "size" : 107837
+    }, {
+      "uid" : "c7ca7f1500a6e3fc",
+      "name" : "Page Screenshot",
+      "source" : "c7ca7f1500a6e3fc.png",
+      "type" : "image/png",
+      "size" : 107837
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 2,
+    "hasContent" : true,
+    "stepsCount" : 0
+  },
+  "afterStages" : [ {
+    "name" : "afterMethodTakeScreenShot",
+    "time" : {
+      "start" : 1704785570613,
+      "stop" : 1704785570661,
+      "duration" : 48
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "fd32559ee3b9999b",
+      "name" : "Page Screenshot",
+      "source" : "fd32559ee3b9999b.png",
+      "type" : "image/png",
+      "size" : 107837
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 1,
+    "hasContent" : true,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests.parts.CreatePart"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.parts.CreatePart"
+  }, {
+    "name" : "testMethod",
+    "value" : "verify_standard_field"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Surefire suite"
+  }, {
+    "name" : "suite",
+    "value" : "Surefire test"
+  }, {
+    "name" : "subSuite",
+    "value" : "tests.parts.CreatePart"
+  }, {
+    "name" : "host",
+    "value" : "PC-9"
+  }, {
+    "name" : "thread",
+    "value" : "18520@PC-9.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "feature",
+    "value" : "PartsRelatedItem Test"
+  }, {
+    "name" : "epic",
+    "value" : "Regression Test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f8c5e03ad811c4a.json",
+  "parameterValues" : [ ]
+}

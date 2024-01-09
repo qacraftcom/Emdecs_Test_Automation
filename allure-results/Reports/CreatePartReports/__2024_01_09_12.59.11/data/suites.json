@@ -1,0 +1,95 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Surefire suite",
+    "children" : [ {
+      "name" : "Surefire test",
+      "children" : [ {
+        "name" : "tests.parts.CreatePart",
+        "children" : [ {
+          "name" : "Test_001 Login to the page and Go To Parts Master",
+          "uid" : "b0dd379329e243e6",
+          "parentUid" : "94a994d2dec635b7e8eb0914665051dd",
+          "status" : "passed",
+          "time" : {
+            "start" : 1704785141066,
+            "stop" : 1704785169657,
+            "duration" : 28591
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "Test_002 click on NewParts and verify all element",
+          "uid" : "f7fce078780d7014",
+          "parentUid" : "94a994d2dec635b7e8eb0914665051dd",
+          "status" : "passed",
+          "time" : {
+            "start" : 1704785169797,
+            "stop" : 1704785206018,
+            "duration" : 36221
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "Test_003 Enter part number and create new part",
+          "uid" : "f4c108663d01451e",
+          "parentUid" : "94a994d2dec635b7e8eb0914665051dd",
+          "status" : "passed",
+          "time" : {
+            "start" : 1704785206095,
+            "stop" : 1704785263769,
+            "duration" : 57674
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "Test_004 Search Part number ",
+          "uid" : "2240a1c097f5fe2c",
+          "parentUid" : "94a994d2dec635b7e8eb0914665051dd",
+          "status" : "passed",
+          "time" : {
+            "start" : 1704785263849,
+            "stop" : 1704785303863,
+            "duration" : 40014
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "T_005 Verify the Description and click Cost and Pricing Tab",
+          "uid" : "29abb2b38f9c6248",
+          "parentUid" : "94a994d2dec635b7e8eb0914665051dd",
+          "status" : "passed",
+          "time" : {
+            "start" : 1704785303915,
+            "stop" : 1704785315301,
+            "duration" : 11386
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "T_006 click on Sign out",
+          "uid" : "3d368349c0ae57f2",
+          "parentUid" : "94a994d2dec635b7e8eb0914665051dd",
+          "status" : "passed",
+          "time" : {
+            "start" : 1704785315350,
+            "stop" : 1704785350997,
+            "duration" : 35647
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "94a994d2dec635b7e8eb0914665051dd"
+      } ],
+      "uid" : "1fcb2e6ec8e5b5e8a1f2a70b87c80b24"
+    } ],
+    "uid" : "940a09faf31371a51747026c9d178f0a"
+  } ]
+}

@@ -45,7 +45,7 @@ public class Spotorderparts extends TestDriverActions {
     @Test(priority = 2, description = "Test_003  input Partial Part Number ")
     @Description("Test Description:verify input Partial Part Number ")
     public void Test_003_inputPartialPartNumber() throws FileNotFoundException, InterruptedException {
-      //  spotorderparts.verifySearchCatlogDropDown();
+
         spotorderparts.inputPartialPartNumber();
         spotorderparts.verifyFullPartNumber();
         spotorderparts.verifyOrderPArtDescription ();

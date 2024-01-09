@@ -1,0 +1,137 @@
+{
+  "uid" : "f75769261ec5365b",
+  "name" : "Test_006 input Core Parent Part and sign out  ",
+  "fullName" : "tests.parts.Spotorderparts.Test_006_inputCoreParentPart",
+  "historyId" : "3b1c96043401a7889d7df4bbb1a65095",
+  "time" : {
+    "start" : 1704787787095,
+    "stop" : 1704787938649,
+    "duration" : 151554
+  },
+  "description" : "Test Description: input Core Parent Part and sign out ",
+  "descriptionHtml" : "<p>Test Description: input Core Parent Part and sign out</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "initialization",
+    "time" : {
+      "start" : 1704787337538,
+      "stop" : 1704787356408,
+      "duration" : 18870
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "testStage" : {
+    "description" : "Test Description: input Core Parent Part and sign out ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "8cf53f7fd8458531",
+      "name" : "Page Screenshot",
+      "source" : "8cf53f7fd8458531.png",
+      "type" : "image/png",
+      "size" : 68694
+    }, {
+      "uid" : "caa28824ccb470a9",
+      "name" : "Page Screenshot",
+      "source" : "caa28824ccb470a9.png",
+      "type" : "image/png",
+      "size" : 68188
+    }, {
+      "uid" : "75ffb472e69620f1",
+      "name" : "Page Screenshot",
+      "source" : "75ffb472e69620f1.png",
+      "type" : "image/png",
+      "size" : 76236
+    }, {
+      "uid" : "e3fc95bba215eecc",
+      "name" : "Page Screenshot",
+      "source" : "e3fc95bba215eecc.png",
+      "type" : "image/png",
+      "size" : 105717
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 0
+  },
+  "afterStages" : [ {
+    "name" : "afterMethodTakeScreenShot",
+    "time" : {
+      "start" : 1704787938649,
+      "stop" : 1704787938726,
+      "duration" : 77
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "cd3bbbf0e582a0ca",
+      "name" : "Page Screenshot",
+      "source" : "cd3bbbf0e582a0ca.png",
+      "type" : "image/png",
+      "size" : 105717
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests.parts.Spotorderparts"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.parts.Spotorderparts"
+  }, {
+    "name" : "testMethod",
+    "value" : "Test_006_inputCoreParentPart"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Surefire suite"
+  }, {
+    "name" : "suite",
+    "value" : "Surefire test"
+  }, {
+    "name" : "subSuite",
+    "value" : "tests.parts.Spotorderparts"
+  }, {
+    "name" : "host",
+    "value" : "PC-9"
+  }, {
+    "name" : "thread",
+    "value" : "7448@PC-9.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f75769261ec5365b.json",
+  "parameterValues" : [ ]
+}

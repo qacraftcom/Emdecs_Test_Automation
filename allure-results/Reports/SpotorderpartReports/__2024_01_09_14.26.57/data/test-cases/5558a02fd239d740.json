@@ -1,0 +1,167 @@
+{
+  "uid" : "5558a02fd239d740",
+  "name" : "Test_005 verify Search Part Description ",
+  "fullName" : "tests.parts.Spotorderparts.Test_005_verifySearchPartDescription",
+  "historyId" : "74e80ffe158e35f0642f2a9c05e905ed",
+  "time" : {
+    "start" : 1704789716178,
+    "stop" : 1704789896148,
+    "duration" : 179970
+  },
+  "description" : "Test Description:  verify Search Part Description  ",
+  "descriptionHtml" : "<p>Test Description:  verify Search Part Description</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "initialization",
+    "time" : {
+      "start" : 1704789440332,
+      "stop" : 1704789459089,
+      "duration" : 18757
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "testStage" : {
+    "description" : "Test Description:  verify Search Part Description  ",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "eda0c5380134af98",
+      "name" : "Page Screenshot",
+      "source" : "eda0c5380134af98.png",
+      "type" : "image/png",
+      "size" : 70234
+    }, {
+      "uid" : "aee6b4e912219f76",
+      "name" : "Page Screenshot",
+      "source" : "aee6b4e912219f76.png",
+      "type" : "image/png",
+      "size" : 72289
+    }, {
+      "uid" : "d691d4ad9b910f67",
+      "name" : "Page Screenshot",
+      "source" : "d691d4ad9b910f67.png",
+      "type" : "image/png",
+      "size" : 74219
+    }, {
+      "uid" : "1051494cdeeabdad",
+      "name" : "Page Screenshot",
+      "source" : "1051494cdeeabdad.png",
+      "type" : "image/png",
+      "size" : 72339
+    }, {
+      "uid" : "a91b6795064f6446",
+      "name" : "Page Screenshot",
+      "source" : "a91b6795064f6446.png",
+      "type" : "image/png",
+      "size" : 72318
+    }, {
+      "uid" : "86776778dfaaeaaa",
+      "name" : "Page Screenshot",
+      "source" : "86776778dfaaeaaa.png",
+      "type" : "image/png",
+      "size" : 72393
+    }, {
+      "uid" : "cd01a6511b2d461",
+      "name" : "Page Screenshot",
+      "source" : "cd01a6511b2d461.png",
+      "type" : "image/png",
+      "size" : 72410
+    }, {
+      "uid" : "2fe9226c65d7cc0b",
+      "name" : "Page Screenshot",
+      "source" : "2fe9226c65d7cc0b.png",
+      "type" : "image/png",
+      "size" : 72410
+    }, {
+      "uid" : "a483b9d9b763c1bf",
+      "name" : "Page Screenshot",
+      "source" : "a483b9d9b763c1bf.png",
+      "type" : "image/png",
+      "size" : 69000
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 9
+  },
+  "afterStages" : [ {
+    "name" : "afterMethodTakeScreenShot",
+    "time" : {
+      "start" : 1704789896156,
+      "stop" : 1704789896207,
+      "duration" : 51
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "7bf65e2b4fe4a9dc",
+      "name" : "Page Screenshot",
+      "source" : "7bf65e2b4fe4a9dc.png",
+      "type" : "image/png",
+      "size" : 69000
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 1
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests.parts.Spotorderparts"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.parts.Spotorderparts"
+  }, {
+    "name" : "testMethod",
+    "value" : "Test_005_verifySearchPartDescription"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Surefire suite"
+  }, {
+    "name" : "suite",
+    "value" : "Surefire test"
+  }, {
+    "name" : "subSuite",
+    "value" : "tests.parts.Spotorderparts"
+  }, {
+    "name" : "host",
+    "value" : "PC-9"
+  }, {
+    "name" : "thread",
+    "value" : "14148@PC-9.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "5558a02fd239d740.json",
+  "parameterValues" : [ ]
+}
