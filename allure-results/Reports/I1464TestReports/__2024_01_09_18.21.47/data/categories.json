@@ -1,0 +1,81 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=120.0.6099.200)\nBuild info: version: '4.4.0', revision: 'e5c75ed026a'\nSystem info: host: 'PC-5', ip: '192.168.29.196', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [767e41e1cf65bdb6c500797fd40fa35b, findElement {using=xpath, value=//div[@role='menuitem']}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.200, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\\Users\\pc5-q\\AppData\\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64698}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64698/devtoo..., se:cdpVersion: 120.0.6099.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: 767e41e1cf65bdb6c500797fd40fa35b",
+      "children" : [ {
+        "name" : "initialization",
+        "uid" : "528a173764c40773",
+        "parentUid" : "15c20ae4d1ab05eb1baa1f9c733070a4",
+        "status" : "broken",
+        "time" : {
+          "start" : 1704803290811,
+          "stop" : 1704803290811,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "15c20ae4d1ab05eb1baa1f9c733070a4"
+    }, {
+      "name" : "no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=120.0.6099.200)\nBuild info: version: '4.4.0', revision: 'e5c75ed026a'\nSystem info: host: 'PC-5', ip: '192.168.29.196', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCommand: [767e41e1cf65bdb6c500797fd40fa35b, screenshot {}]\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.200, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\\Users\\pc5-q\\AppData\\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64698}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64698/devtoo..., se:cdpVersion: 120.0.6099.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: 767e41e1cf65bdb6c500797fd40fa35b",
+      "children" : [ {
+        "name" : "afterMethodTakeScreenShot",
+        "uid" : "24d74a09359c327d",
+        "parentUid" : "d985e471ebaec90cfd3800d7d56ae77a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1704803290983,
+          "stop" : 1704803290983,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "d985e471ebaec90cfd3800d7d56ae77a"
+    }, {
+      "name" : "Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (cb279651714439af20fc85b3aa39829e)] -> xpath: (//label[contains(text(),'Customer PO#')])[1]//following::input[1]] (tried for 40 second(s) with 500 milliseconds interval)\nBuild info: version: '4.4.0', revision: 'e5c75ed026a'\nSystem info: host: 'PC-5', ip: '192.168.29.196', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.200, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\\Users\\pc5-q\\AppData\\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51186}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51186/devtoo..., se:cdpVersion: 120.0.6099.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: cb279651714439af20fc85b3aa39829e",
+      "children" : [ {
+        "name" : "NonRepairBillButtonWithCustomerPO",
+        "uid" : "2acff1b9d4efbfe5",
+        "parentUid" : "3ca0549d33ceaaef8ebfce2a50077139",
+        "status" : "broken",
+        "time" : {
+          "start" : 1704804603383,
+          "stop" : 1704804707865,
+          "duration" : 104482
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "3ca0549d33ceaaef8ebfce2a50077139"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  }, {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "expected [true] but found [false]",
+      "children" : [ {
+        "name" : "AddNewCounterSaleButtonWithCustomerPO",
+        "uid" : "3736ced200100b39",
+        "parentUid" : "067aa11ae245eca950dc984999fefd6d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1704804379490,
+          "stop" : 1704804524240,
+          "duration" : 144750
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "067aa11ae245eca950dc984999fefd6d"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

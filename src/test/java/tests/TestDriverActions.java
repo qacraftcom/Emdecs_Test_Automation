@@ -14,6 +14,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.LoginPage;
+import pages.SP_Nov_Dec2023.I1464Page;
 import pages.administration.CreateCustomerPage;
 import pages.administration.CreateVendorPage;
 import pages.estimating.ApproveanEstimateDMSPage;
@@ -92,6 +93,8 @@ public class TestDriverActions {
     public JournalizePartsInvoice_konaEU journalizepartinvoice;
 
     public ReportsPage reportsPage;
+
+    public I1464Page i1464Page;
     LoginActions loginActions;
 
 
@@ -212,6 +215,9 @@ public class TestDriverActions {
         }
         else if(this.getClass().getCanonicalName().contains("ReportsTest")) {
             filePath = System.getProperty("user.dir") + "/src/test/java/utils/reports.properties";
+        }
+        else if(this.getClass().getCanonicalName().contains("I1464Test")) {
+            filePath = System.getProperty("user.dir") + "/src/test/java/utils/customerpocountersales.properties";
         }
 
         try {
@@ -350,7 +356,7 @@ public class TestDriverActions {
         journalizepartinvoice = PageFactory.initElements(driver, JournalizePartsInvoice_konaEU.class);
         receivepart = PageFactory.initElements(driver, ReceivePart_konaEU.class);
         reportsPage = PageFactory.initElements(driver,ReportsPage.class);
-
+        i1464Page = PageFactory.initElements(driver,I1464Page.class);
 
 
         loginPage.selectCountryFromDropDown();
@@ -537,6 +543,9 @@ public class TestDriverActions {
         else if (getClass().getCanonicalName().contains("ReportsTest")) {
             folderPath = System.getProperty("user.dir") + "/allure-results/Reports/ReportsTestReports/" + "__" + currentDateTime;
         }
+        else if (getClass().getCanonicalName().contains("I1464Test")) {
+            folderPath = System.getProperty("user.dir") + "/allure-results/Reports/I1464TestReports/" + "__" + currentDateTime;
+        }
 
 
 
@@ -665,6 +674,9 @@ public class TestDriverActions {
             }
             else if (getClass().getCanonicalName().contains("ReportsTest")) {
                 cmd = allurePathWin + " generate " + " " + System.getProperty("user.dir") + "\\allure-results -o" + " " + System.getProperty("user.dir") + "\\allure-results\\Reports\\ReportsTestReports\\" + theDir.getName();
+            }
+            else if (getClass().getCanonicalName().contains("I1464Test")) {
+                cmd = allurePathWin + " generate " + " " + System.getProperty("user.dir") + "\\allure-results -o" + " " + System.getProperty("user.dir") + "\\allure-results\\Reports\\I1464TestReports\\" + theDir.getName();
             }
 
 

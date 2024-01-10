@@ -1,0 +1,113 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "tests.SP_Nov_Dec2023.I1464Test",
+    "children" : [ {
+      "name" : "initialization",
+      "uid" : "528a173764c40773",
+      "parentUid" : "514d20fd706a8b3c2972620c1eb2dc2c",
+      "status" : "broken",
+      "time" : {
+        "start" : 1704803290811,
+        "stop" : 1704803290811,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Test_003_AddNewCounterSaleButtonWithoutCustomerPO",
+      "uid" : "4bfb12b9501babe0",
+      "parentUid" : "514d20fd706a8b3c2972620c1eb2dc2c",
+      "status" : "skipped",
+      "time" : {
+        "start" : 1704803290976,
+        "stop" : 1704803290977,
+        "duration" : 1
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "afterMethodTakeScreenShot",
+      "uid" : "24d74a09359c327d",
+      "parentUid" : "514d20fd706a8b3c2972620c1eb2dc2c",
+      "status" : "broken",
+      "time" : {
+        "start" : 1704803290983,
+        "stop" : 1704803290983,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Test_001_gotoReportScreen",
+      "uid" : "b9231d299bc0c1d4",
+      "parentUid" : "514d20fd706a8b3c2972620c1eb2dc2c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1704804287221,
+        "stop" : 1704804313617,
+        "duration" : 26396
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Test_002_AddNewCounterSaleButtonWithoutCustomerPO",
+      "uid" : "426e8a1ddb80f285",
+      "parentUid" : "514d20fd706a8b3c2972620c1eb2dc2c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1704804313802,
+        "stop" : 1704804379408,
+        "duration" : 65606
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Test_003_AddNewCounterSaleButtonWithCustomerPO",
+      "uid" : "3736ced200100b39",
+      "parentUid" : "514d20fd706a8b3c2972620c1eb2dc2c",
+      "status" : "failed",
+      "time" : {
+        "start" : 1704804379490,
+        "stop" : 1704804524240,
+        "duration" : 144750
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Test_004_NonRepairBillButtonWithoutCustomerPO",
+      "uid" : "78a4dbc57739eac5",
+      "parentUid" : "514d20fd706a8b3c2972620c1eb2dc2c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1704804524335,
+        "stop" : 1704804603296,
+        "duration" : 78961
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Test_005_NonRepairBillButtonWithCustomerPO",
+      "uid" : "2acff1b9d4efbfe5",
+      "parentUid" : "514d20fd706a8b3c2972620c1eb2dc2c",
+      "status" : "broken",
+      "time" : {
+        "start" : 1704804603383,
+        "stop" : 1704804707865,
+        "duration" : 104482
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "tests.SP_Nov_Dec2023.I1464Test"
+  } ]
+}

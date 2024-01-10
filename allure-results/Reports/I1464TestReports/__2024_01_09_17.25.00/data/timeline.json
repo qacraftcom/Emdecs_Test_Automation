@@ -1,0 +1,52 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "PC-5",
+    "children" : [ {
+      "name" : "24708@PC-5.main(1)",
+      "children" : [ {
+        "name" : "Login",
+        "uid" : "340c2b3c1ed62f49",
+        "parentUid" : "4553f245b77528d6aa4515a0a929f714",
+        "status" : "broken",
+        "time" : {
+          "start" : 1704801109920,
+          "stop" : 1704801300529,
+          "duration" : 190609
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Login",
+        "uid" : "2c7ded11fa03e986",
+        "parentUid" : "4553f245b77528d6aa4515a0a929f714",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704800857891,
+          "stop" : 1704800884118,
+          "duration" : 26227
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Login",
+        "uid" : "f976d770bd34f404",
+        "parentUid" : "4553f245b77528d6aa4515a0a929f714",
+        "status" : "failed",
+        "time" : {
+          "start" : 1704800884288,
+          "stop" : 1704801109830,
+          "duration" : 225542
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "4553f245b77528d6aa4515a0a929f714"
+    } ],
+    "uid" : "a73e966c7298dd236db9463e7eeeeb18"
+  } ]
+}

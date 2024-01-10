@@ -1,0 +1,51 @@
+[ {
+  "uid" : "3a48b604c40335ba",
+  "name" : "Login",
+  "time" : {
+    "start" : 1704804986161,
+    "stop" : 1704805013337,
+    "duration" : 27176
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "febb30bad2be683b",
+  "name" : "NonRepairBillButtonWithCustomerPO",
+  "time" : {
+    "start" : 1704805406686,
+    "stop" : 1704805406686,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "fd13434f7776ebd1",
+  "name" : "NonRepairBillButtonWithoutCustomerPO",
+  "time" : {
+    "start" : 1704805223450,
+    "stop" : 1704805406623,
+    "duration" : 183173
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "18d688a437c83928",
+  "name" : "AddNewCounterSaleButtonWithCustomerPO",
+  "time" : {
+    "start" : 1704805078859,
+    "stop" : 1704805223382,
+    "duration" : 144523
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "fb56907ad8d2da45",
+  "name" : "AddNewCounterSaleButtonWithoutCustomerPO",
+  "time" : {
+    "start" : 1704805013480,
+    "stop" : 1704805078787,
+    "duration" : 65307
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

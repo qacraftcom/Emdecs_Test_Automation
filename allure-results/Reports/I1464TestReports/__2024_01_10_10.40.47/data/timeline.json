@@ -1,0 +1,121 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "PC-5",
+    "children" : [ {
+      "name" : "5748@PC-5.main(1)",
+      "children" : [ {
+        "name" : "Login",
+        "uid" : "2f1ff2a91e16bf82",
+        "parentUid" : "d05feed008949aa0472c01b5905c6359",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704805730854,
+          "stop" : 1704805760576,
+          "duration" : 29722
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "AddNewCounterSaleButtonWithoutCustomerPO",
+        "uid" : "365d53d30964f928",
+        "parentUid" : "d05feed008949aa0472c01b5905c6359",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704805760718,
+          "stop" : 1704805826795,
+          "duration" : 66077
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "AddNewCounterSaleButtonWithCustomerPO",
+        "uid" : "f63605a2297b9680",
+        "parentUid" : "d05feed008949aa0472c01b5905c6359",
+        "status" : "failed",
+        "time" : {
+          "start" : 1704805826868,
+          "stop" : 1704805971335,
+          "duration" : 144467
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "d05feed008949aa0472c01b5905c6359"
+    }, {
+      "name" : "20288@PC-5.main(1)",
+      "children" : [ {
+        "name" : "AddNewCounterSaleButtonWithCustomerPO",
+        "uid" : "14c7a4e99d45fc79",
+        "parentUid" : "e3cb0ac834d63a19cce92a99d6f6f327",
+        "status" : "failed",
+        "time" : {
+          "start" : 1704863179892,
+          "stop" : 1704863324253,
+          "duration" : 144361
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "NonRepairBillButtonWithoutCustomerPO",
+        "uid" : "b3c5ee1347349742",
+        "parentUid" : "e3cb0ac834d63a19cce92a99d6f6f327",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704863324330,
+          "stop" : 1704863446858,
+          "duration" : 122528
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "NonRepairBillButtonWithCustomerPO",
+        "uid" : "32998a32023f2fe2",
+        "parentUid" : "e3cb0ac834d63a19cce92a99d6f6f327",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704863446947,
+          "stop" : 1704863446947,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "AddNewCounterSaleButtonWithoutCustomerPO",
+        "uid" : "5ce8407b9894f325",
+        "parentUid" : "e3cb0ac834d63a19cce92a99d6f6f327",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704863114291,
+          "stop" : 1704863179794,
+          "duration" : 65503
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Login",
+        "uid" : "eebc9274fc744f29",
+        "parentUid" : "e3cb0ac834d63a19cce92a99d6f6f327",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704863085985,
+          "stop" : 1704863114131,
+          "duration" : 28146
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "e3cb0ac834d63a19cce92a99d6f6f327"
+    } ],
+    "uid" : "a73e966c7298dd236db9463e7eeeeb18"
+  } ]
+}

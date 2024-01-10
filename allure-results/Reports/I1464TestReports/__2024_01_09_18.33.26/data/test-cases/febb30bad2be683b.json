@@ -1,0 +1,100 @@
+{
+  "uid" : "febb30bad2be683b",
+  "name" : "NonRepairBillButtonWithCustomerPO",
+  "fullName" : "tests.SP_Nov_Dec2023.I1464Test.Test_005_NonRepairBillButtonWithCustomerPO",
+  "historyId" : "47aa0ffd7fb7b22f876b36587e754e2a",
+  "time" : {
+    "start" : 1704805406686,
+    "stop" : 1704805406686,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "initialization",
+    "time" : {
+      "start" : 1704804963295,
+      "stop" : 1704804986155,
+      "duration" : 22860
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "afterMethodTakeScreenShot",
+    "time" : {
+      "start" : 1704805406686,
+      "stop" : 1704805406741,
+      "duration" : 55
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "90a4675ffadc2c",
+      "name" : "Page Screenshot",
+      "source" : "90a4675ffadc2c.png",
+      "type" : "image/png",
+      "size" : 129297
+    } ],
+    "parameters" : [ ],
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : true
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests.SP_Nov_Dec2023.I1464Test"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.SP_Nov_Dec2023.I1464Test"
+  }, {
+    "name" : "testMethod",
+    "value" : "Test_005_NonRepairBillButtonWithCustomerPO"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Default Suite"
+  }, {
+    "name" : "suite",
+    "value" : "Emdecs_Test_Automation"
+  }, {
+    "name" : "subSuite",
+    "value" : "tests.SP_Nov_Dec2023.I1464Test"
+  }, {
+    "name" : "host",
+    "value" : "PC-5"
+  }, {
+    "name" : "thread",
+    "value" : "22828@PC-5.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "febb30bad2be683b.json",
+  "parameterValues" : [ ]
+}

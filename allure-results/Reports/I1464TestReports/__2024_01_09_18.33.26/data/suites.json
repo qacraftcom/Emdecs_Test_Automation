@@ -1,0 +1,82 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Default Suite",
+    "children" : [ {
+      "name" : "Emdecs_Test_Automation",
+      "children" : [ {
+        "name" : "tests.SP_Nov_Dec2023.I1464Test",
+        "children" : [ {
+          "name" : "Login",
+          "uid" : "3a48b604c40335ba",
+          "parentUid" : "f53baff1e563ffce3febe1cc4c36c248",
+          "status" : "passed",
+          "time" : {
+            "start" : 1704804986161,
+            "stop" : 1704805013337,
+            "duration" : 27176
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "AddNewCounterSaleButtonWithoutCustomerPO",
+          "uid" : "fb56907ad8d2da45",
+          "parentUid" : "f53baff1e563ffce3febe1cc4c36c248",
+          "status" : "passed",
+          "time" : {
+            "start" : 1704805013480,
+            "stop" : 1704805078787,
+            "duration" : 65307
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "AddNewCounterSaleButtonWithCustomerPO",
+          "uid" : "18d688a437c83928",
+          "parentUid" : "f53baff1e563ffce3febe1cc4c36c248",
+          "status" : "failed",
+          "time" : {
+            "start" : 1704805078859,
+            "stop" : 1704805223382,
+            "duration" : 144523
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "NonRepairBillButtonWithoutCustomerPO",
+          "uid" : "fd13434f7776ebd1",
+          "parentUid" : "f53baff1e563ffce3febe1cc4c36c248",
+          "status" : "broken",
+          "time" : {
+            "start" : 1704805223450,
+            "stop" : 1704805406623,
+            "duration" : 183173
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "NonRepairBillButtonWithCustomerPO",
+          "uid" : "febb30bad2be683b",
+          "parentUid" : "f53baff1e563ffce3febe1cc4c36c248",
+          "status" : "passed",
+          "time" : {
+            "start" : 1704805406686,
+            "stop" : 1704805406686,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "f53baff1e563ffce3febe1cc4c36c248"
+      } ],
+      "uid" : "08b98c4da19495aebcd64cc16a06eafd"
+    } ],
+    "uid" : "8399274b4bb69ec8699907dd6ef7de4e"
+  } ]
+}

@@ -1,0 +1,51 @@
+[ {
+  "uid" : "63603f602d3e4fac",
+  "name" : "Login",
+  "time" : {
+    "start" : 1704803290976,
+    "stop" : 1704803290977,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "724bbd9f656f807a",
+  "name" : "initialization",
+  "time" : {
+    "start" : 1704803290811,
+    "stop" : 1704803290811,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "ffc21f7e89ff1a13",
+  "name" : "Login",
+  "time" : {
+    "start" : 1704803290891,
+    "stop" : 1704803290906,
+    "duration" : 15
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "c9eb5287c16c4b2f",
+  "name" : "afterMethodTakeScreenShot",
+  "time" : {
+    "start" : 1704803290983,
+    "stop" : 1704803290983,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "f6e178cb4568f0aa",
+  "name" : "Login",
+  "time" : {
+    "start" : 1704803290965,
+    "stop" : 1704803290965,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+} ]

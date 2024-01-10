@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Jan 09 17:17:37 IST 2024","Tue Jan 09 17:18:04 IST 2024","26227","Default Suite","Emdecs_Test_Automation","tests.SP_Nov_Dec2023.I1464Test","tests.SP_Nov_Dec2023.I1464Test","Test_001_gotoReportScreen","Login",""
+"broken","Tue Jan 09 17:21:49 IST 2024","Tue Jan 09 17:25:00 IST 2024","190609","Default Suite","Emdecs_Test_Automation","tests.SP_Nov_Dec2023.I1464Test","tests.SP_Nov_Dec2023.I1464Test","Test_003_AddNewCounterSaleButtonWithoutCustomerPO","Login",""
+"failed","Tue Jan 09 17:18:04 IST 2024","Tue Jan 09 17:21:49 IST 2024","225542","Default Suite","Emdecs_Test_Automation","tests.SP_Nov_Dec2023.I1464Test","tests.SP_Nov_Dec2023.I1464Test","Test_002_AddNewCounterSaleButtonWithoutCustomerPO","Login",""

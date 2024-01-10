@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"skipped","Tue Jan 09 17:58:10 IST 2024","Tue Jan 09 17:58:10 IST 2024","0","Default Suite","Emdecs_Test_Automation","tests.SP_Nov_Dec2023.I1464Test","tests.SP_Nov_Dec2023.I1464Test","Test_002_AddNewCounterSaleButtonWithoutCustomerPO","Login",""
+"broken","Tue Jan 09 17:58:10 IST 2024","Tue Jan 09 17:58:10 IST 2024","0","Default Suite","Emdecs_Test_Automation","tests.SP_Nov_Dec2023.I1464Test","tests.SP_Nov_Dec2023.I1464Test","afterMethodTakeScreenShot","afterMethodTakeScreenShot",""
+"skipped","Tue Jan 09 17:58:10 IST 2024","Tue Jan 09 17:58:10 IST 2024","1","Default Suite","Emdecs_Test_Automation","tests.SP_Nov_Dec2023.I1464Test","tests.SP_Nov_Dec2023.I1464Test","Test_003_AddNewCounterSaleButtonWithoutCustomerPO","Login",""
+"broken","Tue Jan 09 17:58:10 IST 2024","Tue Jan 09 17:58:10 IST 2024","0","Default Suite","Emdecs_Test_Automation","tests.SP_Nov_Dec2023.I1464Test","tests.SP_Nov_Dec2023.I1464Test","initialization","initialization",""
+"skipped","Tue Jan 09 17:58:10 IST 2024","Tue Jan 09 17:58:10 IST 2024","15","Default Suite","Emdecs_Test_Automation","tests.SP_Nov_Dec2023.I1464Test","tests.SP_Nov_Dec2023.I1464Test","Test_001_gotoReportScreen","Login",""

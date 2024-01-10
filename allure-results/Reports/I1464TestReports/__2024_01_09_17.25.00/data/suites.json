@@ -1,0 +1,56 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Default Suite",
+    "children" : [ {
+      "name" : "Emdecs_Test_Automation",
+      "children" : [ {
+        "name" : "tests.SP_Nov_Dec2023.I1464Test",
+        "children" : [ {
+          "name" : "Login",
+          "uid" : "2c7ded11fa03e986",
+          "parentUid" : "f53baff1e563ffce3febe1cc4c36c248",
+          "status" : "passed",
+          "time" : {
+            "start" : 1704800857891,
+            "stop" : 1704800884118,
+            "duration" : 26227
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "Login",
+          "uid" : "f976d770bd34f404",
+          "parentUid" : "f53baff1e563ffce3febe1cc4c36c248",
+          "status" : "failed",
+          "time" : {
+            "start" : 1704800884288,
+            "stop" : 1704801109830,
+            "duration" : 225542
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "Login",
+          "uid" : "340c2b3c1ed62f49",
+          "parentUid" : "f53baff1e563ffce3febe1cc4c36c248",
+          "status" : "broken",
+          "time" : {
+            "start" : 1704801109920,
+            "stop" : 1704801300529,
+            "duration" : 190609
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "f53baff1e563ffce3febe1cc4c36c248"
+      } ],
+      "uid" : "08b98c4da19495aebcd64cc16a06eafd"
+    } ],
+    "uid" : "8399274b4bb69ec8699907dd6ef7de4e"
+  } ]
+}

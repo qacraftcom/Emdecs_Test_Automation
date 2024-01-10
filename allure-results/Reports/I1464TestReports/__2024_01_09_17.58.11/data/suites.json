@@ -1,0 +1,82 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Default Suite",
+    "children" : [ {
+      "name" : "Emdecs_Test_Automation",
+      "children" : [ {
+        "name" : "tests.SP_Nov_Dec2023.I1464Test",
+        "children" : [ {
+          "name" : "initialization",
+          "uid" : "724bbd9f656f807a",
+          "parentUid" : "f53baff1e563ffce3febe1cc4c36c248",
+          "status" : "broken",
+          "time" : {
+            "start" : 1704803290811,
+            "stop" : 1704803290811,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "Login",
+          "uid" : "ffc21f7e89ff1a13",
+          "parentUid" : "f53baff1e563ffce3febe1cc4c36c248",
+          "status" : "skipped",
+          "time" : {
+            "start" : 1704803290891,
+            "stop" : 1704803290906,
+            "duration" : 15
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "Login",
+          "uid" : "f6e178cb4568f0aa",
+          "parentUid" : "f53baff1e563ffce3febe1cc4c36c248",
+          "status" : "skipped",
+          "time" : {
+            "start" : 1704803290965,
+            "stop" : 1704803290965,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "Login",
+          "uid" : "63603f602d3e4fac",
+          "parentUid" : "f53baff1e563ffce3febe1cc4c36c248",
+          "status" : "skipped",
+          "time" : {
+            "start" : 1704803290976,
+            "stop" : 1704803290977,
+            "duration" : 1
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "afterMethodTakeScreenShot",
+          "uid" : "c9eb5287c16c4b2f",
+          "parentUid" : "f53baff1e563ffce3febe1cc4c36c248",
+          "status" : "broken",
+          "time" : {
+            "start" : 1704803290983,
+            "stop" : 1704803290983,
+            "duration" : 0
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "f53baff1e563ffce3febe1cc4c36c248"
+      } ],
+      "uid" : "08b98c4da19495aebcd64cc16a06eafd"
+    } ],
+    "uid" : "8399274b4bb69ec8699907dd6ef7de4e"
+  } ]
+}

@@ -1,0 +1,109 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "initialization",
+    "uid" : "528a173764c40773",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "broken",
+    "time" : {
+      "start" : 1704803290811,
+      "stop" : 1704803290811,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Login",
+    "uid" : "4bfb12b9501babe0",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1704803290976,
+      "stop" : 1704803290977,
+      "duration" : 1
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "afterMethodTakeScreenShot",
+    "uid" : "24d74a09359c327d",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "broken",
+    "time" : {
+      "start" : 1704803290983,
+      "stop" : 1704803290983,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Login",
+    "uid" : "b9231d299bc0c1d4",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1704804287221,
+      "stop" : 1704804313617,
+      "duration" : 26396
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "AddNewCounterSaleButtonWithoutCustomerPO",
+    "uid" : "426e8a1ddb80f285",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1704804313802,
+      "stop" : 1704804379408,
+      "duration" : 65606
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "AddNewCounterSaleButtonWithCustomerPO",
+    "uid" : "3736ced200100b39",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "failed",
+    "time" : {
+      "start" : 1704804379490,
+      "stop" : 1704804524240,
+      "duration" : 144750
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "NonRepairBillButtonWithoutCustomerPO",
+    "uid" : "78a4dbc57739eac5",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1704804524335,
+      "stop" : 1704804603296,
+      "duration" : 78961
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "NonRepairBillButtonWithCustomerPO",
+    "uid" : "2acff1b9d4efbfe5",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "broken",
+    "time" : {
+      "start" : 1704804603383,
+      "stop" : 1704804707865,
+      "duration" : 104482
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  } ]
+}

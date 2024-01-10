@@ -1,0 +1,48 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "tests.SP_Nov_Dec2023.I1464Test",
+    "children" : [ {
+      "name" : "Test_001_gotoReportScreen",
+      "uid" : "2c7ded11fa03e986",
+      "parentUid" : "514d20fd706a8b3c2972620c1eb2dc2c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1704800857891,
+        "stop" : 1704800884118,
+        "duration" : 26227
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Test_002_AddNewCounterSaleButtonWithoutCustomerPO",
+      "uid" : "f976d770bd34f404",
+      "parentUid" : "514d20fd706a8b3c2972620c1eb2dc2c",
+      "status" : "failed",
+      "time" : {
+        "start" : 1704800884288,
+        "stop" : 1704801109830,
+        "duration" : 225542
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Test_003_AddNewCounterSaleButtonWithoutCustomerPO",
+      "uid" : "340c2b3c1ed62f49",
+      "parentUid" : "514d20fd706a8b3c2972620c1eb2dc2c",
+      "status" : "broken",
+      "time" : {
+        "start" : 1704801109920,
+        "stop" : 1704801300529,
+        "duration" : 190609
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "tests.SP_Nov_Dec2023.I1464Test"
+  } ]
+}

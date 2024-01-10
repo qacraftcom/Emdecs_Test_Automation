@@ -1,0 +1,104 @@
+{
+  "uid" : "38294910704506ee",
+  "name" : "Login",
+  "fullName" : "tests.SP_Nov_Dec2023.I1464Test.Test_001_gotoReportScreen",
+  "historyId" : "1932ee5575826e823f628c0638f884d5",
+  "time" : {
+    "start" : 1704802720008,
+    "stop" : 1704802745647,
+    "duration" : 25639
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "986e1714a566d72f",
+      "name" : "Page Screenshot",
+      "source" : "986e1714a566d72f.png",
+      "type" : "image/png",
+      "size" : 30648
+    }, {
+      "uid" : "cd2c0fe6dc428f06",
+      "name" : "Page Screenshot",
+      "source" : "cd2c0fe6dc428f06.png",
+      "type" : "image/png",
+      "size" : 139766
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 2,
+    "hasContent" : true,
+    "stepsCount" : 0
+  },
+  "afterStages" : [ {
+    "name" : "afterMethodTakeScreenShot",
+    "time" : {
+      "start" : 1704802745724,
+      "stop" : 1704802745777,
+      "duration" : 53
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "7b401248d58b1908",
+      "name" : "Page Screenshot",
+      "source" : "7b401248d58b1908.png",
+      "type" : "image/png",
+      "size" : 139766
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 1,
+    "hasContent" : true,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests.SP_Nov_Dec2023.I1464Test"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.SP_Nov_Dec2023.I1464Test"
+  }, {
+    "name" : "testMethod",
+    "value" : "Test_001_gotoReportScreen"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Default Suite"
+  }, {
+    "name" : "suite",
+    "value" : "Emdecs_Test_Automation"
+  }, {
+    "name" : "subSuite",
+    "value" : "tests.SP_Nov_Dec2023.I1464Test"
+  }, {
+    "name" : "host",
+    "value" : "PC-5"
+  }, {
+    "name" : "thread",
+    "value" : "8756@PC-5.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "38294910704506ee.json",
+  "parameterValues" : [ ]
+}

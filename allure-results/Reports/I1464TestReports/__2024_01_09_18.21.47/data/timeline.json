@@ -1,0 +1,280 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "PC-5",
+    "children" : [ {
+      "name" : "19136@PC-5.main(1)",
+      "children" : [ {
+        "name" : "afterMethodTakeScreenShot",
+        "uid" : "9f0a4b077b682fac",
+        "parentUid" : "1a4e62f57098391c2f7418f33fe5335a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1704803290972,
+          "stop" : 1704803290972,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "afterMethodTakeScreenShot",
+        "uid" : "24d74a09359c327d",
+        "parentUid" : "1a4e62f57098391c2f7418f33fe5335a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1704803290983,
+          "stop" : 1704803290983,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Login",
+        "uid" : "28a1b4a821f859e1",
+        "parentUid" : "1a4e62f57098391c2f7418f33fe5335a",
+        "status" : "skipped",
+        "time" : {
+          "start" : 1704803290965,
+          "stop" : 1704803290965,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Login",
+        "uid" : "76c87c98bcc7265b",
+        "parentUid" : "1a4e62f57098391c2f7418f33fe5335a",
+        "status" : "skipped",
+        "time" : {
+          "start" : 1704803290891,
+          "stop" : 1704803290906,
+          "duration" : 15
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Login",
+        "uid" : "4bfb12b9501babe0",
+        "parentUid" : "1a4e62f57098391c2f7418f33fe5335a",
+        "status" : "skipped",
+        "time" : {
+          "start" : 1704803290976,
+          "stop" : 1704803290977,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "afterMethodTakeScreenShot",
+        "uid" : "d293409e8dd0a448",
+        "parentUid" : "1a4e62f57098391c2f7418f33fe5335a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1704803290955,
+          "stop" : 1704803290955,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "initialization",
+        "uid" : "528a173764c40773",
+        "parentUid" : "1a4e62f57098391c2f7418f33fe5335a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1704803290811,
+          "stop" : 1704803290811,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "1a4e62f57098391c2f7418f33fe5335a"
+    }, {
+      "name" : "18960@PC-5.main(1)",
+      "children" : [ {
+        "name" : "AddNewCounterSaleButtonWithCustomerPO",
+        "uid" : "3736ced200100b39",
+        "parentUid" : "b6fa4b36f93d5813e77058d093cb1e30",
+        "status" : "failed",
+        "time" : {
+          "start" : 1704804379490,
+          "stop" : 1704804524240,
+          "duration" : 144750
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Login",
+        "uid" : "b9231d299bc0c1d4",
+        "parentUid" : "b6fa4b36f93d5813e77058d093cb1e30",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704804287221,
+          "stop" : 1704804313617,
+          "duration" : 26396
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "AddNewCounterSaleButtonWithoutCustomerPO",
+        "uid" : "426e8a1ddb80f285",
+        "parentUid" : "b6fa4b36f93d5813e77058d093cb1e30",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704804313802,
+          "stop" : 1704804379408,
+          "duration" : 65606
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "NonRepairBillButtonWithCustomerPO",
+        "uid" : "2acff1b9d4efbfe5",
+        "parentUid" : "b6fa4b36f93d5813e77058d093cb1e30",
+        "status" : "broken",
+        "time" : {
+          "start" : 1704804603383,
+          "stop" : 1704804707865,
+          "duration" : 104482
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "NonRepairBillButtonWithoutCustomerPO",
+        "uid" : "78a4dbc57739eac5",
+        "parentUid" : "b6fa4b36f93d5813e77058d093cb1e30",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704804524335,
+          "stop" : 1704804603296,
+          "duration" : 78961
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "b6fa4b36f93d5813e77058d093cb1e30"
+    }, {
+      "name" : "10012@PC-5.main(1)",
+      "children" : [ {
+        "name" : "Login",
+        "uid" : "b0a80bddc85f01df",
+        "parentUid" : "4f7c82263b8d453b43d25b0bfd597b62",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704803605806,
+          "stop" : 1704803632259,
+          "duration" : 26453
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "AddNewCounterSaleButtonWithoutCustomerPO",
+        "uid" : "112427dbb56b27e7",
+        "parentUid" : "4f7c82263b8d453b43d25b0bfd597b62",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704803632411,
+          "stop" : 1704803709336,
+          "duration" : 76925
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "4f7c82263b8d453b43d25b0bfd597b62"
+    }, {
+      "name" : "25664@PC-5.main(1)",
+      "children" : [ {
+        "name" : "Login",
+        "uid" : "6bf9f45a62fd9960",
+        "parentUid" : "28d29afacbeb97010c836044694bd17a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704804036377,
+          "stop" : 1704804062889,
+          "duration" : 26512
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "AddNewCounterSaleButtonWithoutCustomerPO",
+        "uid" : "f4c90448a04b5050",
+        "parentUid" : "28d29afacbeb97010c836044694bd17a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704804063041,
+          "stop" : 1704804128665,
+          "duration" : 65624
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "28d29afacbeb97010c836044694bd17a"
+    }, {
+      "name" : "8756@PC-5.main(1)",
+      "children" : [ {
+        "name" : "Login",
+        "uid" : "bab1feee520bb765",
+        "parentUid" : "e56e6f9b85c98173d57c0fc9606b94c8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704802720008,
+          "stop" : 1704802745647,
+          "duration" : 25639
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "e56e6f9b85c98173d57c0fc9606b94c8"
+    }, {
+      "name" : "2260@PC-5.main(1)",
+      "children" : [ {
+        "name" : "Login",
+        "uid" : "85466e80b720a081",
+        "parentUid" : "9e57586517d9074c6164b4760dbc9656",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704803817368,
+          "stop" : 1704803846736,
+          "duration" : 29368
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "AddNewCounterSaleButtonWithoutCustomerPO",
+        "uid" : "c8537182fef2370b",
+        "parentUid" : "9e57586517d9074c6164b4760dbc9656",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704803846923,
+          "stop" : 1704803912240,
+          "duration" : 65317
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "9e57586517d9074c6164b4760dbc9656"
+    } ],
+    "uid" : "a73e966c7298dd236db9463e7eeeeb18"
+  } ]
+}

@@ -1,0 +1,121 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "PC-5",
+    "children" : [ {
+      "name" : "8756@PC-5.main(1)",
+      "children" : [ {
+        "name" : "Login",
+        "uid" : "38294910704506ee",
+        "parentUid" : "e56e6f9b85c98173d57c0fc9606b94c8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704802720008,
+          "stop" : 1704802745647,
+          "duration" : 25639
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "e56e6f9b85c98173d57c0fc9606b94c8"
+    }, {
+      "name" : "19136@PC-5.main(1)",
+      "children" : [ {
+        "name" : "Login",
+        "uid" : "63603f602d3e4fac",
+        "parentUid" : "1a4e62f57098391c2f7418f33fe5335a",
+        "status" : "skipped",
+        "time" : {
+          "start" : 1704803290976,
+          "stop" : 1704803290977,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Login",
+        "uid" : "ffc21f7e89ff1a13",
+        "parentUid" : "1a4e62f57098391c2f7418f33fe5335a",
+        "status" : "skipped",
+        "time" : {
+          "start" : 1704803290891,
+          "stop" : 1704803290906,
+          "duration" : 15
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "initialization",
+        "uid" : "724bbd9f656f807a",
+        "parentUid" : "1a4e62f57098391c2f7418f33fe5335a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1704803290811,
+          "stop" : 1704803290811,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "afterMethodTakeScreenShot",
+        "uid" : "62d1dcfe50602996",
+        "parentUid" : "1a4e62f57098391c2f7418f33fe5335a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1704803290972,
+          "stop" : 1704803290972,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Login",
+        "uid" : "f6e178cb4568f0aa",
+        "parentUid" : "1a4e62f57098391c2f7418f33fe5335a",
+        "status" : "skipped",
+        "time" : {
+          "start" : 1704803290965,
+          "stop" : 1704803290965,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "afterMethodTakeScreenShot",
+        "uid" : "c9eb5287c16c4b2f",
+        "parentUid" : "1a4e62f57098391c2f7418f33fe5335a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1704803290983,
+          "stop" : 1704803290983,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "afterMethodTakeScreenShot",
+        "uid" : "df272250f5b78",
+        "parentUid" : "1a4e62f57098391c2f7418f33fe5335a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1704803290955,
+          "stop" : 1704803290955,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "1a4e62f57098391c2f7418f33fe5335a"
+    } ],
+    "uid" : "a73e966c7298dd236db9463e7eeeeb18"
+  } ]
+}

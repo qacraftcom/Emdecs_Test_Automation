@@ -1,0 +1,99 @@
+{
+  "f1733c323a71d7bce338373b76c8b55c" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "18d688a437c83928",
+      "status" : "failed",
+      "statusDetails" : "expected [true] but found [false]",
+      "time" : {
+        "start" : 1704805078859,
+        "stop" : 1704805223382,
+        "duration" : 144523
+      }
+    } ]
+  },
+  "47aa0ffd7fb7b22f876b36587e754e2a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "febb30bad2be683b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1704805406686,
+        "stop" : 1704805406686,
+        "duration" : 0
+      }
+    } ]
+  },
+  "1932ee5575826e823f628c0638f884d5" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "3a48b604c40335ba",
+      "status" : "passed",
+      "time" : {
+        "start" : 1704804986161,
+        "stop" : 1704805013337,
+        "duration" : 27176
+      }
+    } ]
+  },
+  "80fc37a374ba04bbe1adcbff9b91c134" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "fb56907ad8d2da45",
+      "status" : "passed",
+      "time" : {
+        "start" : 1704805013480,
+        "stop" : 1704805078787,
+        "duration" : 65307
+      }
+    } ]
+  },
+  "ccd31ca5c4eb64acfb12d1f94d5c8456" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "fd13434f7776ebd1",
+      "status" : "broken",
+      "statusDetails" : "Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (e83ba8b55a42af5a1a7925372ed5353b)] -> xpath: (//label[contains(text(),'Customer PO#')])[1]//following::input[1]] (tried for 40 second(s) with 500 milliseconds interval)\nBuild info: version: '4.4.0', revision: 'e5c75ed026a'\nSystem info: host: 'PC-5', ip: '192.168.29.196', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.200, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\\Users\\pc5-q\\AppData\\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53044}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53044/devtoo..., se:cdpVersion: 120.0.6099.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: e83ba8b55a42af5a1a7925372ed5353b",
+      "time" : {
+        "start" : 1704805223450,
+        "stop" : 1704805406623,
+        "duration" : 183173
+      }
+    } ]
+  }
+}

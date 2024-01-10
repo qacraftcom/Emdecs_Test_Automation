@@ -1,0 +1,74 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "tests.SP_Nov_Dec2023.I1464Test",
+    "children" : [ {
+      "name" : "Test_001_gotoReportScreen",
+      "uid" : "eebc9274fc744f29",
+      "parentUid" : "514d20fd706a8b3c2972620c1eb2dc2c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1704863085985,
+        "stop" : 1704863114131,
+        "duration" : 28146
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Test_002_AddNewCounterSaleButtonWithoutCustomerPO",
+      "uid" : "5ce8407b9894f325",
+      "parentUid" : "514d20fd706a8b3c2972620c1eb2dc2c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1704863114291,
+        "stop" : 1704863179794,
+        "duration" : 65503
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Test_003_AddNewCounterSaleButtonWithCustomerPO",
+      "uid" : "14c7a4e99d45fc79",
+      "parentUid" : "514d20fd706a8b3c2972620c1eb2dc2c",
+      "status" : "failed",
+      "time" : {
+        "start" : 1704863179892,
+        "stop" : 1704863324253,
+        "duration" : 144361
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Test_004_NonRepairBillButtonWithoutCustomerPO",
+      "uid" : "b3c5ee1347349742",
+      "parentUid" : "514d20fd706a8b3c2972620c1eb2dc2c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1704863324330,
+        "stop" : 1704863446858,
+        "duration" : 122528
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Test_005_NonRepairBillButtonWithCustomerPO",
+      "uid" : "32998a32023f2fe2",
+      "parentUid" : "514d20fd706a8b3c2972620c1eb2dc2c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1704863446947,
+        "stop" : 1704863446947,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "tests.SP_Nov_Dec2023.I1464Test"
+  } ]
+}

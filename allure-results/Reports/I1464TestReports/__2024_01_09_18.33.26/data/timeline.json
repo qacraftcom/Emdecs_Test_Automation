@@ -1,0 +1,78 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "PC-5",
+    "children" : [ {
+      "name" : "22828@PC-5.main(1)",
+      "children" : [ {
+        "name" : "NonRepairBillButtonWithoutCustomerPO",
+        "uid" : "fd13434f7776ebd1",
+        "parentUid" : "3ec5ebfb45a3750c356eb618d358b8e9",
+        "status" : "broken",
+        "time" : {
+          "start" : 1704805223450,
+          "stop" : 1704805406623,
+          "duration" : 183173
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Login",
+        "uid" : "3a48b604c40335ba",
+        "parentUid" : "3ec5ebfb45a3750c356eb618d358b8e9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704804986161,
+          "stop" : 1704805013337,
+          "duration" : 27176
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "NonRepairBillButtonWithCustomerPO",
+        "uid" : "febb30bad2be683b",
+        "parentUid" : "3ec5ebfb45a3750c356eb618d358b8e9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704805406686,
+          "stop" : 1704805406686,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "AddNewCounterSaleButtonWithCustomerPO",
+        "uid" : "18d688a437c83928",
+        "parentUid" : "3ec5ebfb45a3750c356eb618d358b8e9",
+        "status" : "failed",
+        "time" : {
+          "start" : 1704805078859,
+          "stop" : 1704805223382,
+          "duration" : 144523
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "AddNewCounterSaleButtonWithoutCustomerPO",
+        "uid" : "fb56907ad8d2da45",
+        "parentUid" : "3ec5ebfb45a3750c356eb618d358b8e9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1704805013480,
+          "stop" : 1704805078787,
+          "duration" : 65307
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "3ec5ebfb45a3750c356eb618d358b8e9"
+    } ],
+    "uid" : "a73e966c7298dd236db9463e7eeeeb18"
+  } ]
+}
